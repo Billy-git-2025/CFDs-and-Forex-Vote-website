@@ -68,12 +68,12 @@ if (!function_exists('h')) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - My Website</title>
+    <title>Trading Insights Blog | Market Sentiment Hub</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Market Sentiment Hub</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -176,7 +176,7 @@ if (!function_exists('h')) {
     </main>
 
     <footer>
-        <p>&copy; 2023 My Website. All rights reserved.</p>
+        <p>&copy; 2023 Market Sentiment Hub. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
