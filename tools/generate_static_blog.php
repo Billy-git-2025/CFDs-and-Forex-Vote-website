@@ -50,17 +50,6 @@ $html = <<<HTML
     </style>
 </head>
 <body>
-    <header>
-        <h1>Market Sentiment Hub</h1>
-        <nav>
-            <ul>
-                <li><a href="https://cf-ds-and-forex-vote-website.vercel.app/">Home</a></li>
-                <li><a href="https://cf-ds-and-forex-vote-website.vercel.app/blog.html" class="active">Blog</a></li>
-                <li><a href="https://discord.gg/mFx2nHpc" class="discord-link" target="_blank" rel="noopener"><i class="fab fa-discord discord-icon"></i> Join Discord</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <main class="blog-page">
         <section class="blog-hero">
             <h2>Our Blog</h2>
