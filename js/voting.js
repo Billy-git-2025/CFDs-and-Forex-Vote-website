@@ -91,7 +91,7 @@ async function checkAndCreateNewPeriod() {
 // Create a new voting period
 async function createNewVotingPeriod() {
     try {
-        const duration = 24 * 60 * 60; // 24 hours in seconds
+        const duration = 7 * 24 * 60 * 60; // 7 days in seconds
         const periodId = await voteManager.createVotingPeriod(duration);
         await initializeVoting();
         if (createVoteBtn) {

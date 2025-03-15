@@ -145,4 +145,11 @@
 .vote-option:disabled:hover {
     transform: none;
     box-shadow: none;
+}
+
+.vote-description {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: center;
 } 
