@@ -112,6 +112,9 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         
         .site-title {
@@ -120,6 +123,12 @@
             font-weight: bold;
             text-decoration: none;
             margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .site-title:hover {
+            color: #2763c5;
         }
 
         /* Adjust main content to account for fixed header */
@@ -178,7 +187,7 @@
 </head>
 <body>
     <header class="site-header">
-        <h1 class="site-title">Market Sentiment Hub</h1>
+        <a href="/" class="site-title">Market Sentiment Hub</a>
     </header>
 
     <main>
@@ -421,7 +430,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2023 Market Sentiment Hub. All rights reserved.</p>
+        <p>&copy; 2025 Market Sentiment Hub. All rights reserved. | 
+        <a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
+            <i class="fab fa-discord discord-icon"></i> Join our Discord
+        </a></p>
     </footer>
 
     <!-- Firebase SDK -->
