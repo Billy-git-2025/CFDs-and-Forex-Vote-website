@@ -54,9 +54,9 @@ $html = <<<HTML
         <h1>Market Sentiment Hub</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="https://discord.gg/mFx2nHpc" class="discord-link" target="_blank"><i class="fab fa-discord discord-icon"></i> Join Discord</a></li>
+                <li><a href="https://cf-ds-and-forex-vote-website.vercel.app/">Home</a></li>
+                <li><a href="https://cf-ds-and-forex-vote-website.vercel.app/blog.html" class="active">Blog</a></li>
+                <li><a href="https://discord.gg/mFx2nHpc" class="discord-link" target="_blank" rel="noopener"><i class="fab fa-discord discord-icon"></i> Join Discord</a></li>
             </ul>
         </nav>
     </header>

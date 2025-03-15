@@ -76,8 +76,8 @@ if (!function_exists('h')) {
         <h1>Market Sentiment Hub</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="https://cf-ds-and-forex-vote-website.vercel.app/">Home</a></li>
+                <li><a href="https://cf-ds-and-forex-vote-website.vercel.app/blog.html" class="active">Blog</a></li>
             </ul>
         </nav>
     </header>
