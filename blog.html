@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - My Website</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for Discord icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .discord-link {
+            color: #7289DA; /* Discord color */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: opacity 0.2s;
+        }
+        .discord-link:hover {
+            opacity: 0.8;
+        }
+        .discord-icon {
+            font-size: 1.2em;
+        }
+        /* For smaller screens, make the nav more responsive */
+        @media (max-width: 768px) {
+            header nav ul {
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,6 +38,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="https://discord.gg/mFx2nHpc" class="discord-link" target="_blank"><i class="fab fa-discord discord-icon"></i> Join Discord</a></li>
             </ul>
         </nav>
     </header>
