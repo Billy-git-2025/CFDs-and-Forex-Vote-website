@@ -3,10 +3,11 @@
 // Note: Firebase configuration is now loaded from config.js
 // Make sure to include config.js before this file in your HTML
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const votesCollection = db.collection("market_votes");
+import { db, collection, addDoc, query, where, getDocs, doc, updateDoc, increment, serverTimestamp } from './firebase-init.js';
+import VotePeriodManager from './vote-manager.js';
+
+// Initialize collections
+const votesCollection = collection(db, "market_votes");
 
 // Initialize vote manager
 const voteManager = new VotePeriodManager();
@@ -33,11 +34,13 @@ let timeRemainingInterval = null;
 // Check if user has voted in current period
 async function hasVotedInPeriod(periodId) {
     const userId = localStorage.getItem('userId') || generateUserId();
-    const voteDoc = await votesCollection
-        .where('periodId', '==', periodId)
-        .where('userId', '==', userId)
-        .get();
-    return !voteDoc.empty;
+    const q = query(
+        votesCollection,
+        where('periodId', '==', periodId),
+        where('userId', '==', userId)
+    );
+    const snapshot = await getDocs(q);
+    return !snapshot.empty;
 }
 
 // Generate a unique user ID
@@ -116,9 +119,9 @@ async function submitVote(voteType) {
     const userId = localStorage.getItem('userId') || generateUserId();
 
     try {
-        await votesCollection.add({
+        await addDoc(votesCollection, {
             type: voteType,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            timestamp: serverTimestamp(),
             periodId: currentPeriodId,
             userId: userId
         });
@@ -128,10 +131,10 @@ async function submitVote(voteType) {
         updateVoteDisplay();
         
         // Update vote counts in period document
-        const periodRef = voteManager.votingPeriodsCollection.doc(currentPeriodId);
-        await periodRef.update({
-            [`${voteType}Votes`]: firebase.firestore.FieldValue.increment(1),
-            totalVotes: firebase.firestore.FieldValue.increment(1)
+        const periodRef = doc(db, "voting_periods", currentPeriodId);
+        await updateDoc(periodRef, {
+            [`${voteType}Votes`]: increment(1),
+            totalVotes: increment(1)
         });
     } catch (error) {
         console.error('Error submitting vote:', error);

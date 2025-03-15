@@ -1,8 +1,9 @@
+import { db, collection, addDoc, query, where, getDocs, doc, updateDoc, serverTimestamp } from './firebase-init.js';
+
 // Vote Period Manager
 class VotePeriodManager {
     constructor() {
-        this.db = firebase.firestore();
-        this.votingPeriodsCollection = this.db.collection("voting_periods");
+        this.votingPeriodsCollection = collection(db, "voting_periods");
         this.currentPeriod = null;
     }
 
@@ -12,9 +13,9 @@ class VotePeriodManager {
         const endTime = new Date(startTime.getTime() + duration * 1000); // duration in seconds
 
         try {
-            const docRef = await this.votingPeriodsCollection.add({
-                startTime: firebase.firestore.Timestamp.fromDate(startTime),
-                endTime: firebase.firestore.Timestamp.fromDate(endTime),
+            const docRef = await addDoc(this.votingPeriodsCollection, {
+                startTime: startTime,
+                endTime: endTime,
                 status: 'active',
                 totalVotes: 0,
                 longVotes: 0,
@@ -31,14 +32,15 @@ class VotePeriodManager {
     // Get the current active voting period
     async getCurrentPeriod() {
         try {
-            const now = firebase.firestore.Timestamp.now();
-            const snapshot = await this.votingPeriodsCollection
-                .where('status', '==', 'active')
-                .where('endTime', '>', now)
-                .orderBy('endTime', 'asc')
-                .limit(1)
-                .get();
-
+            const now = new Date();
+            const q = query(
+                this.votingPeriodsCollection,
+                where('status', '==', 'active'),
+                where('endTime', '>', now)
+            );
+            
+            const snapshot = await getDocs(q);
+            
             if (!snapshot.empty) {
                 const doc = snapshot.docs[0];
                 this.currentPeriod = {
@@ -58,18 +60,20 @@ class VotePeriodManager {
     // Close expired voting periods
     async closeExpiredPeriods() {
         try {
-            const now = firebase.firestore.Timestamp.now();
-            const snapshot = await this.votingPeriodsCollection
-                .where('status', '==', 'active')
-                .where('endTime', '<=', now)
-                .get();
+            const now = new Date();
+            const q = query(
+                this.votingPeriodsCollection,
+                where('status', '==', 'active'),
+                where('endTime', '<=', now)
+            );
+            
+            const snapshot = await getDocs(q);
 
-            const batch = this.db.batch();
-            snapshot.docs.forEach(doc => {
-                batch.update(doc.ref, { status: 'completed' });
-            });
+            const updates = snapshot.docs.map(doc => 
+                updateDoc(doc.ref, { status: 'completed' })
+            );
 
-            await batch.commit();
+            await Promise.all(updates);
         } catch (error) {
             console.error("Error closing expired periods:", error);
             throw error;
@@ -95,4 +99,6 @@ class VotePeriodManager {
 
         return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
     }
-} 
+}
+
+export default VotePeriodManager; 
