@@ -217,34 +217,28 @@
     </main>
 
     <!-- New Modern Voting UI -->
-    <div class="vote_mount" id="vote-section">
-        <div class="feed__wrapper skin-white">
+    <div class="vote_mount">
+        <div class="feed__wrapper">
             <div class="vote-content-wrapper">
-                <div class="vote-title">
-                    How do you plan to invest now?
+                <h2 class="vote-title">Market Sentiment Vote</h2>
+                <div class="time-remaining-wrapper">
+                    <p>Time Remaining: <span id="time-remaining">Loading...</span></p>
                 </div>
                 <div class="pk-wrapper">
-                    <div class="not-vote-yet">
-                        <div class="vote-progress-wrapper">
-                            <span class="left-rate" id="long-percentage">50%</span>
-                            <div class="vote-progress-now" id="vote-progress-bar"></div>
-                            <span class="right-rate" id="short-percentage">50%</span>
-                        </div>
-                        <div class="vote-option-wrapper">
-                            <div id="vote-long" class="vote-option vote-left-option">
-                                <div class="vote-option-title">LONG</div>
-                            </div>
-                            <div id="vote-short" class="vote-option vote-right-option">
-                                <div class="vote-option-title">SHORT</div>
-                            </div>
-                        </div>
+                    <div class="vote-progress-wrapper">
+                        <span class="left-rate" id="long-percentage">50%</span>
+                        <div class="vote-progress-now" id="vote-progress-bar"></div>
+                        <span class="right-rate" id="short-percentage">50%</span>
+                    </div>
+                    <div class="vote-option-wrapper">
+                        <button class="vote-option vote-left-option" id="vote-long">LONG</button>
+                        <button class="vote-option vote-right-option" id="vote-short">SHORT</button>
+                    </div>
+                    <div class="vote-sub-msg">
+                        Total Votes: <span class="vote-already-num" id="total-votes">0</span>
                     </div>
                 </div>
-                <div class="vote-sub-msg">
-                    <div class="vote-already">
-                        <span><span class="vote-already-num" id="total-votes">0</span> votes</span>
-                    </div>
-                </div>
+                <button id="create-vote" class="create-vote-btn" style="display: none;">Start New Voting Period</button>
             </div>
         </div>
     </div>

@@ -8,6 +8,9 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const votesCollection = db.collection("market_votes");
 
+// Initialize vote manager
+const voteManager = new VotePeriodManager();
+
 // Initialize the votes object
 let votes = {
     long: 0,
@@ -21,78 +24,119 @@ const voteProgressBar = document.getElementById('vote-progress-bar');
 const longPercentage = document.getElementById('long-percentage');
 const shortPercentage = document.getElementById('short-percentage');
 const totalVotes = document.getElementById('total-votes');
+const timeRemainingDisplay = document.getElementById('time-remaining');
+const createVoteBtn = document.getElementById('create-vote');
 
-// Check if user has voted today
-function hasVotedToday() {
-    const lastVote = localStorage.getItem('lastVoteDate');
-    if (!lastVote) return false;
+let currentPeriodId = null;
+let timeRemainingInterval = null;
+
+// Check if user has voted in current period
+async function hasVotedInPeriod(periodId) {
+    const userId = localStorage.getItem('userId') || generateUserId();
+    const voteDoc = await votesCollection
+        .where('periodId', '==', periodId)
+        .where('userId', '==', userId)
+        .get();
+    return !voteDoc.empty;
+}
+
+// Generate a unique user ID
+function generateUserId() {
+    const userId = 'user_' + Math.random().toString(36).substr(2, 9);
+    localStorage.setItem('userId', userId);
+    return userId;
+}
+
+// Update time remaining display
+function updateTimeRemaining() {
+    const seconds = voteManager.getTimeRemaining();
+    if (seconds <= 0) {
+        clearInterval(timeRemainingInterval);
+        disableVoting();
+        checkAndCreateNewPeriod();
+        return;
+    }
     
-    const today = new Date().toDateString();
-    return lastVote === today;
+    timeRemainingDisplay.textContent = voteManager.formatTimeRemaining(seconds);
 }
 
-// Set last vote date
-function setLastVoteDate() {
-    localStorage.setItem('lastVoteDate', new Date().toDateString());
+// Disable voting buttons
+function disableVoting() {
+    if (longVoteBtn) longVoteBtn.disabled = true;
+    if (shortVoteBtn) shortVoteBtn.disabled = true;
+    timeRemainingDisplay.textContent = 'Voting period ended';
 }
 
-// Fetch the current votes from Firebase
-function fetchVotes() {
-    votesCollection.get()
-        .then(querySnapshot => {
-            votes.long = 0;
-            votes.short = 0;
-            
-            querySnapshot.forEach(doc => {
-                const voteData = doc.data();
-                if (voteData.type === 'long') {
-                    votes.long++;
-                } else if (voteData.type === 'short') {
-                    votes.short++;
-                }
-            });
-            
-            updateVoteDisplay();
-            localStorage.setItem('marketVotes', JSON.stringify(votes));
-        })
-        .catch(error => {
-            console.error('Error fetching votes:', error);
-            
-            const localVotes = localStorage.getItem('marketVotes');
-            if (localVotes) {
-                try {
-                    votes = JSON.parse(localVotes);
-                    updateVoteDisplay();
-                } catch (e) {
-                    console.error('Error parsing local votes:', e);
-                }
-            }
-        });
+// Enable voting buttons
+function enableVoting() {
+    if (longVoteBtn) longVoteBtn.disabled = false;
+    if (shortVoteBtn) shortVoteBtn.disabled = false;
+}
+
+// Check and create new voting period if needed
+async function checkAndCreateNewPeriod() {
+    await voteManager.closeExpiredPeriods();
+    const currentPeriod = await voteManager.getCurrentPeriod();
+    
+    if (!currentPeriod) {
+        if (createVoteBtn) {
+            createVoteBtn.style.display = 'block';
+        }
+    }
+}
+
+// Create a new voting period
+async function createNewVotingPeriod() {
+    try {
+        const duration = 24 * 60 * 60; // 24 hours in seconds
+        const periodId = await voteManager.createVotingPeriod(duration);
+        await initializeVoting();
+        if (createVoteBtn) {
+            createVoteBtn.style.display = 'none';
+        }
+    } catch (error) {
+        console.error('Error creating new voting period:', error);
+        alert('Error creating new voting period. Please try again.');
+    }
 }
 
 // Submit a vote to Firebase
-function submitVote(voteType) {
-    if (hasVotedToday()) {
-        alert('You have already voted today. Please come back tomorrow!');
+async function submitVote(voteType) {
+    if (!currentPeriodId) {
+        alert('No active voting period.');
         return;
     }
 
-    votesCollection.add({
-        type: voteType,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        date: new Date().toDateString()
-    })
-    .then(() => {
+    const hasVoted = await hasVotedInPeriod(currentPeriodId);
+    if (hasVoted) {
+        alert('You have already voted in this period!');
+        return;
+    }
+
+    const userId = localStorage.getItem('userId') || generateUserId();
+
+    try {
+        await votesCollection.add({
+            type: voteType,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            periodId: currentPeriodId,
+            userId: userId
+        });
+
         console.log('Vote successfully submitted');
         votes[voteType]++;
         updateVoteDisplay();
-        setLastVoteDate();
-        fetchVotes(); // Refresh all votes
-    })
-    .catch(error => {
+        
+        // Update vote counts in period document
+        const periodRef = voteManager.votingPeriodsCollection.doc(currentPeriodId);
+        await periodRef.update({
+            [`${voteType}Votes`]: firebase.firestore.FieldValue.increment(1),
+            totalVotes: firebase.firestore.FieldValue.increment(1)
+        });
+    } catch (error) {
         console.error('Error submitting vote:', error);
         alert('Error submitting vote. Please try again.');
-    });
+    }
 }
 
 // Update the display with current votes
@@ -116,52 +160,64 @@ function updateVoteDisplay() {
         #ff6900 ${longPercent}%)`;
 }
 
-// Add click event listeners to the vote buttons
+// Initialize voting system
+async function initializeVoting() {
+    try {
+        const currentPeriod = await voteManager.getCurrentPeriod();
+        
+        if (currentPeriod) {
+            currentPeriodId = currentPeriod.id;
+            votes.long = currentPeriod.longVotes;
+            votes.short = currentPeriod.shortVotes;
+            updateVoteDisplay();
+            
+            // Start time remaining updates
+            clearInterval(timeRemainingInterval);
+            timeRemainingInterval = setInterval(updateTimeRemaining, 1000);
+            updateTimeRemaining();
+            
+            enableVoting();
+            if (createVoteBtn) {
+                createVoteBtn.style.display = 'none';
+            }
+            
+            // Check if user has already voted
+            const hasVoted = await hasVotedInPeriod(currentPeriodId);
+            if (hasVoted) {
+                if (longVoteBtn) longVoteBtn.classList.add('voted');
+                if (shortVoteBtn) shortVoteBtn.classList.add('voted');
+            }
+        } else {
+            disableVoting();
+            if (createVoteBtn) {
+                createVoteBtn.style.display = 'block';
+            }
+        }
+    } catch (error) {
+        console.error('Error initializing voting:', error);
+    }
+}
+
+// Add click event listeners
 if (longVoteBtn && shortVoteBtn) {
     longVoteBtn.addEventListener('click', function() {
         submitVote('long');
         this.classList.add('voted');
-        setTimeout(() => this.classList.remove('voted'), 300);
     });
 
     shortVoteBtn.addEventListener('click', function() {
         submitVote('short');
         this.classList.add('voted');
-        setTimeout(() => this.classList.remove('voted'), 300);
     });
 }
 
-// Setup real-time listener for vote changes
-function setupRealtimeUpdates() {
-    votesCollection.onSnapshot(snapshot => {
-        votes.long = 0;
-        votes.short = 0;
-        
-        snapshot.forEach(doc => {
-            const voteData = doc.data();
-            if (voteData.type === 'long') {
-                votes.long++;
-            } else if (voteData.type === 'short') {
-                votes.short++;
-            }
-        });
-        
-        updateVoteDisplay();
-    }, error => {
-        console.error("Realtime updates error:", error);
-    });
+if (createVoteBtn) {
+    createVoteBtn.addEventListener('click', createNewVotingPeriod);
 }
 
 // Initialize on load
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.vote_mount')) {
-        fetchVotes();
-        setupRealtimeUpdates();
-        
-        // Check if buttons should be disabled
-        if (hasVotedToday()) {
-            if (longVoteBtn) longVoteBtn.classList.add('voted');
-            if (shortVoteBtn) shortVoteBtn.classList.add('voted');
-        }
+        initializeVoting();
     }
 }); 
