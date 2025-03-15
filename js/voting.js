@@ -1,4 +1,20 @@
-// Market Sentiment Voting System
+// Market Sentiment Voting System with Firebase
+
+// *** IMPORTANT: REPLACE WITH YOUR OWN FIREBASE CONFIG ***
+// You'll get this from Firebase console > Project settings > General > Your apps
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const votesCollection = db.collection("votes");
 
 // Initialize the votes object
 let votes = {
@@ -14,82 +30,100 @@ const longPercentage = document.getElementById('long-percentage');
 const shortPercentage = document.getElementById('short-percentage');
 const totalVotes = document.getElementById('total-votes');
 
-// Fetch the current votes from the server
+// Fetch the current votes from Firebase
 function fetchVotes() {
-    fetch('vote.php')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data.success) {
-                votes = data.counts;
-                updateVoteDisplay();
-            } else {
-                console.error('Error fetching votes:', data.message);
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching votes:', error);
+    // Get all vote documents
+    votesCollection.get()
+        .then(querySnapshot => {
+            // Reset counts
+            votes.long = 0;
+            votes.short = 0;
             
-            // Use local data if already loaded, or fallback to zeros
-            if (localStorage.getItem('marketVotes')) {
-                try {
-                    const localVotes = JSON.parse(localStorage.getItem('marketVotes'));
-                    votes = localVotes;
-                } catch (e) {
-                    console.error('Error parsing local votes:', e);
+            // Count each vote by type
+            querySnapshot.forEach(doc => {
+                const voteData = doc.data();
+                if (voteData.type === 'long') {
+                    votes.long++;
+                } else if (voteData.type === 'short') {
+                    votes.short++;
                 }
-            }
+            });
             
-            updateVoteDisplay();
-        });
-}
-
-// Submit a vote to the server
-function submitVote(voteType) {
-    // Create form data
-    const formData = new FormData();
-    formData.append('vote_type', voteType);
-    
-    // Submit the vote
-    fetch('vote.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        if (data.success) {
-            // Update local votes with server data
-            votes = data.counts;
+            // Update the UI
             updateVoteDisplay();
             
             // Store in localStorage as backup
             localStorage.setItem('marketVotes', JSON.stringify(votes));
-        } else {
-            console.error('Error submitting vote:', data.message);
-        }
-    })
-    .catch(error => {
-        console.error('Error submitting vote:', error);
-        
-        // Fallback to local counting if server fails
-        if (voteType === 'long') {
-            votes.long++;
-        } else if (voteType === 'short') {
-            votes.short++;
-        }
-        
-        updateVoteDisplay();
-        localStorage.setItem('marketVotes', JSON.stringify(votes));
-    });
+        })
+        .catch(error => {
+            console.error('Error fetching votes:', error);
+            
+            // Fall back to localStorage if available
+            if (localStorage.getItem('marketVotes')) {
+                try {
+                    const localVotes = JSON.parse(localStorage.getItem('marketVotes'));
+                    votes = localVotes;
+                    updateVoteDisplay();
+                } catch (e) {
+                    console.error('Error parsing local votes:', e);
+                }
+            }
+        });
+}
+
+// Submit a vote to Firebase
+function submitVote(voteType) {
+    // Get client IP (optional - if you want to limit one vote per IP)
+    // This method just gives an approximation and isn't 100% reliable
+    fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const clientIP = data.ip;
+            
+            // Add the vote to Firebase
+            votesCollection.add({
+                type: voteType,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                ip: clientIP
+            })
+            .then(() => {
+                console.log('Vote successfully submitted');
+                
+                // Update local counts for immediate feedback
+                votes[voteType]++;
+                updateVoteDisplay();
+                
+                // Then fetch all votes to ensure accuracy
+                fetchVotes();
+            })
+            .catch(error => {
+                console.error('Error submitting vote:', error);
+                
+                // Fallback to local counting if Firebase fails
+                votes[voteType]++;
+                updateVoteDisplay();
+                localStorage.setItem('marketVotes', JSON.stringify(votes));
+            });
+        })
+        .catch(error => {
+            // If IP lookup fails, just submit the vote without IP
+            votesCollection.add({
+                type: voteType,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            })
+            .then(() => {
+                console.log('Vote successfully submitted (without IP)');
+                votes[voteType]++;
+                updateVoteDisplay();
+                fetchVotes();
+            })
+            .catch(error => {
+                console.error('Error submitting vote:', error);
+                votes[voteType]++;
+                updateVoteDisplay();
+                localStorage.setItem('marketVotes', JSON.stringify(votes));
+            });
+        });
 }
 
 // Update the display with current votes
@@ -142,11 +176,35 @@ shortVoteBtn.addEventListener('click', function() {
     }, 300);
 });
 
+// Setup real-time listener for vote changes
+function setupRealtimeUpdates() {
+    votesCollection.onSnapshot(snapshot => {
+        // Reset counts
+        votes.long = 0;
+        votes.short = 0;
+        
+        // Count each vote by type
+        snapshot.forEach(doc => {
+            const voteData = doc.data();
+            if (voteData.type === 'long') {
+                votes.long++;
+            } else if (voteData.type === 'short') {
+                votes.short++;
+            }
+        });
+        
+        // Update the UI
+        updateVoteDisplay();
+    }, error => {
+        console.error("Realtime updates error:", error);
+    });
+}
+
 // Initialize on load
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch initial votes
     fetchVotes();
-});
-
-// Refresh votes periodically (every 30 seconds)
-setInterval(fetchVotes, 30000); 
+    
+    // Setup realtime updates
+    setupRealtimeUpdates();
+}); 
