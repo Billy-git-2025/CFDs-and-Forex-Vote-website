@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Market Sentiment Hub | CFDs, Forex & Crypto Trading Insights</title>
+    <meta name="description" content="Join our community to share market sentiment on CFDs, Forex, and Cryptocurrency trading. Vote on market direction and discover what traders expect next.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/vote-styles.css">
     <!-- Font Awesome for Discord icon -->
@@ -29,11 +30,84 @@
                 gap: 15px;
             }
         }
+        
+        /* Welcome section styling */
+        .welcome-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-section h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .welcome-section h2 {
+            color: #34495e;
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .market-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .market-highlight {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 180px;
+        }
+        
+        .market-highlight h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .market-highlight p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #327fff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2763c5;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Market Sentiment Hub</h1>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
@@ -45,14 +119,33 @@
     </header>
 
     <main>
-        <section>
-            <h2>Welcome!</h2>
-            <p>This is a sample website template. You can modify this content as needed.</p>
+        <section class="welcome-section">
+            <h1>Forecasting the Future of CFDs, Forex & Crypto Markets</h1>
+            <h2>Join thousands of traders sharing market sentiment and predictions</h2>
+            <p>Welcome to the Market Sentiment Hub, where the collective wisdom of traders worldwide comes together to forecast market movements. Whether you're trading CFDs, forex pairs, or cryptocurrencies, understanding market sentiment is crucial for making informed decisions.</p>
+            <p>Cast your vote below on whether you're bullish or bearish on the markets right now. See real-time results and compare your outlook with traders from around the globe.</p>
+            
+            <a href="#vote-section" class="cta-button">Vote Now</a>
+            
+            <div class="market-highlights">
+                <div class="market-highlight">
+                    <h3>CFDs</h3>
+                    <p>Trade price movements across indices, commodities, and stocks without owning the underlying asset.</p>
+                </div>
+                <div class="market-highlight">
+                    <h3>Forex</h3>
+                    <p>The world's largest financial market with over $6 trillion daily trading volume.</p>
+                </div>
+                <div class="market-highlight">
+                    <h3>Crypto</h3>
+                    <p>Digital assets revolutionizing finance with blockchain technology and decentralization.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- New Modern Voting UI -->
-    <div class="vote_mount">
+    <div class="vote_mount" id="vote-section">
         <div class="feed__wrapper skin-white">
             <div class="vote-content-wrapper">
                 <div class="vote-title">
