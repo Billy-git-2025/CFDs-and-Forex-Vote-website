@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Sentiment Hub | CFDs, Forex & Crypto Trading Insights</title>
+    <meta name="description" content="Join our community to share market sentiment on CFDs, Forex, and Cryptocurrency trading. Vote on market direction and discover what traders expect next.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vote-styles.css">
+    <!-- Font Awesome for Discord icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .discord-link {
+            color: #7289DA; /* Discord color */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: opacity 0.2s;
+        }
+        .discord-link:hover {
+            opacity: 0.8;
+        }
+        .discord-icon {
+            font-size: 1.2em;
+        }
+        /* For smaller screens, make the nav more responsive */
+        @media (max-width: 768px) {
+            header nav ul {
+                gap: 15px;
+            }
+        }
+        
+        /* Welcome section styling */
+        .welcome-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .welcome-section h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .welcome-section h2 {
+            color: #34495e;
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .market-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .market-highlight {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 180px;
+        }
+        
+        .market-highlight h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .market-highlight p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #327fff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        
+        .cta-button:hover {
+            background-color: #2763c5;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .site-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+        }
+
+        /* Adjust main content to account for fixed header */
+        main {
+            margin-top: 80px;
+        }
+
+        .latest-posts {
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card h3 {
+            color: #2763c5;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #2763c5;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #1e4c99;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <h1 class="site-title">Market Sentiment Hub</h1>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h1>Forecasting the Future of CFDs, Forex & Crypto Markets</h1>
+            <h2>Join thousands of traders sharing market sentiment and predictions</h2>
+            <p>Welcome to the Market Sentiment Hub, where the collective wisdom of traders worldwide comes together to forecast market movements. Whether you're trading CFDs, forex pairs, or cryptocurrencies, understanding market sentiment is crucial for making informed decisions.</p>
+            <p>Cast your vote below on whether you're bullish or bearish on the markets right now. See real-time results and compare your outlook with traders from around the globe.</p>
+            
+            <a href="#vote-section" class="cta-button">Vote Now</a>
+            
+            <div class="market-highlights">
+                <div class="market-highlight">
+                    <h3>CFDs</h3>
+                    <p>Trade price movements across indices, commodities, and stocks without owning the underlying asset.</p>
+                </div>
+                <div class="market-highlight">
+                    <h3>Forex</h3>
+                    <p>The world's largest financial market with over $6 trillion daily trading volume.</p>
+                </div>
+                <div class="market-highlight">
+                    <h3>Crypto</h3>
+                    <p>Digital assets revolutionizing finance with blockchain technology and decentralization.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- New Modern Voting UI -->
+    <div class="vote_mount" id="vote-section">
+        <div class="feed__wrapper skin-white">
+            <div class="vote-content-wrapper">
+                <div class="vote-title">
+                    How do you plan to invest now?
+                </div>
+                <div class="pk-wrapper">
+                    <div class="not-vote-yet">
+                        <div class="vote-progress-wrapper">
+                            <span class="left-rate" id="long-percentage">50%</span>
+                            <div class="vote-progress-now" id="vote-progress-bar"></div>
+                            <span class="right-rate" id="short-percentage">50%</span>
+                        </div>
+                        <div class="vote-option-wrapper">
+                            <div id="vote-long" class="vote-option vote-left-option">
+                                <div class="vote-option-title">LONG</div>
+                            </div>
+                            <div id="vote-short" class="vote-option vote-right-option">
+                                <div class="vote-option-title">SHORT</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vote-sub-msg">
+                    <div class="vote-already">
+                        <span><span class="vote-already-num" id="total-votes">0</span> votes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget-container">
+        <h2 class="section-title">Live Stock Index</h2>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+        </div>
+        <!-- TradingView Widget Configuration -->
+        <script type="text/javascript">
+        var tradingviewWidgetConfig = {
+            "width": 1000,
+            "height": 800,
+            "symbolsGroups": [
+                {
+                "name": "Indices",
+                "originalName": "Indices",
+                "symbols": [
+                    {
+                    "name": "FOREXCOM:SPXUSD",
+                    "displayName": "S&P 500 Index"
+                    },
+                    {
+                    "name": "FOREXCOM:NSXUSD",
+                    "displayName": "US 100 Cash CFD"
+                    },
+                    {
+                    "name": "FOREXCOM:DJI",
+                    "displayName": "Dow Jones Industrial Average Index"
+                    },
+                    {
+                    "name": "INDEX:NKY",
+                    "displayName": "Japan 225"
+                    },
+                    {
+                    "name": "INDEX:DEU40",
+                    "displayName": "DAX Index"
+                    },
+                    {
+                    "name": "FOREXCOM:UKXGBP",
+                    "displayName": "FTSE 100 Index"
+                    }
+                ]
+                },
+                {
+                "name": "Futures",
+                "originalName": "Futures",
+                "symbols": [
+                    {
+                    "name": "CME_MINI:ES1!",
+                    "displayName": "S&P 500"
+                    },
+                    {
+                    "name": "CME:6E1!",
+                    "displayName": "Euro"
+                    },
+                    {
+                    "name": "COMEX:GC1!",
+                    "displayName": "Gold"
+                    },
+                    {
+                    "name": "NYMEX:CL1!",
+                    "displayName": "WTI Crude Oil"
+                    },
+                    {
+                    "name": "NYMEX:NG1!",
+                    "displayName": "Gas"
+                    },
+                    {
+                    "name": "CBOT:ZC1!",
+                    "displayName": "Corn"
+                    }
+                ]
+                },
+                {
+                "name": "Bonds",
+                "originalName": "Bonds",
+                "symbols": [
+                    {
+                    "name": "CBOT:ZB1!",
+                    "displayName": "T-Bond"
+                    },
+                    {
+                    "name": "CBOT:UB1!",
+                    "displayName": "Ultra T-Bond"
+                    },
+                    {
+                    "name": "EUREX:FGBL1!",
+                    "displayName": "Euro Bund"
+                    },
+                    {
+                    "name": "EUREX:FBTP1!",
+                    "displayName": "Euro BTP"
+                    },
+                    {
+                    "name": "EUREX:FGBM1!",
+                    "displayName": "Euro BOBL"
+                    }
+                ]
+                },
+                {
+                "name": "Forex",
+                "originalName": "Forex",
+                "symbols": [
+                    {
+                    "name": "FX:EURUSD",
+                    "displayName": "EUR to USD"
+                    },
+                    {
+                    "name": "FX:GBPUSD",
+                    "displayName": "GBP to USD"
+                    },
+                    {
+                    "name": "FX:USDJPY",
+                    "displayName": "USD to JPY"
+                    },
+                    {
+                    "name": "FX:USDCHF",
+                    "displayName": "USD to CHF"
+                    },
+                    {
+                    "name": "FX:AUDUSD",
+                    "displayName": "AUD to USD"
+                    },
+                    {
+                    "name": "FX:USDCAD",
+                    "displayName": "USD to CAD"
+                    }
+                ]
+                }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": false,
+            "colorTheme": "dark",
+            "locale": "en",
+            "backgroundColor": "#131722"
+        };
+        </script>
+        <!-- TradingView Widget Loader -->
+        <script type="text/javascript">
+        (function() {
+            var script = document.createElement('script');
+            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js";
+            script.async = true;
+            script.type = 'text/javascript';
+            script.onload = function() {
+                console.log('TradingView widget loaded');
+            };
+            script.innerHTML = JSON.stringify(tradingviewWidgetConfig);
+            document.querySelector('.tradingview-widget-container__widget').appendChild(script);
+        })();
+        </script>
+        <!-- TradingView Widget END -->
+    </div>
+
+    <section class="latest-posts">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h3>Gold Record & Oil Decline Analysis</h3>
+                <p>Analysis of recent gold price records and significant oil market decline.</p>
+                <a href="blog/gold-record-oil-decline.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Market Analysis Techniques</h3>
+                <p>Learn about different market analysis techniques and how to apply them.</p>
+                <a href="blog/market-analysis.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Investment Strategies</h3>
+                <p>Discover effective investment strategies for different market conditions.</p>
+                <a href="blog/investment-strategies.html" class="read-more">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>Cryptocurrency Market Trends</h3>
+                <p>Analysis of current cryptocurrency market trends and future predictions.</p>
+                <a href="blog/crypto-trends.html" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Market Sentiment Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Config (load before voting.js) -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/voting.js"></script>
+</body>
+</html> 
