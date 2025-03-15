@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome!</h2>
+            <p>This is a sample website template. You can modify this content as needed.</p>
+        </section>
+    </main>
+
+    <section class="voting-section">
+        <h2>Market Sentiment</h2>
+        <p>What is your market position? Vote below:</p>
+        
+        <div class="voting-buttons">
+            <button id="vote-long" class="vote-btn long-btn">LONG</button>
+            <button id="vote-short" class="vote-btn short-btn">SHORT</button>
+        </div>
+        
+        <div class="voting-results">
+            <div class="result-container">
+                <div class="result-label">Long:</div>
+                <div class="result-bar-container">
+                    <div id="long-bar" class="result-bar long-bar" style="width: 50%;">
+                        <span id="long-votes">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="result-container">
+                <div class="result-label">Short:</div>
+                <div class="result-bar-container">
+                    <div id="short-bar" class="result-bar short-bar" style="width: 50%;">
+                        <span id="short-votes">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="total-votes">
+                Total Votes: <span id="total-votes">0</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="widget-container">
+        <h2 class="section-title">Live Stock Index</h2>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+        </div>
+        <!-- TradingView Widget Configuration -->
+        <script type="text/javascript">
+        var tradingviewWidgetConfig = {
+            "width": 1000,
+            "height": 800,
+            "symbolsGroups": [
+                {
+                "name": "Indices",
+                "originalName": "Indices",
+                "symbols": [
+                    {
+                    "name": "FOREXCOM:SPXUSD",
+                    "displayName": "S&P 500 Index"
+                    },
+                    {
+                    "name": "FOREXCOM:NSXUSD",
+                    "displayName": "US 100 Cash CFD"
+                    },
+                    {
+                    "name": "FOREXCOM:DJI",
+                    "displayName": "Dow Jones Industrial Average Index"
+                    },
+                    {
+                    "name": "INDEX:NKY",
+                    "displayName": "Japan 225"
+                    },
+                    {
+                    "name": "INDEX:DEU40",
+                    "displayName": "DAX Index"
+                    },
+                    {
+                    "name": "FOREXCOM:UKXGBP",
+                    "displayName": "FTSE 100 Index"
+                    }
+                ]
+                },
+                {
+                "name": "Futures",
+                "originalName": "Futures",
+                "symbols": [
+                    {
+                    "name": "CME_MINI:ES1!",
+                    "displayName": "S&P 500"
+                    },
+                    {
+                    "name": "CME:6E1!",
+                    "displayName": "Euro"
+                    },
+                    {
+                    "name": "COMEX:GC1!",
+                    "displayName": "Gold"
+                    },
+                    {
+                    "name": "NYMEX:CL1!",
+                    "displayName": "WTI Crude Oil"
+                    },
+                    {
+                    "name": "NYMEX:NG1!",
+                    "displayName": "Gas"
+                    },
+                    {
+                    "name": "CBOT:ZC1!",
+                    "displayName": "Corn"
+                    }
+                ]
+                },
+                {
+                "name": "Bonds",
+                "originalName": "Bonds",
+                "symbols": [
+                    {
+                    "name": "CBOT:ZB1!",
+                    "displayName": "T-Bond"
+                    },
+                    {
+                    "name": "CBOT:UB1!",
+                    "displayName": "Ultra T-Bond"
+                    },
+                    {
+                    "name": "EUREX:FGBL1!",
+                    "displayName": "Euro Bund"
+                    },
+                    {
+                    "name": "EUREX:FBTP1!",
+                    "displayName": "Euro BTP"
+                    },
+                    {
+                    "name": "EUREX:FGBM1!",
+                    "displayName": "Euro BOBL"
+                    }
+                ]
+                },
+                {
+                "name": "Forex",
+                "originalName": "Forex",
+                "symbols": [
+                    {
+                    "name": "FX:EURUSD",
+                    "displayName": "EUR to USD"
+                    },
+                    {
+                    "name": "FX:GBPUSD",
+                    "displayName": "GBP to USD"
+                    },
+                    {
+                    "name": "FX:USDJPY",
+                    "displayName": "USD to JPY"
+                    },
+                    {
+                    "name": "FX:USDCHF",
+                    "displayName": "USD to CHF"
+                    },
+                    {
+                    "name": "FX:AUDUSD",
+                    "displayName": "AUD to USD"
+                    },
+                    {
+                    "name": "FX:USDCAD",
+                    "displayName": "USD to CAD"
+                    }
+                ]
+                }
+            ],
+            "showSymbolLogo": true,
+            "isTransparent": false,
+            "colorTheme": "dark",
+            "locale": "en",
+            "backgroundColor": "#131722"
+        };
+        </script>
+        <!-- TradingView Widget Loader -->
+        <script type="text/javascript">
+        (function() {
+            var script = document.createElement('script');
+            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js";
+            script.async = true;
+            script.type = 'text/javascript';
+            script.onload = function() {
+                console.log('TradingView widget loaded');
+            };
+            script.innerHTML = JSON.stringify(tradingviewWidgetConfig);
+            document.querySelector('.tradingview-widget-container__widget').appendChild(script);
+        })();
+        </script>
+        <!-- TradingView Widget END -->
+    </div>
+
+    <section class="blog-section">
+        <h2>Latest Blog Posts</h2>
+        <div class="blog-container">
+            <article class="blog-post">
+                <h3>Market Analysis: Weekly Review</h3>
+                <p class="blog-meta">Posted on August 15, 2023 | By Market Analyst</p>
+                <p>This week's market showed significant movement in tech stocks, with the NASDAQ index reaching new heights. Simultaneously, energy commodities experienced volatility due to global supply chain challenges.</p>
+                <a href="blog/market-analysis.html" class="read-more">Read More</a>
+            </article>
+            
+            <article class="blog-post">
+                <h3>Investment Strategies for Beginners</h3>
+                <p class="blog-meta">Posted on August 10, 2023 | By Financial Advisor</p>
+                <p>Starting your investment journey can be overwhelming. This guide breaks down essential strategies that new investors should consider, focusing on diversification and long-term planning.</p>
+                <a href="blog/investment-strategies.html" class="read-more">Read More</a>
+            </article>
+        </div>
+        <div class="blog-view-all">
+            <a href="blog.html" class="view-all-button">View All Blog Posts</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/voting.js"></script>
+</body>
+</html> 

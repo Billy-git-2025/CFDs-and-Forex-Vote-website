@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Admin Panel - My Website</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <header>
+        <h1>Blog Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">View Site</a></li>
+                <li><a href="#" class="active">Blog Posts</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Comments</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-sidebar">
+            <div class="admin-user">
+                <div class="user-avatar">A</div>
+                <div class="user-details">
+                    <h3>Admin User</h3>
+                    <p>Administrator</p>
+                </div>
+            </div>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="#">Posts</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Media</a></li>
+                    <li><a href="#">Comments</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Tags</a></li>
+                    <li><a href="#">Users</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="admin-content">
+            <div class="admin-header">
+                <h2>Blog Posts</h2>
+                <button class="btn-primary">Add New Post</button>
+            </div>
+
+            <div class="admin-tools">
+                <div class="search-box">
+                    <input type="text" placeholder="Search posts...">
+                    <button>Search</button>
+                </div>
+                
+                <div class="filter-actions">
+                    <select>
+                        <option>All Categories</option>
+                        <option>Market Analysis</option>
+                        <option>Investment Strategies</option>
+                        <option>Trading Tips</option>
+                        <option>Financial News</option>
+                    </select>
+                    <select>
+                        <option>All Dates</option>
+                        <option>August 2023</option>
+                        <option>July 2023</option>
+                        <option>June 2023</option>
+                    </select>
+                    <button>Filter</button>
+                </div>
+            </div>
+
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Market Analysis: Weekly Review</td>
+                        <td>Market Analyst</td>
+                        <td>Market Analysis</td>
+                        <td>August 15, 2023</td>
+                        <td><span class="status-published">Published</span></td>
+                        <td class="actions">
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-view">View</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Investment Strategies for Beginners</td>
+                        <td>Financial Advisor</td>
+                        <td>Investment Strategies</td>
+                        <td>August 10, 2023</td>
+                        <td><span class="status-published">Published</span></td>
+                        <td class="actions">
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-view">View</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Understanding Market Indicators</td>
+                        <td>Market Analyst</td>
+                        <td>Trading Tips</td>
+                        <td>August 5, 2023</td>
+                        <td><span class="status-draft">Draft</span></td>
+                        <td class="actions">
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-view">Preview</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>Cryptocurrency Trends for 2023</td>
+                        <td>Crypto Expert</td>
+                        <td>Financial News</td>
+                        <td>July 28, 2023</td>
+                        <td><span class="status-scheduled">Scheduled</span></td>
+                        <td class="actions">
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-view">Preview</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <button disabled>Previous</button>
+                <span class="page-numbers">
+                    <a href="#" class="current">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                </span>
+                <button>Next</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html> 
