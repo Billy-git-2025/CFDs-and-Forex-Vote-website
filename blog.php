@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/config.php';
 require_once 'includes/blog.php';
+require_once 'includes/blog_data.php';  // Include our centralized blog data
 
 // Initialize database if needed
 init_database();
@@ -14,44 +15,9 @@ $offset = ($page - 1) * $posts_per_page;
 // Get posts for current page
 $posts = get_posts($posts_per_page, $offset);
 
-// If no posts from the database, use our static blog posts
+// If no posts from the database, use our static blog posts from the central repository
 if (empty($posts)) {
-    // Create static blog posts as fallback
-    $posts = [
-        [
-            'id' => 1,
-            'title' => 'Market Analysis: Weekly Review',
-            'slug' => 'market-analysis',
-            'author' => 'Market Analyst',
-            'published_at' => '2023-08-15 10:00:00',
-            'excerpt' => "This week's market showed significant movement in tech stocks, with the NASDAQ index reaching new heights.",
-            'content' => "This week's market showed significant movement in tech stocks, with the NASDAQ index reaching new heights. Simultaneously, energy commodities experienced volatility due to global supply chain challenges. The S&P 500 closed at a record high on Thursday, driven by strong earnings reports from major technology companies.",
-            'feature_image' => 'https://via.placeholder.com/800x400',
-            'category_name' => 'Market Analysis'
-        ],
-        [
-            'id' => 2,
-            'title' => 'Investment Strategies for Beginners',
-            'slug' => 'investment-strategies',
-            'author' => 'Financial Advisor',
-            'published_at' => '2023-08-10 14:30:00',
-            'excerpt' => "Starting your investment journey can be overwhelming. This guide breaks down essential strategies that new investors should consider.",
-            'content' => "Starting your investment journey can be overwhelming. This guide breaks down essential strategies that new investors should consider, focusing on diversification and long-term planning. Understanding your risk tolerance is the first step in creating a successful investment strategy.",
-            'feature_image' => 'https://via.placeholder.com/800x400',
-            'category_name' => 'Investment'
-        ],
-        [
-            'id' => 3,
-            'title' => 'Cryptocurrency Trends: What\'s Next?',
-            'slug' => 'crypto-trends',
-            'author' => 'Crypto Analyst',
-            'published_at' => '2023-08-05 09:15:00',
-            'excerpt' => "The cryptocurrency market continues to evolve at a rapid pace. This analysis examines current trends and potential future developments.",
-            'content' => "The cryptocurrency market continues to evolve at a rapid pace. This analysis examines current trends and potential future developments in the digital asset space. Institutional adoption has been a key driver of cryptocurrency growth in recent months.",
-            'feature_image' => 'https://via.placeholder.com/800x400',
-            'category_name' => 'Cryptocurrency'
-        ]
-    ];
+    $posts = get_blog_posts();  // Use the centralized blog posts function
 }
 
 // Get total post count for pagination
@@ -83,11 +49,10 @@ if (empty($recent_posts)) {
     $recent_posts = array_slice($posts, 0, 3);
 }
 
-// Helper function to format dates
+// Use our centralized format_blog_date function if local one doesn't exist
 if (!function_exists('format_date')) {
     function format_date($date_string) {
-        $date = new DateTime($date_string);
-        return $date->format('F j, Y');
+        return format_blog_date($date_string);
     }
 }
 
