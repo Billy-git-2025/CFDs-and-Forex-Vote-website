@@ -9,10 +9,9 @@ let votes = {
 // DOM elements
 const longVoteBtn = document.getElementById('vote-long');
 const shortVoteBtn = document.getElementById('vote-short');
-const longBar = document.getElementById('long-bar');
-const shortBar = document.getElementById('short-bar');
-const longVotes = document.getElementById('long-votes');
-const shortVotes = document.getElementById('short-votes');
+const voteProgressBar = document.getElementById('vote-progress-bar');
+const longPercentage = document.getElementById('long-percentage');
+const shortPercentage = document.getElementById('short-percentage');
 const totalVotes = document.getElementById('total-votes');
 
 // Fetch the current votes from the server
@@ -97,9 +96,7 @@ function submitVote(voteType) {
 function updateVoteDisplay() {
     const total = votes.long + votes.short;
     
-    // Update counters
-    longVotes.textContent = votes.long;
-    shortVotes.textContent = votes.short;
+    // Update total vote count
     totalVotes.textContent = total;
     
     // Calculate percentages
@@ -111,9 +108,17 @@ function updateVoteDisplay() {
         shortPercent = Math.round((votes.short / total) * 100);
     }
     
-    // Update the bars
-    longBar.style.width = longPercent + '%';
-    shortBar.style.width = shortPercent + '%';
+    // Update percentage displays
+    longPercentage.textContent = longPercent + '%';
+    shortPercentage.textContent = shortPercent + '%';
+    
+    // Update the progress bar with gradient showing the split
+    voteProgressBar.style.backgroundImage = `linear-gradient(135deg, 
+        #327fff ${longPercent}%, 
+        transparent ${longPercent}%, 
+        transparent ${longPercent + 1}%, 
+        #ff6900 ${longPercent + 1}%, 
+        #ff6900)`;
 }
 
 // Add click event listeners to the vote buttons
@@ -141,16 +146,6 @@ shortVoteBtn.addEventListener('click', function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Fetch initial votes
     fetchVotes();
-    
-    // Add CSS for the voted animation
-    const style = document.createElement('style');
-    style.textContent = `
-        .vote-btn.voted {
-            transform: scale(1.1);
-            opacity: 0.8;
-        }
-    `;
-    document.head.appendChild(style);
 });
 
 // Refresh votes periodically (every 30 seconds)

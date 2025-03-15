@@ -1,0 +1,130 @@
+/* Modern Voting UI Styles */
+
+.vote_mount {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin: 30px auto;
+    max-width: 600px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.feed__wrapper {
+    position: relative;
+}
+
+.vote-content-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.vote-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.pk-wrapper {
+    width: 100%;
+}
+
+.not-vote-yet {
+    width: 100%;
+}
+
+.vote-progress-wrapper {
+    position: relative;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #f0f2f5;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.vote-progress-now {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transition: background-image 0.3s ease;
+    z-index: 1;
+}
+
+.left-rate, .right-rate {
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.vote-option-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vote-option {
+    width: 48%;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vote-left-option {
+    background-color: #327fff;
+    color: white;
+}
+
+.vote-right-option {
+    background-color: #ff6900;
+    color: white;
+}
+
+.vote-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vote-option:active {
+    transform: translateY(0);
+}
+
+.vote-option-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.vote-sub-msg {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.vote-already-num {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.vote-option.voted {
+    animation: pulse 0.3s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+} 
