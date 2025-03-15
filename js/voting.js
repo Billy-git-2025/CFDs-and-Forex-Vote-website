@@ -1,15 +1,7 @@
 // Market Sentiment Voting System with Firebase
 
-// Firebase configuration with your actual values
-const firebaseConfig = {
-    apiKey: "AIzaSyCAeBMb-HfvLhQt5yeEWfioZ29wLWKgcOE",
-    authDomain: "voting-ec72a.firebaseapp.com",
-    projectId: "voting-ec72a",
-    storageBucket: "voting-ec72a.firebasestorage.app",
-    messagingSenderId: "92915704760",
-    appId: "1:92915704760:web:c67cfddcd65f17e3ab254d",
-    measurementId: "G-V9M85WK6TT"
-};
+// Note: Firebase configuration is now loaded from config.js
+// Make sure to include config.js before this file in your HTML
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
