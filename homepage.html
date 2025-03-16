@@ -202,11 +202,61 @@
             margin-bottom: 2rem;
             color: #555;
         }
+
+        .site-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-nav li {
+            margin-left: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #2763c5;
+        }
+        
+        .site-nav .discord-link {
+            display: flex;
+            align-items: center;
+            background-color: #5865F2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        .site-nav .discord-link:hover {
+            background-color: #4752c4;
+            color: white;
+        }
+        
+        .discord-icon {
+            margin-right: 0.5rem;
+        }
     </style>
 </head>
 <body>
     <header class="site-header">
         <a href="/" class="site-title">Market Sentiment Hub</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/" class="active">Home</a></li>
+                <li><a href="/blog.html">Media</a></li>
+                <li><a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
+                    <i class="fab fa-discord discord-icon"></i> Join Discord</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -220,31 +270,38 @@
     </main>
 
     <!-- Voting Section -->
-    <div class="vote_mount" id="vote-section">
-        <div class="feed__wrapper">
-            <div class="vote-content-wrapper">
-                <h2 class="vote-title">What do you think this week BTC above $85,000 or under?</h2>
-                <div class="vote-description">
-                    Cast your vote on Bitcoin's price movement for the next 7 days
+    <div class="vote_mount_457adfa15e7c dis-vote" id="vote-section">
+        <div class="feed__wrapper skin-white">
+            <div class="vote-content-wrapper vote_white discussM justify">
+                <div class="vote-title overflow2">
+                    How do you plan to invest now?
                 </div>
-                <div class="time-remaining-wrapper">
-                    <p>Time Remaining: <span id="time-remaining">Loading...</span></p>
+                <div class="pk-wrapper innerVoteWrapper">
+                    <div class="not-vote-yet">
+                        <div class="vote-progress-wrapper">
+                            <span class="left-rate" id="buy-percentage">50%</span>
+                            <div class="vote-progress-now" id="vote-progress-bar"></div>
+                            <span class="right-rate" id="cash-percentage">50%</span>
+                        </div>
+                        <div class="vote-option-wrapper">
+                            <div id="vote-buy" class="vote-option vote-left-option">
+                                <div class="vote-option-title overflow">Buying the Dip</div>
+                            </div>
+                            <div class="vote-sub-area"></div>
+                            <div id="vote-cash" class="vote-option vote-right-option">
+                                <div class="vote-option-title overflow">Cashing Out</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="pk-wrapper">
-                    <div class="vote-progress-wrapper">
-                        <span class="left-rate" id="long-percentage">50%</span>
-                        <div class="vote-progress-now" id="vote-progress-bar"></div>
-                        <span class="right-rate" id="short-percentage">50%</span>
-                    </div>
-                    <div class="vote-option-wrapper">
-                        <button class="vote-option vote-left-option" id="vote-long">Above $85,000</button>
-                        <button class="vote-option vote-right-option" id="vote-short">Under $85,000</button>
-                    </div>
-                    <div class="vote-sub-msg">
-                        Total Votes: <span class="vote-already-num" id="total-votes">0</span>
+                <div class="vote-sub-msg justify">
+                    <div class="vote-already">
+                        <span>
+                            <span class="vote-already-num" id="total-votes">0</span>
+                            votes
+                        </span>
                     </div>
                 </div>
-                <button id="create-vote" class="create-vote-btn" style="display: none;">Start New 7-Day Voting Period</button>
             </div>
         </div>
     </div>
@@ -437,8 +494,6 @@
     </footer>
 
     <!-- Firebase SDK -->
-    <script type="module" src="js/firebase-init.js"></script>
-    <script type="module" src="js/vote-manager.js"></script>
-    <script type="module" src="js/voting.js"></script>
+    <script type="module" src="js/firebase-voting.js"></script>
 </body>
 </html> 

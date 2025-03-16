@@ -3,111 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Insights Blog | Market Sentiment Hub</title>
-    <meta name="description" content="Explore the latest analysis, trends, and strategies for CFDs, Forex, and Cryptocurrency trading in our regularly updated blog.">
+    <title>Blog - Market Sentiment Hub</title>
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Font Awesome for Discord icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .discord-link {
-            color: #7289DA; /* Discord color */
-            font-weight: bold;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .site-header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 5px;
-            transition: opacity 0.2s;
+            justify-content: space-between;
         }
-        .discord-link:hover {
-            opacity: 0.8;
+        
+        .site-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
+
+        .site-title:hover {
+            color: #2763c5;
+        }
+        
+        .site-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-nav li {
+            margin-left: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #2763c5;
+        }
+        
+        .site-nav .discord-link {
+            display: flex;
+            align-items: center;
+            background-color: #5865F2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        .site-nav .discord-link:hover {
+            background-color: #4752c4;
+            color: white;
+        }
+        
         .discord-icon {
-            font-size: 1.2em;
+            margin-right: 0.5rem;
         }
-        /* For smaller screens, make the nav more responsive */
-        @media (max-width: 768px) {
-            header nav ul {
-                gap: 15px;
-            }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+        
+        .blog-page {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .blog-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-card h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .blog-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #2763c5;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: #1e4c99;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            background-color: #f8f9fa;
         }
     </style>
 </head>
 <body>
+    <header class="site-header">
+        <a href="/" class="site-title">Market Sentiment Hub</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html" class="active">Media</a></li>
+                <li><a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
+                    <i class="fab fa-discord discord-icon"></i> Join Discord</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
     <main class="blog-page">
         <section class="blog-hero">
-            <h2>Our Blog</h2>
-            <p>Stay updated with our latest insights, analyses, and market reviews.</p>
+            <h1>Latest Media & Analysis</h1>
+            <p>Stay updated with our latest market insights, analysis, and trends</p>
         </section>
-
-        <section class="blog-content">
-            <div class="blog-container full-width">
-                <!-- Post 1: Gold/Oil Analysis -->
-                <article class="blog-post full-post">
-                    <h3>Gold Surges to New Record Near $2,990 as Crude Oil Declines</h3>
-                    <p class="blog-meta">Posted on October 15, 2023 | By Market Analyst</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Gold Surges to New Record Near $2,990 as Crude Oil Declines">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>Gold prices have reached unprecedented heights, climbing to nearly $2,990 per ounce, while crude oil markets experienced a significant decline of over 1%.</p>
-                    </div>
-                    <a href="blog/gold-record-oil-decline.html" class="read-more">Read Full Article</a>
-                </article>
-
-                <!-- Post 2: Market Analysis -->
-                <article class="blog-post full-post">
-                    <h3>Market Analysis: Weekly Review</h3>
-                    <p class="blog-meta">Posted on August 15, 2023 | By Market Analyst</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Market Analysis: Weekly Review">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>This week's market showed significant movement in tech stocks, with the NASDAQ index reaching new heights.</p>
-                    </div>
-                    <a href="blog/market-analysis.html" class="read-more">Read Full Article</a>
-                </article>
-
-                <!-- Post 3: Investment Strategies -->
-                <article class="blog-post full-post">
-                    <h3>Investment Strategies for Beginners</h3>
-                    <p class="blog-meta">Posted on August 10, 2023 | By Financial Advisor</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Investment Strategies for Beginners">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>Starting your investment journey can be overwhelming. This guide breaks down essential strategies that new investors should consider.</p>
-                    </div>
-                    <a href="blog/investment-strategies.html" class="read-more">Read Full Article</a>
-                </article>
-
-                <!-- Post 4: Cryptocurrency Trends -->
-                <article class="blog-post full-post">
-                    <h3>Cryptocurrency Trends: What's Next?</h3>
-                    <p class="blog-meta">Posted on August 5, 2023 | By Crypto Analyst</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Cryptocurrency Trends: What's Next?">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>The cryptocurrency market continues to evolve at a rapid pace. This analysis examines current trends and potential future developments.</p>
-                    </div>
-                    <a href="blog/crypto-trends.html" class="read-more">Read Full Article</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="blog-pagination">
-            <div class="pagination">
-                <span class="current-page">1</span>
-                <a href="#" class="page-link">2</a>
-                <a href="#" class="page-link">3</a>
-                <a href="#" class="next-page">Next →</a>
-            </div>
-        </section>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/gold-oil.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Gold Record & Oil Decline Analysis</h2>
+                    <p class="blog-meta">May 15, 2023 | Market Analysis</p>
+                    <p class="blog-excerpt">Analysis of recent gold price records and significant oil market decline. What's driving these movements and what to expect next.</p>
+                    <a href="blog/gold-record-oil-decline.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/market-analysis.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Market Analysis Techniques</h2>
+                    <p class="blog-meta">April 28, 2023 | Education</p>
+                    <p class="blog-excerpt">Learn about different market analysis techniques and how to apply them to improve your trading decisions.</p>
+                    <a href="blog/market-analysis.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/investment.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Investment Strategies</h2>
+                    <p class="blog-meta">April 15, 2023 | Strategy</p>
+                    <p class="blog-excerpt">Discover effective investment strategies for different market conditions and learn how to adapt your approach.</p>
+                    <a href="blog/investment-strategies.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/crypto.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Cryptocurrency Market Trends</h2>
+                    <p class="blog-meta">April 3, 2023 | Crypto</p>
+                    <p class="blog-excerpt">Analysis of current cryptocurrency market trends and future predictions for major coins and emerging projects.</p>
+                    <a href="blog/crypto-trends.html" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2023 Market Sentiment Hub. All rights reserved.</p>
+        <p>&copy; 2025 Market Sentiment Hub. All rights reserved. | 
+        <a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
+            <i class="fab fa-discord discord-icon"></i> Join our Discord
+        </a></p>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html> 
