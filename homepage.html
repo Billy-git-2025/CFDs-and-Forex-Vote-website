@@ -90,18 +90,18 @@
         
         .cta-button {
             display: inline-block;
-            background-color: #327fff;
+            padding: 1rem 2rem;
+            background-color: #2763c5;
             color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
             font-weight: bold;
-            margin-top: 10px;
             text-decoration: none;
-            transition: background-color 0.2s;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         
         .cta-button:hover {
-            background-color: #2763c5;
+            background-color: #1e4c99;
+            transform: translateY(-2px);
         }
 
         .site-header {
@@ -183,6 +183,25 @@
         .read-more:hover {
             background-color: #1e4c99;
         }
+
+        .welcome-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .welcome-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .welcome-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
     </style>
 </head>
 <body>
@@ -192,32 +211,16 @@
 
     <main>
         <section class="welcome-section">
-            <h1>Forecasting the Future of CFDs, Forex & Crypto Markets</h1>
-            <h2>Join thousands of traders sharing market sentiment and predictions</h2>
-            <p>Welcome to the Market Sentiment Hub, where the collective wisdom of traders worldwide comes together to forecast market movements. Whether you're trading CFDs, forex pairs, or cryptocurrencies, understanding market sentiment is crucial for making informed decisions.</p>
-            <p>Cast your vote below on whether you're bullish or bearish on the markets right now. See real-time results and compare your outlook with traders from around the globe.</p>
-            
-            <a href="#vote-section" class="cta-button">Vote Now</a>
-            
-            <div class="market-highlights">
-                <div class="market-highlight">
-                    <h3>CFDs</h3>
-                    <p>Trade price movements across indices, commodities, and stocks without owning the underlying asset.</p>
-                </div>
-                <div class="market-highlight">
-                    <h3>Forex</h3>
-                    <p>The world's largest financial market with over $6 trillion daily trading volume.</p>
-                </div>
-                <div class="market-highlight">
-                    <h3>Crypto</h3>
-                    <p>Digital assets revolutionizing finance with blockchain technology and decentralization.</p>
-                </div>
+            <div class="welcome-content">
+                <h1>Welcome to Market Sentiment Hub</h1>
+                <p>Your centralized platform for market sentiment analysis and real-time voting data.</p>
+                <a href="#vote-section" class="cta-button">Vote Now</a>
             </div>
         </section>
     </main>
 
-    <!-- New Modern Voting UI -->
-    <div class="vote_mount">
+    <!-- Voting Section -->
+    <div class="vote_mount" id="vote-section">
         <div class="feed__wrapper">
             <div class="vote-content-wrapper">
                 <h2 class="vote-title">What do you think this week BTC above $85,000 or under?</h2>

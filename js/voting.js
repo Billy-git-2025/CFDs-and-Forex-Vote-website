@@ -166,6 +166,7 @@ function updateVoteDisplay() {
 // Initialize voting system
 async function initializeVoting() {
     try {
+        await voteManager.closeExpiredPeriods();
         const currentPeriod = await voteManager.getCurrentPeriod();
         
         if (currentPeriod) {
@@ -191,13 +192,16 @@ async function initializeVoting() {
                 if (shortVoteBtn) shortVoteBtn.classList.add('voted');
             }
         } else {
-            disableVoting();
-            if (createVoteBtn) {
-                createVoteBtn.style.display = 'block';
-            }
+            // Automatically create a new voting period if none exists
+            console.log("No active voting period found, creating a new one...");
+            await createNewVotingPeriod();
         }
     } catch (error) {
         console.error('Error initializing voting:', error);
+        // Still show the create button in case of errors
+        if (createVoteBtn) {
+            createVoteBtn.style.display = 'block';
+        }
     }
 }
 
