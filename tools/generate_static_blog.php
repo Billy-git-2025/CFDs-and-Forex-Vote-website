@@ -58,6 +58,13 @@ $html = <<<HTML
 
         <section class="blog-content">
             <div class="blog-container full-width">
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog.html" class="active">Media</a></li>
+                        <li><a href="/compare.html">Compare</a></li>
+                    </ul>
+                </nav>
 HTML;
 
 // Add each blog post to the HTML
