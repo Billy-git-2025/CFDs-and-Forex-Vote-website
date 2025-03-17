@@ -61,6 +61,15 @@
             margin: 0 auto 20px;
         }
         
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 15px;
+            text-align: left;
+        }
+        
         .market-highlights {
             display: flex;
             justify-content: center;
@@ -111,10 +120,12 @@
             position: fixed;
             width: 100%;
             top: 0;
+            left: 0;
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-sizing: border-box;
         }
         
         .site-title {
@@ -203,15 +214,20 @@
             color: #555;
         }
 
+        .site-nav {
+            margin-left: auto;
+        }
+        
         .site-nav ul {
             display: flex;
             list-style: none;
             margin: 0;
             padding: 0;
+            align-items: center;
         }
         
         .site-nav li {
-            margin-left: 1.5rem;
+            margin-left: 2rem;
         }
         
         .site-nav a {
@@ -243,6 +259,91 @@
         .discord-icon {
             margin-right: 0.5rem;
         }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.8rem 1rem;
+            }
+            
+            .site-title {
+                font-size: 1.2rem;
+            }
+            
+            .site-nav li {
+                margin-left: 1rem;
+            }
+            
+            .welcome-section {
+                padding: 20px 10px;
+            }
+            
+            .welcome-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-content p {
+                font-size: 1rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
+            
+            .blog-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .vote_mount_457adfa15e7c {
+                margin: 60px auto 20px;
+                padding: 10px;
+            }
+            
+            .vote-title {
+                font-size: 1.2rem;
+            }
+            
+            .vote-option-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .vote-option {
+                width: 100%;
+            }
+            
+            .vote-sub-area {
+                display: none;
+            }
+            
+            .widget-container {
+                padding: 0 1rem;
+            }
+            
+            .tradingview-widget-container {
+                max-width: 100%;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .site-header {
+                padding: 0.6rem 0.8rem;
+            }
+            
+            .site-title {
+                font-size: 1rem;
+            }
+            
+            .site-nav li {
+                margin-left: 0.8rem;
+            }
+            
+            .welcome-content h1 {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -252,9 +353,6 @@
             <ul>
                 <li><a href="/" class="active">Home</a></li>
                 <li><a href="/blog.html">Media</a></li>
-                <li><a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
-                    <i class="fab fa-discord discord-icon"></i> Join Discord</a>
-                </li>
             </ul>
         </nav>
     </header>
@@ -264,6 +362,8 @@
             <div class="welcome-content">
                 <h1>Welcome to Market Sentiment Hub</h1>
                 <p>Your centralized platform for market sentiment analysis and real-time voting data.</p>
+                <p class="intro-text">At Market Sentiment Hub, we aim to bridge the gap between individual traders and collective market wisdom. Our platform aggregates the sentiment of thousands of traders worldwide, allowing you to gauge what the public truly thinks about current market conditions.</p>
+                <p class="intro-text">Use our voting system to express your view on the market direction, see what others are thinking, and access real-time analysis that helps inform your trading decisions. Whether you're a novice or experienced trader, understanding market sentiment is crucial for successful trading.</p>
                 <a href="#vote-section" class="cta-button">Vote Now</a>
             </div>
         </section>

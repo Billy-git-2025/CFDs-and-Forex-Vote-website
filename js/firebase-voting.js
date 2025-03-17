@@ -19,8 +19,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
 
-// Collection reference
-const votesCollection = collection(db, "market_votes");
+// Collection reference - using a new collection to avoid conflicts
+const votesCollection = collection(db, "market_votes_unlimited");
 
 // DOM elements
 const buyVoteBtn = document.getElementById('vote-buy');
@@ -80,17 +80,17 @@ function updateVoteDisplay() {
 // Submit vote
 async function submitVote(voteType) {
   try {
+    // Simplified - no time limit checks
     const hasVoted = await hasUserVoted();
     if (hasVoted) {
       alert('You have already voted!');
       return;
     }
     
-    // Add the vote
+    // Add the vote - only storing type and userId, no timestamps
     await addDoc(votesCollection, {
       type: voteType,
-      userId: getUserId(),
-      timestamp: new Date()
+      userId: getUserId()
     });
     
     // Update local votes
@@ -103,6 +103,10 @@ async function submitVote(voteType) {
     } else {
       cashVoteBtn.classList.add('voted');
     }
+    
+    // Disable both buttons after voting
+    buyVoteBtn.classList.add('disabled');
+    cashVoteBtn.classList.add('disabled');
     
   } catch (error) {
     console.error("Error submitting vote:", error);
