@@ -41,6 +41,19 @@ $html = <<<HTML
         .discord-icon {
             font-size: 1.2em;
         }
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #dbc106;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .read-more:hover {
+            background-color: #c4a905;
+        }
         /* For smaller screens, make the nav more responsive */
         @media (max-width: 768px) {
             header nav ul {
