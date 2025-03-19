@@ -27,6 +27,64 @@ $html = <<<HTML
     <!-- Font Awesome for Discord icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .site-header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .site-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .site-title:hover {
+            color: #2763c5;
+        }
+        
+        .site-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-nav li {
+            margin-left: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #2763c5;
+        }
+        
         .discord-link {
             color: #7289DA; /* Discord color */
             font-weight: bold;
@@ -54,15 +112,36 @@ $html = <<<HTML
         .read-more:hover {
             background-color: #c4a905;
         }
+        
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+        
         /* For smaller screens, make the nav more responsive */
         @media (max-width: 768px) {
             header nav ul {
                 gap: 15px;
             }
+            
+            .site-nav li {
+                margin-left: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header class="site-header">
+        <a href="/" class="site-title">Market Sentiment Hub</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html" class="active">Media</a></li>
+                <li><a href="/compare.html">Compare</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main class="blog-page">
         <section class="blog-hero">
             <h2>Our Blog</h2>
