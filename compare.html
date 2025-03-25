@@ -111,15 +111,23 @@
         @media (max-width: 768px) {
             .compare-container {
                 padding: 10px;
+                margin-top: 60px;
             }
             
             .search-box {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 10px;
             }
             
             .search-box input {
                 width: 100%;
+                padding: 8px;
+            }
+
+            .sort-select {
+                width: 100%;
+                padding: 8px;
             }
             
             table {
@@ -134,6 +142,51 @@
             td:first-child {
                 min-width: 150px;
             }
+
+            .table-container {
+                margin: 10px -10px;
+                width: calc(100% + 20px);
+            }
+
+            .table-scroll {
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .compare-container {
+                padding: 8px;
+            }
+
+            .search-box input,
+            .sort-select {
+                font-size: 14px;
+            }
+
+            table {
+                font-size: 11px;
+            }
+
+            th, td {
+                padding: 6px;
+                min-width: 100px;
+            }
+
+            td:first-child {
+                min-width: 120px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
         }
     </style>
 </head>
@@ -145,7 +198,6 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/compare.html" class="active">Compare</a></li>
                 <li><a href="/blog.html">Blog</a></li>
-                <li><a href="/about.html">About</a></li>
                 <li>
                     <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
                         <i class="fab fa-discord discord-icon"></i> Join Discord
