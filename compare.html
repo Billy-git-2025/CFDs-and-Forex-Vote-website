@@ -3,252 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Compare Brokers | broker2choose</title>
-    <meta name="description" content="Compare trading brokers side by side. Analyze fees, features, regulations and more to find the best broker for your needs.">
+    <title>Compare Trading Brokers | broker2choose</title>
+    <meta name="description" content="Compare trading brokers side by side. Find the best broker for your trading needs with detailed comparisons of fees, features, and regulations.">
     <link rel="stylesheet" href="css/styles.css">
     <style>
+        .compare-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 80px auto 0;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .broker-table {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-            font-family: Arial, sans-serif;
+            margin: 0;
             font-size: 14px;
         }
+        
         th, td {
+            padding: 12px;
+            text-align: left;
             border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
         }
+        
         th {
-            background-color: #f2f2f2;
-            font-weight: bold;
+            background-color: #f8f9fa;
+            font-weight: 600;
             position: sticky;
             top: 80px;
             z-index: 10;
         }
+        
         tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: #f8f9fa;
         }
+        
         tr:hover {
             background-color: #f1f1f1;
         }
-        caption {
-            font-size: 1.5em;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-        .compare-container {
-            margin-top: 80px;
-            padding: 20px;
-            max-width: 100%;
-            overflow-x: auto;
-        }
-        .filters {
-            margin: 20px 0;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        .filters select, .filters input {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .score-cell {
-            font-weight: bold;
-            color: #327fff;
-        }
-        .popularity-cell {
-            color: #666;
-        }
-        .fee-cell {
-            color: #28a745;
-        }
-        .yes-cell {
-            color: #28a745;
-            font-weight: bold;
-        }
-        .no-cell {
-            color: #dc3545;
-=======
-    <title>Compare Bitcoin Trading Brokers - Market Sentiment Hub</title>
-    <meta name="description" content="Compare the best Bitcoin trading brokers including Plus500, IG, and MC Markets. Find the perfect platform for your cryptocurrency trading needs.">
-    <link rel="stylesheet" href="/css/styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .comparison-section {
-            max-width: 1200px;
-            margin: 100px auto 50px;
-            padding: 20px;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .comparison-table th,
-        .comparison-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .comparison-table th {
-            background: #2763c5;
-            color: white;
-        }
-        
-        .comparison-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-        
-        .comparison-table tr:hover {
-            background: #f0f4f8;
-        }
         
         .feature-icon {
-            color: #2763c5;
-            margin-right: 5px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #dbc106;
-            color: black;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 20px 0;
-            transition: background 0.3s;
-        }
-        
-        .cta-button:hover {
-            background: #c4a905;
-        }
-        
-        .content-section {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.6;
-        }
-        
-        .content-section h2 {
-            color: #2763c5;
-            margin: 30px 0 15px;
-        }
-        
-        .content-section p {
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .disclaimer {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-left: 4px solid #ff6b6b;
-        }
-        
-        /* Header and nav styles */
-        .site-header {
-            background-color: #ffffff;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            box-sizing: border-box;
-        }
-        
-        .site-title {
-            color: #333;
-            font-size: 1.5rem;
+            color: #327fff;
             font-weight: bold;
-            text-decoration: none;
-            margin: 0;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .site-title:hover {
-            color: #2763c5;
         }
         
-        .site-nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .feature-missing {
+            color: #dc3545;
         }
         
-        .site-nav li {
-            margin-left: 1.5rem;
-        }
-        
-        .site-nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .site-nav a:hover,
-        .site-nav a.active {
-            color: #2763c5;
-        }
-        
-        .discord-link {
-            color: #7289DA; /* Discord color */
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: opacity 0.2s;
-        }
-        
-        .discord-link:hover {
-            opacity: 0.8;
-        }
-        
-        .discord-icon {
-            margin-right: 0.5rem;
-        }
-        
-        /* Mobile responsive styles */
         @media (max-width: 768px) {
-            .comparison-table {
-                display: block;
-                overflow-x: auto;
+            .filters {
+                flex-direction: column;
             }
             
-            .comparison-section {
-                padding: 10px;
+            .filter-group {
+                width: 100%;
             }
             
-            .site-nav li {
-                margin-left: 1rem;
+            table {
+                font-size: 12px;
             }
->>>>>>> d93920517ec1b814d907f6e990ed8575d8875334
+            
+            th, td {
+                padding: 8px;
+            }
         }
     </style>
 </head>
 <body>
     <header class="site-header">
-<<<<<<< HEAD
         <a href="/" class="site-title">broker2choose</a>
         <nav>
             <ul>
@@ -256,173 +112,67 @@
                 <li><a href="/compare.html" class="active">Compare</a></li>
                 <li><a href="/blog.html">Blog</a></li>
                 <li><a href="/about.html">About</a></li>
-=======
-        <a href="/" class="site-title">Market Sentiment Hub</a>
-        <nav class="site-nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog.html">Media</a></li>
-                <li><a href="/compare.html" class="active">Compare</a></li>
->>>>>>> d93920517ec1b814d907f6e990ed8575d8875334
             </ul>
         </nav>
     </header>
 
-<<<<<<< HEAD
     <div class="compare-container">
         <h1>Compare Trading Brokers</h1>
+        <p>Compare brokers side by side to find the best match for your trading needs.</p>
         
         <div class="filters">
-            <select id="sortBy">
-                <option value="score">Sort by Score</option>
-                <option value="popularity">Sort by Popularity</option>
-                <option value="fees">Sort by Trading Fees</option>
-                <option value="minDeposit">Sort by Minimum Deposit</option>
-            </select>
+            <div class="filter-group">
+                <label for="sortBy">Sort By:</label>
+                <select id="sortBy">
+                    <option value="score">Score</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="fees">Fees</option>
+                    <option value="minDeposit">Minimum Deposit</option>
+                </select>
+            </div>
             
-            <select id="filterRegulator">
-                <option value="all">All Regulators</option>
-                <option value="asic">ASIC</option>
-                <option value="fca">FCA</option>
-                <option value="sec">SEC</option>
-            </select>
+            <div class="filter-group">
+                <label for="regulator">Regulator:</label>
+                <select id="regulator">
+                    <option value="">All Regulators</option>
+                    <option value="FCA">FCA</option>
+                    <option value="ASIC">ASIC</option>
+                    <option value="CySEC">CySEC</option>
+                </select>
+            </div>
             
-            <input type="number" id="minScore" placeholder="Minimum Score" min="1" max="5" step="0.1">
-            
-            <select id="filterFeatures">
-                <option value="all">All Features</option>
-                <option value="mt4">MT4 Available</option>
-                <option value="mt5">MT5 Available</option>
-                <option value="paypal">PayPal Deposits</option>
-            </select>
+            <div class="filter-group">
+                <label for="minScore">Minimum Score:</label>
+                <input type="number" id="minScore" min="0" max="100" value="0">
+            </div>
         </div>
 
-        <table>
-            <caption>Broker Comparison Table</caption>
-            <thead>
-                <tr>
-                    <th>Broker</th>
-                    <th>Score</th>
-                    <th>Popularity</th>
-                    <th>US Stock Fee</th>
-                    <th>EURUSD Spread</th>
-                    <th>SP 500 CFD Spread</th>
-                    <th>Withdrawal Fee</th>
-                    <th>Deposit Fee</th>
-                    <th>Inactivity Fee</th>
-                    <th>Top-Tier Regulators</th>
-                    <th>Foundation Date</th>
-                    <th>Investor Protection</th>
-                    <th>Minimum Deposit</th>
-                    <th>Bank Transfer</th>
-                    <th>Credit/Debit</th>
-                    <th>PayPal</th>
-                    <th>Wise</th>
-                    <th>Revolut</th>
-                    <th>Other e-Wallets</th>
-                    <th>Mobile Platform Score</th>
-                    <th>Web Platform Score</th>
-                    <th>MT4 Available</th>
-                    <th>MT5 Available</th>
-                    <th>Customer Service Score</th>
-                    <th>Account Opening Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Broker data will be inserted here via JavaScript -->
-            </tbody>
-        </table>
-    </div>
-
-    <script src="js/broker-data.js"></script>
-=======
-    <main>
-        <section class="comparison-section">
-            <h1>Compare Bitcoin Trading Brokers</h1>
-            
-            <div class="content-section">
-                <h2>What is Bitcoin and where can I best buy/sell Bitcoins?</h2>
-                <p>Bitcoin has become increasingly popular as an electronic means of payment in recent years and has therefore also increased considerably in value. In 2009, this so-called 'cryptocurrency' was introduced. You can manage Bitcoins on your own computer via a digital wallet or you can have this done by a third party, namely a blockchain, or simply put, a wallet service. Anyone with a digital wallet can send and receive the electronic currency.</p>
-                
-                <div class="disclaimer">
-                    <p><strong>Important Notice:</strong> CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Between 51% and 82% of retail investor accounts lose money when trading CFDs. You should consider whether you understand how CFDs work, and whether you can afford to take the high risk of losing your money.</p>
-                    <p>Trading involves risk. You should not risk more capital than you are prepared to lose. Past performance is not a reliable indicator of future results. This content is for educational purposes only and is not investment advice.</p>
-                </div>
-            </div>
-
-            <table class="comparison-table">
+        <div class="broker-table">
+            <table>
                 <thead>
                     <tr>
-                        <th>Features</th>
-                        <th>Plus500</th>
-                        <th>IG</th>
-                        <th>MC Markets</th>
+                        <th>Broker</th>
+                        <th>Score</th>
+                        <th>Popularity</th>
+                        <th>Fees</th>
+                        <th>Min Deposit</th>
+                        <th>Regulator</th>
+                        <th>MT4</th>
+                        <th>MT5</th>
+                        <th>PayPal</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><i class="fas fa-shield-alt feature-icon"></i> Regulation</td>
-                        <td>FCA (UK), CySEC (Cyprus)</td>
-                        <td>FCA (UK), NFA (US)</td>
-                        <td>FSA (Seychelles), CySEC (Cyprus)</td>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-chart-line feature-icon"></i> Products</td>
-                        <td>CFDs on forex, shares, commodities, indices, ETFs, options, crypto</td>
-                        <td>CFDs, spread betting, stock trading, forex, shares, indices, commodities, ETFs, futures, options, crypto</td>
-                        <td>CFDs, spread betting, stock trading, forex, shares, indices, commodities, ETFs, Cryptos</td>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-desktop feature-icon"></i> Platform</td>
-                        <td>Proprietary platform (simple, user-friendly)</td>
-                        <td>IG Trading, ProRealTime, MT4</td>
-                        <td>MC Trade (advanced), MT5</td>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-percentage feature-icon"></i> Fees</td>
-                        <td>Higher spreads (EUR/USD ~1.0 pip), no deposit/withdrawal fees</td>
-                        <td>Competitive spreads (EUR/USD ~0.8 pips), inactivity fee after 2 years</td>
-                        <td>As low as 0.0 spreads</td>
-                    </tr>
-                    <tr>
-                        <td><i class="fas fa-headset feature-icon"></i> Support</td>
-                        <td>24/5 support, limited educational resources</td>
-                        <td>24/5 support, industry-leading education (IG Academy)</td>
-                        <td>24/7 support, free live trading news, free trader analysis report</td>
-                    </tr>
+                <tbody id="brokerTableBody">
+                    <!-- Broker data will be populated here -->
                 </tbody>
             </table>
-
-            <div class="content-section">
-                <h2>Why pay with bitcoin?</h2>
-                <p>There are advantages and disadvantages to using bitcoin. In principle, you no longer need to carry paper money around or keep that sock with money under your mattress. After all, your money is in your digital wallet and you pay electronically. Of course, you can do that with your debit card and bank account, but a bank can see all your payment activity and has the option to block your account. If you have bitcoins, you can pay directly with your virtual wallet at web shops that accept this as a payment method. There is no longer a third party such as a bank or payment processor involved.</p>
-                
-                <p>The disadvantage is that bitcoins are not legal tender but in principle a means of exchange, like gold for example. This means that you are not entitled to compensation for damage or loss of value. Bitcoins are also susceptible to internet crime and you can not yet pay with them everywhere.</p>
-            </div>
-
-            <div class="content-section">
-                <h2>Can Bitcoin Increase Further in Value?</h2>
-                <p>Bitcoin price movements often have to do with market conditions. Due to the increased tensions between America and North Korea because of the nuclear tests of the Asian country, the bitcoin has become more valuable in recent times. The value of the electronic currency even went through the threshold of 4,000 dollars, the highest level ever. This also meant an increase in value of almost 300 percent compared to early 2017.</p>
-                
-                <p>Bitcoin can be used by investors in uncertain political or economic times to trade. An investment that works differently than, for example, paper currencies such as the dollar or euro. And if more investors choose Bitcoin, its value will increase because the currency is more popular and people are therefore willing to pay more for it.</p>
-                
-                <p>Conversely, the value of the currency can also fall. For example, when a certain price or support level is reached and investors trade their Bitcoins. Then a new impulse is needed to help the currency rise further. If you think that the bitcoin is going to fall, start speculating on a fall.</p>
-                
-                <p>Negative news about Bitcoin can depress the value of the currency. Recently, prominent figures in the financial world have not been so positive about Bitcoin. For example, Jamie Dimon, the CEO of the American bank JP Morgan Chase, said that he sees no future in the virtual currency. Furthermore, China is said to want to restrict Bitcoin trading. These are risks for Bitcoin trading and therefore also the movement of the electronic currency.</p>
-            </div>
-
-            <div style="text-align: center;">
-                <a href="https://www.mcmarkets.com" class="cta-button" target="_blank" rel="noopener">Buy Bitcoins now directly with special Deal</a>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2025 Market Sentiment Hub. All rights reserved. | 
-        <a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
-            <i class="fab fa-discord discord-icon"></i> Join our Discord
-        </a></p>
+        <p>&copy; 2024 broker2choose. All rights reserved.</p>
     </footer>
->>>>>>> d93920517ec1b814d907f6e990ed8575d8875334
+
+    <script src="js/broker-data.js"></script>
 </body>
 </html> 

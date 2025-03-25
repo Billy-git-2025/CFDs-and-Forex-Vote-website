@@ -1,111 +1,147 @@
 // Broker data array
 const brokerData = [
     {
-        name: "VT Markets",
-        score: "4.1/5",
-        popularity: "3.1K",
-        usStockFee: "N/A",
-        eurusdSpread: "0.2",
-        sp500Spread: "0.4",
-        withdrawalFee: "$0",
-        depositFee: "$0",
-        inactivityFee: "No",
-        regulators: "ASIC in Australia",
-        foundationDate: "2016",
-        investorProtection: "No",
+        name: "Plus500",
+        score: 85,
+        popularity: 95,
+        fees: "Low",
         minDeposit: "$100",
-        bankTransfer: "Yes",
-        creditDebit: "Yes",
-        paypal: "No",
-        wise: "No",
-        revolut: "Yes",
-        otherEwallets: "Yes",
-        mobilePlatformScore: "4.1/5",
-        webPlatformScore: "2.8/5",
-        mt4: "Yes",
-        mt5: "Yes",
-        customerServiceScore: "3.1/5",
-        accountOpeningScore: "5.0/5"
+        regulator: "FCA",
+        mt4: true,
+        mt5: false,
+        paypal: true
     },
-    // Add all other brokers here from the HTML data
+    {
+        name: "IG",
+        score: 90,
+        popularity: 98,
+        fees: "Medium",
+        minDeposit: "$250",
+        regulator: "FCA",
+        mt4: true,
+        mt5: true,
+        paypal: true
+    },
+    {
+        name: "MC Markets",
+        score: 88,
+        popularity: 92,
+        fees: "Low",
+        minDeposit: "$200",
+        regulator: "ASIC",
+        mt4: true,
+        mt5: true,
+        paypal: true
+    },
+    {
+        name: "XM",
+        score: 82,
+        popularity: 88,
+        fees: "Low",
+        minDeposit: "$5",
+        regulator: "CySEC",
+        mt4: true,
+        mt5: true,
+        paypal: true
+    },
+    {
+        name: "Pepperstone",
+        score: 87,
+        popularity: 90,
+        fees: "Low",
+        minDeposit: "$200",
+        regulator: "ASIC",
+        mt4: true,
+        mt5: true,
+        paypal: true
+    }
 ];
 
 // Sorting functions
-const sortFunctions = {
-    score: (a, b) => parseFloat(b.score) - parseFloat(a.score),
-    popularity: (a, b) => parseInt(b.popularity) - parseInt(a.popularity),
-    fees: (a, b) => {
-        const aFee = a.usStockFee === "N/A" ? Infinity : parseFloat(a.usStockFee);
-        const bFee = b.usStockFee === "N/A" ? Infinity : parseFloat(b.usStockFee);
-        return aFee - bFee;
-    },
-    minDeposit: (a, b) => {
-        const aDeposit = parseInt(a.minDeposit.replace("$", ""));
-        const bDeposit = parseInt(b.minDeposit.replace("$", ""));
-        return aDeposit - bDeposit;
-    }
-};
+function sortByScore(a, b) {
+    return b.score - a.score;
+}
+
+function sortByPopularity(a, b) {
+    return b.popularity - a.popularity;
+}
+
+function sortByFees(a, b) {
+    const feeOrder = { "Low": 1, "Medium": 2, "High": 3 };
+    return feeOrder[a.fees] - feeOrder[b.fees];
+}
+
+function sortByMinDeposit(a, b) {
+    return parseInt(a.minDeposit.replace(/[^0-9]/g, '')) - parseInt(b.minDeposit.replace(/[^0-9]/g, ''));
+}
 
 // Filter functions
 function filterByRegulator(brokers, regulator) {
-    if (regulator === "all") return brokers;
-    return brokers.filter(broker => 
-        broker.regulators.toLowerCase().includes(regulator.toLowerCase())
-    );
+    if (!regulator) return brokers;
+    return brokers.filter(broker => broker.regulator === regulator);
 }
 
 function filterByMinScore(brokers, minScore) {
-    if (!minScore) return brokers;
-    return brokers.filter(broker => 
-        parseFloat(broker.score) >= minScore
-    );
+    return brokers.filter(broker => broker.score >= minScore);
 }
 
-function filterByFeature(brokers, feature) {
-    if (feature === "all") return brokers;
-    const featureMap = {
-        mt4: "mt4",
-        mt5: "mt5",
-        paypal: "paypal"
-    };
-    return brokers.filter(broker => 
-        broker[featureMap[feature]] === "Yes"
-    );
+// Render function
+function renderBrokers(brokers) {
+    const tbody = document.getElementById('brokerTableBody');
+    tbody.innerHTML = '';
+
+    brokers.forEach(broker => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${broker.name}</td>
+            <td>${broker.score}</td>
+            <td>${broker.popularity}%</td>
+            <td>${broker.fees}</td>
+            <td>${broker.minDeposit}</td>
+            <td>${broker.regulator}</td>
+            <td class="feature-icon">${broker.mt4 ? '✓' : '✗'}</td>
+            <td class="feature-icon">${broker.mt5 ? '✓' : '✗'}</td>
+            <td class="feature-icon">${broker.paypal ? '✓' : '✗'}</td>
+        `;
+        tbody.appendChild(row);
+    });
 }
 
 // Event listeners
-document.getElementById("sortBy").addEventListener("change", (e) => {
-    const sortedData = [...brokerData].sort(sortFunctions[e.target.value]);
-    renderBrokerData(sortedData);
-});
+document.addEventListener('DOMContentLoaded', () => {
+    // Initial render
+    renderBrokers(brokerData);
 
-document.getElementById("filterRegulator").addEventListener("change", (e) => {
-    let filteredData = filterByRegulator(brokerData, e.target.value);
-    const minScore = document.getElementById("minScore").value;
-    if (minScore) {
-        filteredData = filterByMinScore(filteredData, parseFloat(minScore));
-    }
-    const feature = document.getElementById("filterFeatures").value;
-    filteredData = filterByFeature(filteredData, feature);
-    renderBrokerData(filteredData);
-});
+    // Sort by change
+    document.getElementById('sortBy').addEventListener('change', (e) => {
+        let sortedBrokers = [...brokerData];
+        switch (e.target.value) {
+            case 'score':
+                sortedBrokers.sort(sortByScore);
+                break;
+            case 'popularity':
+                sortedBrokers.sort(sortByPopularity);
+                break;
+            case 'fees':
+                sortedBrokers.sort(sortByFees);
+                break;
+            case 'minDeposit':
+                sortedBrokers.sort(sortByMinDeposit);
+                break;
+        }
+        renderBrokers(sortedBrokers);
+    });
 
-document.getElementById("minScore").addEventListener("input", (e) => {
-    let filteredData = filterByMinScore(brokerData, parseFloat(e.target.value));
-    const regulator = document.getElementById("filterRegulator").value;
-    filteredData = filterByRegulator(filteredData, regulator);
-    const feature = document.getElementById("filterFeatures").value;
-    filteredData = filterByFeature(filteredData, feature);
-    renderBrokerData(filteredData);
-});
+    // Regulator filter
+    document.getElementById('regulator').addEventListener('change', (e) => {
+        const filteredBrokers = filterByRegulator(brokerData, e.target.value);
+        renderBrokers(filteredBrokers);
+    });
 
-document.getElementById("filterFeatures").addEventListener("change", (e) => {
-    let filteredData = filterByFeature(brokerData, e.target.value);
-    const regulator = document.getElementById("filterRegulator").value;
-    filteredData = filterByRegulator(filteredData, regulator);
-    const minScore = document.getElementById("minScore").value;
-    if (minScore) {
-        filteredData = filterByMinScore(filteredData, parseFloat(minScore));
-    }
-    renderBrokerData(filteredData);
+    // Minimum score filter
+    document.getElementById('minScore').addEventListener('input', (e) => {
+        const minScore = parseInt(e.target.value) || 0;
+        const filteredBrokers = filterByMinScore(brokerData, minScore);
+        renderBrokers(filteredBrokers);
+    });
 }); 
