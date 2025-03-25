@@ -366,38 +366,89 @@
             padding: 0 2rem;
         }
 
-        .about-content {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
+        .about-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            margin-bottom: 30px;
         }
 
-        .about-text {
+        .about-header h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .about-header p {
+            color: #666;
+            font-size: 1.1rem;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .about-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .mission-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .mission-point {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
             text-align: center;
         }
 
-        .about-text p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
+        .mission-point i {
+            font-size: 2rem;
+            color: #327fff;
+            margin-bottom: 15px;
+        }
+
+        .mission-point h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .mission-point p {
+            color: #666;
+            font-size: 0.9rem;
         }
 
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 30px;
+            margin-top: 20px;
         }
 
         .team-member {
             text-align: center;
-            padding: 2rem;
-            background: white;
+            padding: 20px;
+            background: #f8f9fa;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
@@ -409,37 +460,39 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
             object-fit: cover;
         }
 
         .team-member h3 {
             color: #2c3e50;
-            margin-bottom: 0.5rem;
+            margin-bottom: 5px;
+        }
+
+        .team-member .role {
+            color: #327fff;
+            font-weight: 500;
+            margin-bottom: 10px;
         }
 
         .team-member p {
             color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .team-member .bio {
             font-size: 0.9rem;
-            color: #777;
             line-height: 1.5;
         }
 
         @media (max-width: 768px) {
-            .about-container {
-                padding: 0 1rem;
+            .about-header h1 {
+                font-size: 2rem;
             }
-
+            .about-header p {
+                font-size: 1rem;
+            }
+            .about-section {
+                padding: 20px;
+            }
             .team-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .about-text p {
-                font-size: 1rem;
             }
         }
     </style>
@@ -699,33 +752,69 @@
 
         <section class="about-section">
             <div class="about-container">
-                <h2>About Us</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>broker2choose is your trusted platform for comparing trading brokers and making informed investment decisions. We provide comprehensive analysis, detailed comparisons, and expert insights to help you find the perfect broker for your trading needs.</p>
-                        <p>Our mission is to empower traders with transparent, accurate, and up-to-date information about trading brokers. We believe that informed decisions lead to better trading outcomes, and we're committed to providing the tools and resources you need to succeed.</p>
+                <div class="about-header">
+                    <h1>About broker2choose</h1>
+                    <p>Your trusted source for comprehensive broker comparisons and trading insights</p>
+                </div>
+
+                <section class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>At broker2choose, we're dedicated to helping traders find the perfect broker for their trading needs. Whether you're interested in forex trading, CFD trading, or other financial instruments, we provide detailed comparisons and expert analysis to guide your decision-making process.</p>
+                    
+                    <div class="mission-points">
+                        <div class="mission-point">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Comprehensive Analysis</h3>
+                            <p>In-depth reviews of trading platforms, fees, and features</p>
+                        </div>
+                        <div class="mission-point">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Regulatory Compliance</h3>
+                            <p>Focus on regulated brokers and trading safety</p>
+                        </div>
+                        <div class="mission-point">
+                            <i class="fas fa-users"></i>
+                            <h3>Community Focus</h3>
+                            <p>Building a community of informed traders</p>
+                        </div>
                     </div>
+                </section>
+
+                <section class="about-section">
+                    <h2>Why Choose broker2choose?</h2>
+                    <p>We understand that choosing the right broker is crucial for your trading success. Our platform offers:</p>
+                    <ul>
+                        <li>Detailed broker comparisons covering forex, CFDs, and other trading instruments</li>
+                        <li>Regular updates on broker features, fees, and regulatory status</li>
+                        <li>Expert analysis of trading platforms and tools</li>
+                        <li>Community-driven insights and reviews</li>
+                        <li>Focus on regulated brokers and trading safety</li>
+                    </ul>
+                </section>
+
+                <section class="about-section">
+                    <h2>Our Team</h2>
                     <div class="team-grid">
                         <div class="team-member">
                             <img src="images/team/geoffrey.jpg" alt="Geoffrey Wallace">
+                            <div class="role">Founder & CEO</div>
                             <h3>Geoffrey Wallace</h3>
-                            <p>Founder & CEO</p>
-                            <p class="bio">With over 15 years of experience in financial markets, Geoffrey leads our mission to provide transparent broker comparisons.</p>
+                            <p>Expert in forex and CFD trading with over 15 years of experience in broker analysis and market research.</p>
                         </div>
                         <div class="team-member">
                             <img src="images/team/franky.jpg" alt="Franky Wong">
+                            <div class="role">Head of Research</div>
                             <h3>Franky Wong</h3>
-                            <p>Head of Research</p>
-                            <p class="bio">Franky brings expertise in market analysis and broker evaluation, ensuring our comparisons are accurate and comprehensive.</p>
+                            <p>Specializes in broker regulations, compliance, and trading platform analysis.</p>
                         </div>
                         <div class="team-member">
                             <img src="images/team/billy.jpg" alt="Billy Chen">
+                            <div class="role">Technical Analyst</div>
                             <h3>Billy Chen</h3>
-                            <p>Technical Analyst</p>
-                            <p class="bio">Billy specializes in technical analysis and platform evaluation, helping traders find the right tools for their strategy.</p>
+                            <p>Expert in trading platforms, technical analysis, and broker technology evaluation.</p>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
     </main>
