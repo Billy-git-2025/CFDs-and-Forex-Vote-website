@@ -113,6 +113,13 @@
         
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Filter by Broker Name..." onkeyup="filterTable()">
+            <select id="sortBy" class="sort-select">
+                <option value="">Sort by...</option>
+                <option value="score">Score</option>
+                <option value="popularity">Popularity</option>
+                <option value="fees">Fees</option>
+                <option value="minDeposit">Minimum Deposit</option>
+            </select>
         </div>
 
         <div class="broker-table">
@@ -147,7 +154,7 @@
                         <th>Overall Score</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="brokerTableBody">
                     <!-- Broker data will be populated here -->
                 </tbody>
             </table>
@@ -162,5 +169,26 @@
     </footer>
 
     <script src="js/broker-data.js"></script>
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            table = document.getElementById("brokerTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html> 
