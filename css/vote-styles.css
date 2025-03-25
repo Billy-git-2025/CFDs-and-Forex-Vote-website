@@ -1,8 +1,8 @@
 /* Modern Voting UI Styles */
 
-.vote_mount {
+.vote_mount_457adfa15e7c {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 80px auto 40px;
     padding: 20px;
 }
 
@@ -22,6 +22,14 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+}
+
+.overflow2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .pk-wrapper {
@@ -47,6 +55,7 @@
     height: 100%;
     width: 100%;
     transition: background-image 0.3s ease;
+    background-image: linear-gradient(135deg, #327fff 50%, transparent 50%, transparent 51%, #ff6900 51%, #ff6900);
 }
 
 .left-rate, .right-rate {
@@ -60,27 +69,28 @@
 
 .vote-option-wrapper {
     display: flex;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .vote-option {
-    padding: 12px 30px;
+    width: 45%;
+    padding: 12px;
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    font-weight: bold;
-    min-width: 120px;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
 }
 
 .vote-left-option {
-    background-color: #327fff;
-    color: white;
+    background-color: #f0f7ff;
+    border-color: #d0e3ff;
 }
 
 .vote-right-option {
-    background-color: #ff6900;
-    color: white;
+    background-color: #fff7f0;
+    border-color: #ffe0cc;
 }
 
 .vote-option:hover {
@@ -93,15 +103,43 @@
     opacity: 0.8;
 }
 
+.vote-option-title {
+    font-weight: 500;
+    color: #333;
+}
+
+.overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.vote-sub-area {
+    width: 5%;
+}
+
 .vote-sub-msg {
     margin-top: 15px;
     color: #666;
     font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
 }
 
 .vote-already-num {
     font-weight: bold;
     color: #333;
+    margin-right: 4px;
+}
+
+.justify {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.discussM {
+    padding: 10px;
 }
 
 .time-remaining-wrapper {

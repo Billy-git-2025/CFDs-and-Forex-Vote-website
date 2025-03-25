@@ -3,31 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Broker Insights Blog | broker2choose</title>
     <meta name="description" content="Stay updated with the latest broker reviews, comparisons, and industry insights to help you choose the right trading broker.">
+=======
+    <title>Blog - Market Sentiment Hub</title>
+>>>>>>> d93920517ec1b814d907f6e990ed8575d8875334
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Font Awesome for Discord icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .discord-link {
-            color: #7289DA; /* Discord color */
-            font-weight: bold;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .site-header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 5px;
-            transition: opacity 0.2s;
+            justify-content: space-between;
         }
-        .discord-link:hover {
-            opacity: 0.8;
+        
+        .site-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
+
+        .site-title:hover {
+            color: #2763c5;
+        }
+        
+        .site-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-nav li {
+            margin-left: 1.5rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #2763c5;
+        }
+        
+        .site-nav .discord-link {
+            display: flex;
+            align-items: center;
+            background-color: #5865F2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        .site-nav .discord-link:hover {
+            background-color: #4752c4;
+            color: white;
+        }
+        
         .discord-icon {
-            font-size: 1.2em;
+            margin-right: 0.5rem;
         }
-        /* For smaller screens, make the nav more responsive */
-        @media (max-width: 768px) {
-            header nav ul {
-                gap: 15px;
-            }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem;
+        }
+        
+        .blog-page {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .blog-hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .blog-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+        
+        .blog-card h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .blog-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-excerpt {
+            margin-bottom: 1.5rem;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #dbc106;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            background-color: #c4a905;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            background-color: #f8f9fa;
         }
         .blog-container {
             margin-top: 80px;
@@ -71,6 +215,7 @@
 </head>
 <body>
     <header class="site-header">
+<<<<<<< HEAD
         <a href="/" class="site-title">broker2choose</a>
         <nav>
             <ul>
@@ -78,10 +223,22 @@
                 <li><a href="/compare.html">Compare</a></li>
                 <li><a href="/blog.html" class="active">Blog</a></li>
                 <li><a href="/about.html">About</a></li>
+=======
+        <a href="/" class="site-title">Market Sentiment Hub</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html" class="active">Media</a></li>
+                <li><a href="/compare.html">Compare</a></li>
+                <li><a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
+                    <i class="fab fa-discord discord-icon"></i> Join Discord</a>
+                </li>
+>>>>>>> d93920517ec1b814d907f6e990ed8575d8875334
             </ul>
         </nav>
     </header>
 
+<<<<<<< HEAD
     <div class="blog-container">
         <h1>Latest Broker Insights</h1>
         <p>Stay informed with our latest broker reviews, comparisons, and industry insights.</p>
@@ -99,11 +256,63 @@
             <!-- Add more blog posts here -->
         </div>
     </div>
+=======
+    <main class="blog-page">
+        <section class="blog-hero">
+            <h1>Latest Media & Analysis</h1>
+            <p>Stay updated with our latest market insights, analysis, and trends</p>
+        </section>
+        
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/gold-oil.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Gold Record & Oil Decline Analysis</h2>
+                    <p class="blog-meta">May 15, 2023 | Market Analysis</p>
+                    <p class="blog-excerpt">Analysis of recent gold price records and significant oil market decline. What's driving these movements and what to expect next.</p>
+                    <a href="blog/gold-record-oil-decline.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/market-analysis.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Market Analysis Techniques</h2>
+                    <p class="blog-meta">April 28, 2023 | Education</p>
+                    <p class="blog-excerpt">Learn about different market analysis techniques and how to apply them to improve your trading decisions.</p>
+                    <a href="blog/market-analysis.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/investment.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Investment Strategies</h2>
+                    <p class="blog-meta">April 15, 2023 | Strategy</p>
+                    <p class="blog-excerpt">Discover effective investment strategies for different market conditions and learn how to adapt your approach.</p>
+                    <a href="blog/investment-strategies.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            
+            <article class="blog-card">
+                <div class="blog-card-image" style="background-image: url('blog/images/crypto.jpg');"></div>
+                <div class="blog-card-content">
+                    <h2>Cryptocurrency Market Trends</h2>
+                    <p class="blog-meta">April 3, 2023 | Crypto</p>
+                    <p class="blog-excerpt">Analysis of current cryptocurrency market trends and future predictions for major coins and emerging projects.</p>
+                    <a href="blog/crypto-trends.html" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+    </main>
+>>>>>>> d93920517ec1b814d907f6e990ed8575d8875334
 
     <footer>
-        <p>&copy; 2023 Market Sentiment Hub. All rights reserved.</p>
+        <p>&copy; 2025 Market Sentiment Hub. All rights reserved. | 
+        <a href="https://discord.com/invite/mFx2nHpc" class="discord-link" target="_blank" rel="noopener">
+            <i class="fab fa-discord discord-icon"></i> Join our Discord
+        </a></p>
     </footer>
-
-    <script src="js/main.js"></script>
+    <script src="js/generate-images.js"></script>
 </body>
 </html> 
