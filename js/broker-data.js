@@ -29,49 +29,118 @@ const brokerData = [
         overallScore: "4.70/5"
     },
     {
-        name: "Plus500",
-        score: 85,
-        popularity: 95,
-        fees: "Low",
-        minDeposit: "$100",
-        regulator: "FCA",
-        mt4: true,
-        mt5: false,
-        paypal: true
+        name: "moomoo",
+        score: "4.0/5",
+        popularity: "1.9K",
+        usStockFee: "$0.0",
+        eurusdSpread: "N/A",
+        sp500Spread: "N/A",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "SEC and FINRA in the US, MAS in Singapore, ASIC in Australia, Japan",
+        foundationDate: "2018",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "No",
+        paypal: "No",
+        wise: "No",
+        revolut: "No",
+        otherEWallets: "No",
+        mobileScore: "5.0/5",
+        webScore: "5.0/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "3.4/5",
+        accountOpening: "4.4/5",
+        overallScore: "4.45/5"
     },
     {
         name: "MC Markets",
-        score: 88,
-        popularity: 92,
-        fees: "Low",
-        minDeposit: "$200",
-        regulator: "ASIC",
-        mt4: true,
-        mt5: true,
-        paypal: true
+        score: "4.8/5",
+        popularity: "30K",
+        usStockFee: "$0.0",
+        eurusdSpread: "N/A",
+        sp500Spread: "0.0",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "FSA and CySEC",
+        foundationDate: "2024",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "No",
+        paypal: "No",
+        wise: "No",
+        revolut: "No",
+        otherEWallets: "No",
+        mobileScore: "5.0/5",
+        webScore: "5.0/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "3.4/5",
+        accountOpening: "3.4/5",
+        overallScore: "4.20/5"
     },
     {
-        name: "XM",
-        score: 82,
-        popularity: 88,
-        fees: "Low",
-        minDeposit: "$5",
-        regulator: "CySEC",
-        mt4: true,
-        mt5: true,
-        paypal: true
+        name: "Vantage",
+        score: "4.3/5",
+        popularity: "30K",
+        usStockFee: "N/A",
+        eurusdSpread: "0.6",
+        sp500Spread: "0.4",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "ASIC in Australia",
+        foundationDate: "2009",
+        investorProtection: "No",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "Yes",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.4/5",
+        webScore: "4.5/5",
+        mt4: "Yes",
+        mt5: "Yes",
+        customerService: "4.4/5",
+        accountOpening: "4.4/5",
+        overallScore: "4.43/5"
     },
     {
-        name: "Pepperstone",
-        score: 87,
-        popularity: 90,
-        fees: "Low",
-        minDeposit: "$200",
-        regulator: "ASIC",
-        mt4: true,
-        mt5: true,
-        paypal: true
+        name: "FP Markets",
+        score: "4.3/5",
+        popularity: "30K",
+        usStockFee: "N/A",
+        eurusdSpread: "0.6",
+        sp500Spread: "0.4",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "ASIC in Australia",
+        foundationDate: "2005",
+        investorProtection: "No",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "Yes",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.4/5",
+        webScore: "4.5/5",
+        mt4: "Yes",
+        mt5: "Yes",
+        customerService: "4.4/5",
+        accountOpening: "4.4/5",
+        overallScore: "4.43/5"
     }
+    // Add more brokers as needed
 ];
 
 // Sorting functions
@@ -112,13 +181,30 @@ function renderBrokers(brokers) {
         row.innerHTML = `
             <td>${broker.name}</td>
             <td>${broker.score}</td>
-            <td>${broker.popularity}%</td>
-            <td>${broker.fees}</td>
+            <td>${broker.popularity}</td>
+            <td>${broker.usStockFee}</td>
+            <td>${broker.eurusdSpread}</td>
+            <td>${broker.sp500Spread}</td>
+            <td>${broker.withdrawalFee}</td>
+            <td>${broker.depositFee}</td>
+            <td>${broker.inactivityFee}</td>
+            <td>${broker.regulators}</td>
+            <td>${broker.foundationDate}</td>
+            <td>${broker.investorProtection}</td>
             <td>${broker.minDeposit}</td>
-            <td>${broker.regulator}</td>
-            <td class="feature-icon">${broker.mt4 ? '✓' : '✗'}</td>
-            <td class="feature-icon">${broker.mt5 ? '✓' : '✗'}</td>
-            <td class="feature-icon">${broker.paypal ? '✓' : '✗'}</td>
+            <td>${broker.bankTransfer}</td>
+            <td>${broker.creditDebit}</td>
+            <td>${broker.paypal}</td>
+            <td>${broker.wise}</td>
+            <td>${broker.revolut}</td>
+            <td>${broker.otherEWallets}</td>
+            <td>${broker.mobileScore}</td>
+            <td>${broker.webScore}</td>
+            <td>${broker.mt4}</td>
+            <td>${broker.mt5}</td>
+            <td>${broker.customerService}</td>
+            <td>${broker.accountOpening}</td>
+            <td>${broker.overallScore}</td>
         `;
         tbody.appendChild(row);
     });
