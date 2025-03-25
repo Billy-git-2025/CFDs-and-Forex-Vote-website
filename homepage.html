@@ -411,9 +411,37 @@
         }
 
         .widget-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .tradingview-widget-container {
+            width: 100% !important;
+            height: auto !important;
+            min-height: 400px;
+        }
+
+        @media (max-width: 768px) {
+            .widget-container {
+                padding: 10px;
+            }
+
+            .tradingview-widget-container {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .widget-container {
+                padding: 5px;
+            }
+
+            .tradingview-widget-container {
+                min-height: 250px;
+            }
         }
 
         .about-section {
@@ -503,6 +531,13 @@
             .about-text p {
                 font-size: 1rem;
             }
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -746,22 +781,22 @@
                     </div>
                     <div class="team-grid">
                         <div class="team-member">
-                            <img src="images/team/geoffrey.jpg" alt="Geoffrey Wallace">
-                            <h3>Geoffrey Wallace</h3>
-                            <p>Founder & CEO</p>
-                            <p class="bio">With over 15 years of experience in financial markets, Geoffrey leads our mission to provide transparent broker comparisons.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="images/team/franky.jpg" alt="Franky Wong">
-                            <h3>Franky Wong</h3>
-                            <p>Head of Research</p>
-                            <p class="bio">Franky brings expertise in market analysis and broker evaluation, ensuring our comparisons are accurate and comprehensive.</p>
-                        </div>
-                        <div class="team-member">
-                            <img src="images/team/billy.jpg" alt="Billy Chen">
+                            <img src="images/billy-chen.jpg" alt="Billy Chen">
                             <h3>Billy Chen</h3>
-                            <p>Technical Analyst</p>
-                            <p class="bio">Billy specializes in technical analysis and platform evaluation, helping traders find the right tools for their strategy.</p>
+                            <p>Co-founder & Technical Lead</p>
+                            <p class="bio">Expert in algorithmic trading and market analysis with over 8 years of experience in quantitative finance.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/franky-wong.jpg" alt="Franky Wong">
+                            <h3>Franky Wong</h3>
+                            <p>Co-founder & Research Director</p>
+                            <p class="bio">Specializes in broker analysis and regulatory compliance with 12 years of industry experience.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/geoffrey-wallace.jpg" alt="Geoffrey Wallace">
+                            <h3>Geoffrey Wallace</h3>
+                            <p>Co-founder & Strategy Lead</p>
+                            <p class="bio">Former hedge fund manager with 15 years of experience in institutional trading and risk management.</p>
                         </div>
                     </div>
                 </div>
