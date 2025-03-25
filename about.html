@@ -9,24 +9,93 @@
     <!-- Font Awesome for Discord icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .discord-link {
-            color: #7289DA; /* Discord color */
-            font-weight: bold;
+        .site-header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 5px;
-            transition: opacity 0.2s;
+            justify-content: space-between;
+            box-sizing: border-box;
         }
+        
+        .site-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .site-title:hover {
+            color: #2763c5;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #2763c5;
+        }
+
+        .discord-link {
+            display: flex;
+            align-items: center;
+            background-color: #5865F2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
         .discord-link:hover {
-            opacity: 0.8;
+            background-color: #4752c4;
+            color: white;
         }
+
         .discord-icon {
-            font-size: 1.2em;
+            margin-right: 0.5rem;
         }
-        /* For smaller screens, make the nav more responsive */
+
         @media (max-width: 768px) {
-            header nav ul {
-                gap: 15px;
+            .site-header {
+                padding: 0.8rem 1rem;
+            }
+            
+            .site-title {
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.9rem;
             }
         }
         .about-container {
@@ -143,7 +212,7 @@
                     <p class="bio">Franky brings expertise in market analysis and broker evaluation, ensuring our comparisons are accurate and comprehensive.</p>
                 </div>
                 <div class="team-member">
-                    <img src="images/team/billy.jpg" alt="Billy Chen">
+                    <img src="images/team/billy.jpg" alt="Billy Chan">
                     <h3>Billy Chen</h3>
                     <p>Technical Analyst</p>
                     <p class="bio">Billy specializes in technical analysis and platform evaluation, helping traders find the right tools for their strategy.</p>

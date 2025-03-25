@@ -16,16 +16,25 @@
         
         .search-box {
             margin-bottom: 20px;
-            width: 100%;
-            max-width: 300px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
         }
         
         .search-box input {
-            width: 100%;
+            width: 300px;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 14px;
+        }
+
+        .sort-select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
         }
         
         .broker-table {
@@ -34,6 +43,7 @@
             margin-top: 20px;
             background: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         
         table {
@@ -41,12 +51,16 @@
             border-collapse: collapse;
             margin: 0;
             font-size: 14px;
+            table-layout: fixed;
         }
         
         th, td {
             padding: 12px;
             text-align: left;
             border: 1px solid #ddd;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         th {
@@ -55,6 +69,12 @@
             position: sticky;
             top: 80px;
             z-index: 10;
+            min-width: 120px;
+        }
+        
+        td:first-child {
+            min-width: 150px;
+            font-weight: 500;
         }
         
         tr:nth-child(even) {
@@ -77,6 +97,15 @@
         @media (max-width: 768px) {
             .compare-container {
                 padding: 10px;
+            }
+            
+            .search-box {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .search-box input {
+                width: 100%;
             }
             
             table {
