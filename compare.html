@@ -44,6 +44,7 @@
             background: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             border-radius: 8px;
+            position: relative;
         }
         
         table {
@@ -51,16 +52,13 @@
             border-collapse: collapse;
             margin: 0;
             font-size: 14px;
-            table-layout: fixed;
         }
         
         th, td {
-            padding: 12px;
+            padding: 15px;
             text-align: left;
             border: 1px solid #ddd;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            min-width: 150px;
         }
         
         th {
@@ -69,12 +67,17 @@
             position: sticky;
             top: 80px;
             z-index: 10;
-            min-width: 120px;
+            white-space: normal;
+            height: auto;
         }
         
         td:first-child {
-            min-width: 150px;
+            min-width: 180px;
             font-weight: 500;
+            position: sticky;
+            left: 0;
+            background-color: white;
+            z-index: 5;
         }
         
         tr:nth-child(even) {
@@ -92,6 +95,17 @@
         
         .feature-missing {
             color: #dc3545;
+        }
+
+        .table-container {
+            margin-top: 20px;
+            overflow-x: auto;
+            position: relative;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+            margin-bottom: 15px;
         }
         
         @media (max-width: 768px) {
@@ -114,6 +128,11 @@
             
             th, td {
                 padding: 8px;
+                min-width: 120px;
+            }
+
+            td:first-child {
+                min-width: 150px;
             }
         }
     </style>
@@ -151,42 +170,44 @@
             </select>
         </div>
 
-        <div class="broker-table">
-            <table id="brokerTable">
-                <thead>
-                    <tr>
-                        <th>Broker</th>
-                        <th>Score</th>
-                        <th>Popularity</th>
-                        <th>US Stock Fee</th>
-                        <th>EURUSD Spread</th>
-                        <th>SP 500 CFD Spread</th>
-                        <th>Withdrawal Fee</th>
-                        <th>Deposit Fee</th>
-                        <th>Inactivity Fee</th>
-                        <th>Top-Tier Regulators</th>
-                        <th>Foundation Date</th>
-                        <th>Investor Protection</th>
-                        <th>Minimum Deposit</th>
-                        <th>Bank Transfer</th>
-                        <th>Credit/Debit</th>
-                        <th>PayPal</th>
-                        <th>Wise</th>
-                        <th>Revolut</th>
-                        <th>Other e-Wallets</th>
-                        <th>Mobile Score</th>
-                        <th>Web Score</th>
-                        <th>MT4</th>
-                        <th>MT5</th>
-                        <th>Customer Service</th>
-                        <th>Account Opening</th>
-                        <th>Overall Score</th>
-                    </tr>
-                </thead>
-                <tbody id="brokerTableBody">
-                    <!-- Broker data will be populated here -->
-                </tbody>
-            </table>
+        <div class="table-container">
+            <div class="table-scroll">
+                <table id="brokerTable">
+                    <thead>
+                        <tr>
+                            <th>Broker</th>
+                            <th>Score</th>
+                            <th>Popularity</th>
+                            <th>US Stock Fee</th>
+                            <th>EURUSD Spread</th>
+                            <th>SP 500 CFD Spread</th>
+                            <th>Withdrawal Fee</th>
+                            <th>Deposit Fee</th>
+                            <th>Inactivity Fee</th>
+                            <th>Top-Tier Regulators</th>
+                            <th>Foundation Date</th>
+                            <th>Investor Protection</th>
+                            <th>Minimum Deposit</th>
+                            <th>Bank Transfer</th>
+                            <th>Credit/Debit</th>
+                            <th>PayPal</th>
+                            <th>Wise</th>
+                            <th>Revolut</th>
+                            <th>Other e-Wallets</th>
+                            <th>Mobile Score</th>
+                            <th>Web Score</th>
+                            <th>MT4</th>
+                            <th>MT5</th>
+                            <th>Customer Service</th>
+                            <th>Account Opening</th>
+                            <th>Overall Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="brokerTableBody">
+                        <!-- Broker data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 

@@ -148,7 +148,7 @@
         }
 
         .latest-posts {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 40px auto;
             padding: 2rem;
             background-color: #f8f9fa;
@@ -352,6 +352,95 @@
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
+        }
+
+        .about-section {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .bio {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 0 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -604,6 +693,38 @@
                     <h3>Cryptocurrency Market Trends</h3>
                     <p>Analysis of current cryptocurrency market trends and future predictions.</p>
                     <a href="blog/crypto-trends.html" class="read-more">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section">
+            <div class="about-container">
+                <h2>About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>broker2choose is your trusted platform for comparing trading brokers and making informed investment decisions. We provide comprehensive analysis, detailed comparisons, and expert insights to help you find the perfect broker for your trading needs.</p>
+                        <p>Our mission is to empower traders with transparent, accurate, and up-to-date information about trading brokers. We believe that informed decisions lead to better trading outcomes, and we're committed to providing the tools and resources you need to succeed.</p>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="images/team/geoffrey.jpg" alt="Geoffrey Wallace">
+                            <h3>Geoffrey Wallace</h3>
+                            <p>Founder & CEO</p>
+                            <p class="bio">With over 15 years of experience in financial markets, Geoffrey leads our mission to provide transparent broker comparisons.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/team/franky.jpg" alt="Franky Wong">
+                            <h3>Franky Wong</h3>
+                            <p>Head of Research</p>
+                            <p class="bio">Franky brings expertise in market analysis and broker evaluation, ensuring our comparisons are accurate and comprehensive.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/team/billy.jpg" alt="Billy Chen">
+                            <h3>Billy Chen</h3>
+                            <p>Technical Analyst</p>
+                            <p class="bio">Billy specializes in technical analysis and platform evaluation, helping traders find the right tools for their strategy.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
