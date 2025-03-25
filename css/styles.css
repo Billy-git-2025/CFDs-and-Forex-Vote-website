@@ -350,6 +350,29 @@ footer {
     border-top: 1px solid #ddd;
 }
 
+footer .discord-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: #5865F2;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+footer .discord-link:hover {
+    background-color: #4752c4;
+    color: white;
+}
+
+footer .discord-icon {
+    margin-right: 4px;
+    font-size: 0.9rem;
+}
+
 /* Utility Classes */
 .cta-button {
     display: inline-block;

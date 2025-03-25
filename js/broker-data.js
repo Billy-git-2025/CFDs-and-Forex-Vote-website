@@ -1,6 +1,34 @@
 // Broker data array
 const brokerData = [
     {
+        name: "IG",
+        score: "4.5/5",
+        popularity: "28K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.6",
+        sp500Spread: "0.4",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "FCA in the UK, BaFin in Germany, ASIC in Australia",
+        foundationDate: "1974",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "Yes",
+        wise: "Yes",
+        revolut: "No",
+        otherEWallets: "No",
+        mobileScore: "5.0/5",
+        webScore: "5.0/5",
+        mt4: "Yes",
+        mt5: "Yes",
+        customerService: "4.4/5",
+        accountOpening: "4.4/5",
+        overallScore: "4.70/5"
+    },
+    {
         name: "Plus500",
         score: 85,
         popularity: 95,
@@ -9,17 +37,6 @@ const brokerData = [
         regulator: "FCA",
         mt4: true,
         mt5: false,
-        paypal: true
-    },
-    {
-        name: "IG",
-        score: 90,
-        popularity: 98,
-        fees: "Medium",
-        minDeposit: "$250",
-        regulator: "FCA",
-        mt4: true,
-        mt5: true,
         paypal: true
     },
     {
