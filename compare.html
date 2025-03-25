@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Brokers | broker2choose</title>
+    <meta name="description" content="Compare trading brokers side by side. Analyze fees, features, regulations and more to find the best broker for your needs.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+            position: sticky;
+            top: 80px;
+            z-index: 10;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        caption {
+            font-size: 1.5em;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .compare-container {
+            margin-top: 80px;
+            padding: 20px;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        .filters {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filters select, .filters input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .score-cell {
+            font-weight: bold;
+            color: #327fff;
+        }
+        .popularity-cell {
+            color: #666;
+        }
+        .fee-cell {
+            color: #28a745;
+        }
+        .yes-cell {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .no-cell {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <a href="/" class="site-title">broker2choose</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/compare.html" class="active">Compare</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="compare-container">
+        <h1>Compare Trading Brokers</h1>
+        
+        <div class="filters">
+            <select id="sortBy">
+                <option value="score">Sort by Score</option>
+                <option value="popularity">Sort by Popularity</option>
+                <option value="fees">Sort by Trading Fees</option>
+                <option value="minDeposit">Sort by Minimum Deposit</option>
+            </select>
+            
+            <select id="filterRegulator">
+                <option value="all">All Regulators</option>
+                <option value="asic">ASIC</option>
+                <option value="fca">FCA</option>
+                <option value="sec">SEC</option>
+            </select>
+            
+            <input type="number" id="minScore" placeholder="Minimum Score" min="1" max="5" step="0.1">
+            
+            <select id="filterFeatures">
+                <option value="all">All Features</option>
+                <option value="mt4">MT4 Available</option>
+                <option value="mt5">MT5 Available</option>
+                <option value="paypal">PayPal Deposits</option>
+            </select>
+        </div>
+
+        <table>
+            <caption>Broker Comparison Table</caption>
+            <thead>
+                <tr>
+                    <th>Broker</th>
+                    <th>Score</th>
+                    <th>Popularity</th>
+                    <th>US Stock Fee</th>
+                    <th>EURUSD Spread</th>
+                    <th>SP 500 CFD Spread</th>
+                    <th>Withdrawal Fee</th>
+                    <th>Deposit Fee</th>
+                    <th>Inactivity Fee</th>
+                    <th>Top-Tier Regulators</th>
+                    <th>Foundation Date</th>
+                    <th>Investor Protection</th>
+                    <th>Minimum Deposit</th>
+                    <th>Bank Transfer</th>
+                    <th>Credit/Debit</th>
+                    <th>PayPal</th>
+                    <th>Wise</th>
+                    <th>Revolut</th>
+                    <th>Other e-Wallets</th>
+                    <th>Mobile Platform Score</th>
+                    <th>Web Platform Score</th>
+                    <th>MT4 Available</th>
+                    <th>MT5 Available</th>
+                    <th>Customer Service Score</th>
+                    <th>Account Opening Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Broker data will be inserted here via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="js/broker-data.js"></script>
+</body>
+</html> 

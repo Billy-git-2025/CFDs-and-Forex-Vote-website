@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Insights Blog | Market Sentiment Hub</title>
-    <meta name="description" content="Explore the latest analysis, trends, and strategies for CFDs, Forex, and Cryptocurrency trading in our regularly updated blog.">
+    <title>Broker Insights Blog | broker2choose</title>
+    <meta name="description" content="Stay updated with the latest broker reviews, comparisons, and industry insights to help you choose the right trading broker.">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Font Awesome for Discord icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -29,80 +29,76 @@
                 gap: 15px;
             }
         }
+        .blog-container {
+            margin-top: 80px;
+            padding: 20px;
+        }
+        .blog-post {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .blog-title {
+            color: #327fff;
+            margin-bottom: 10px;
+        }
+        .blog-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        .blog-excerpt {
+            color: #444;
+            line-height: 1.6;
+        }
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: #327fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .read-more:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <main class="blog-page">
-        <section class="blog-hero">
-            <h2>Our Blog</h2>
-            <p>Stay updated with our latest insights, analyses, and market reviews.</p>
-        </section>
+    <header class="site-header">
+        <a href="/" class="site-title">broker2choose</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/compare.html">Compare</a></li>
+                <li><a href="/blog.html" class="active">Blog</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section class="blog-content">
-            <div class="blog-container full-width">
-                <!-- Post 1: Gold/Oil Analysis -->
-                <article class="blog-post full-post">
-                    <h3>Gold Surges to New Record Near $2,990 as Crude Oil Declines</h3>
-                    <p class="blog-meta">Posted on October 15, 2023 | By Market Analyst</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Gold Surges to New Record Near $2,990 as Crude Oil Declines">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>Gold prices have reached unprecedented heights, climbing to nearly $2,990 per ounce, while crude oil markets experienced a significant decline of over 1%.</p>
-                    </div>
-                    <a href="blog/gold-record-oil-decline.html" class="read-more">Read Full Article</a>
-                </article>
-
-                <!-- Post 2: Market Analysis -->
-                <article class="blog-post full-post">
-                    <h3>Market Analysis: Weekly Review</h3>
-                    <p class="blog-meta">Posted on August 15, 2023 | By Market Analyst</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Market Analysis: Weekly Review">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>This week's market showed significant movement in tech stocks, with the NASDAQ index reaching new heights.</p>
-                    </div>
-                    <a href="blog/market-analysis.html" class="read-more">Read Full Article</a>
-                </article>
-
-                <!-- Post 3: Investment Strategies -->
-                <article class="blog-post full-post">
-                    <h3>Investment Strategies for Beginners</h3>
-                    <p class="blog-meta">Posted on August 10, 2023 | By Financial Advisor</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Investment Strategies for Beginners">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>Starting your investment journey can be overwhelming. This guide breaks down essential strategies that new investors should consider.</p>
-                    </div>
-                    <a href="blog/investment-strategies.html" class="read-more">Read Full Article</a>
-                </article>
-
-                <!-- Post 4: Cryptocurrency Trends -->
-                <article class="blog-post full-post">
-                    <h3>Cryptocurrency Trends: What's Next?</h3>
-                    <p class="blog-meta">Posted on August 5, 2023 | By Crypto Analyst</p>
-                    <div class="blog-image">
-                        <img src="https://via.placeholder.com/800x400" alt="Cryptocurrency Trends: What's Next?">
-                    </div>
-                    <div class="blog-excerpt">
-                        <p>The cryptocurrency market continues to evolve at a rapid pace. This analysis examines current trends and potential future developments.</p>
-                    </div>
-                    <a href="blog/crypto-trends.html" class="read-more">Read Full Article</a>
-                </article>
-            </div>
-        </section>
-
-        <section class="blog-pagination">
-            <div class="pagination">
-                <span class="current-page">1</span>
-                <a href="#" class="page-link">2</a>
-                <a href="#" class="page-link">3</a>
-                <a href="#" class="next-page">Next →</a>
-            </div>
-        </section>
-    </main>
+    <div class="blog-container">
+        <h1>Latest Broker Insights</h1>
+        <p>Stay informed with our latest broker reviews, comparisons, and industry insights.</p>
+        
+        <div class="blog-posts">
+            <article class="blog-post">
+                <h2 class="blog-title">Comprehensive Analysis - March 16</h2>
+                <div class="blog-meta">Posted on March 16, 2024 | By Broker Analyst</div>
+                <div class="blog-excerpt">
+                    <p>A detailed comparison of top trading brokers, analyzing their fees, features, and regulatory compliance...</p>
+                </div>
+                <a href="/blog/comprehensive-analysis-mar-16.html" class="read-more">Read More →</a>
+            </article>
+            
+            <!-- Add more blog posts here -->
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2023 Market Sentiment Hub. All rights reserved.</p>
