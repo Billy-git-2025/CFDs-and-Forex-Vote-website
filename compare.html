@@ -190,6 +190,22 @@
                 font-size: 1.3rem;
             }
         }
+
+        .compare-container p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .filter-highlight {
+            color: #327fff;
+            font-weight: 500;
+            background-color: #f0f7ff;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            display: inline-block;
+            margin: 0.2rem 0;
+        }
     </style>
 </head>
 <body>
@@ -211,7 +227,7 @@
     <div class="compare-container">
         <h1>Compare Trading Brokers</h1>
         <p>Compare brokers side by side to find the best match for your trading needs.</p>
-        <p>Use the filter to start find your best broker.</p>
+        <p class="filter-highlight">Use the filter to start find your best broker.</p>
         
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Filter by Broker Name..." onkeyup="filterTable()">
