@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://brokerchoose.com/</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://brokerchoose.com/images/logo.png</image:loc>
+            <image:title>Broker Choose - Compare Trading Brokers</image:title>
+            <image:caption>Compare trading brokers side by side</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://brokerchoose.com/compare.html</loc>
+        <lastmod>2024-03-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://brokerchoose.com/images/compare-brokers.png</image:loc>
+            <image:title>Compare Trading Brokers</image:title>
+            <image:caption>Detailed comparison of trading brokers</image:caption>
+        </image:image>
+    </url>
+</urlset> 
