@@ -232,26 +232,23 @@
         
         .site-nav ul {
             display: flex;
+            gap: 2rem;
+            align-items: center;
             list-style: none;
             margin: 0;
             padding: 0;
-            align-items: center;
-        }
-        
-        .site-nav li {
-            margin-left: 2rem;
         }
         
         .site-nav a {
             color: #333;
             text-decoration: none;
-            font-weight: 500;
+            padding: 0.5rem;
             transition: color 0.3s ease;
         }
         
         .site-nav a:hover,
         .site-nav a.active {
-            color: #2763c5;
+            color: #327fff;
         }
         
         .site-nav .discord-link {
@@ -261,6 +258,7 @@
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
         
         .site-nav .discord-link:hover {
@@ -587,7 +585,7 @@
 <body>
     <header class="site-header">
         <a href="/" class="site-title">Broker Choose</a>
-        <nav>
+        <nav class="site-nav">
             <ul>
                 <li><a href="/" class="active">Home</a></li>
                 <li><a href="/compare.html">Compare</a></li>
@@ -625,7 +623,7 @@
 
         <!-- MC Markets Sponsor Banner -->
         <div class="sponsor-banner">
-            <a href="https://broker-choose.com/compare.html?utm_source=broker-choose&utm_medium=website&utm_campaign=banner">
+            <a href="https://mcmarkets.com/?utm_source=broker-choose&utm_medium=website&utm_campaign=banner" target="_blank" rel="noopener">
                 <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
             </a>
         </div>
