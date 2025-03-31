@@ -207,13 +207,21 @@
         }
 
         .filter-highlight {
-            color: #327fff;
-            font-weight: 500;
-            background-color: #f0f7ff;
-            padding: 0.3rem 0.6rem;
-            border-radius: 4px;
+            color: #ffffff;
+            font-weight: 600;
+            background-color: #327fff;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
             display: inline-block;
-            margin: 0.2rem 0;
+            margin: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(50, 127, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .filter-highlight:hover {
+            background-color: #2763c5;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(50, 127, 255, 0.3);
         }
 
         .sponsor-banner {
@@ -314,7 +322,9 @@
 
     <!-- MC Markets Sponsor Banner -->
     <div class="sponsor-banner">
-        <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
+        <a href="https://broker-choose.com/compare.html?utm_source=broker-choose&utm_medium=website&utm_campaign=banner">
+            <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
+        </a>
     </div>
 
     <footer>
