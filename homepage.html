@@ -558,6 +558,29 @@
         .sitemap-link:hover {
             color: #327fff;
         }
+
+        .sponsor-banner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -598,6 +621,11 @@
                 <p>Check regulatory status and safety measures to ensure your funds are protected with trusted brokers.</p>
             </div>
         </section>
+
+        <!-- MC Markets Sponsor Banner -->
+        <div class="sponsor-banner">
+            <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
+        </div>
 
         <!-- Voting Section -->
         <div class="vote_mount_457adfa15e7c dis-vote" id="vote-section">
@@ -800,25 +828,25 @@
                     </div>
                     <div class="team-grid">
                         <div class="team-member">
-                            <img src="images/billy-chen.jpg" alt="Billy Chen - Technical Lead">
+                            <img src="images/team1.jpg" alt="Billy Chen - Technical Lead">
                             <h3>Billy Chen</h3>
                             <p>Co-founder & Technical Lead</p>
                             <p class="bio">Expert in algorithmic trading and market analysis with over 8 years of experience in quantitative finance.</p>
                         </div>
                         <div class="team-member">
-                            <img src="images/franky-wong.jpg" alt="Franky Wong - Research Director">
+                            <img src="images/team2.jpg" alt="Franky Wong - Research Director">
                             <h3>Franky Wong</h3>
                             <p>Co-founder & Research Director</p>
                             <p class="bio">Specializes in broker analysis and regulatory compliance with 12 years of industry experience.</p>
                         </div>
                         <div class="team-member">
-                            <img src="images/geoffrey-wallace.jpg" alt="Geoffrey Wallace - Strategy Lead">
+                            <img src="images/team3.jpg" alt="Geoffrey Wallace - Strategy Lead">
                             <h3>Geoffrey Wallace</h3>
                             <p>Co-founder & Strategy Lead</p>
                             <p class="bio">Former hedge fund manager with 15 years of experience in institutional trading and risk management.</p>
-            </div>
-            </div>
-            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -835,5 +863,7 @@
 
     <!-- Firebase SDK -->
     <script type="module" src="js/firebase-voting.js"></script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html> 

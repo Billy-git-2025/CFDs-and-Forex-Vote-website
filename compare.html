@@ -215,6 +215,29 @@
             display: inline-block;
             margin: 0.2rem 0;
         }
+
+        .sponsor-banner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -287,6 +310,11 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <!-- MC Markets Sponsor Banner -->
+    <div class="sponsor-banner">
+        <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
     </div>
 
     <footer>
@@ -407,5 +435,7 @@
         // Call populateTable when the page loads
         document.addEventListener("DOMContentLoaded", populateTable);
     </script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html> 
