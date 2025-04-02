@@ -2,7 +2,7 @@ const translations = {
     en: {
         // Head
         pageTitle: "Broker Choose | Compare Brokers for Trading",
-        metaDescription: "Compare trading brokers side by side. Find the best broker for your trading needs with detailed comparisons of fees, features, and regulations.",
+        metaDescription: "Make smarter trading decisions by comparing brokers based on fees, features, and regulations. Our comprehensive comparison tool helps you find the best broker for your trading style.",
         // Navigation
         home: "Home",
         compare: "Compare",
@@ -78,7 +78,7 @@ const translations = {
     de: {
         // Head
         pageTitle: "Broker Choose | Handelsbroker vergleichen",
-        metaDescription: "Vergleichen Sie Handelsbroker nebeneinander. Finden Sie den besten Broker für Ihre Handelsanforderungen mit detaillierten Vergleichen von Gebühren, Funktionen und Vorschriften.",
+        metaDescription: "Treffen Sie intelligentere Handelsentscheidungen durch den Vergleich von Brokern basierend auf Gebühren, Funktionen und Vorschriften. Unser umfassendes Vergleichstool hilft Ihnen, den besten Broker für Ihren Handelsstil zu finden.",
         // Navigation
         home: "Startseite",
         compare: "Vergleichen",
@@ -146,7 +146,7 @@ const translations = {
     es: {
         // Head
         pageTitle: "Broker Choose | Comparar Brokers de Trading",
-        metaDescription: "Compara brokers de trading lado a lado. Encuentra el mejor broker para tus necesidades de trading con comparaciones detalladas de comisiones, características y regulaciones.",
+        metaDescription: "Toma decisiones de trading más inteligentes comparando brokers según comisiones, características y regulaciones. Nuestra herramienta de comparación integral te ayuda a encontrar el mejor broker para tu estilo de trading.",
         // Navigation
         home: "Inicio",
         compare: "Comparar",
@@ -214,7 +214,7 @@ const translations = {
     fr: {
         // Head
         pageTitle: "Broker Choose | Comparer les Courtiers de Trading",
-        metaDescription: "Comparez les courtiers de trading côte à côte. Trouvez le meilleur courtier pour vos besoins de trading avec des comparaisons détaillées des frais, des fonctionnalités et des réglementations.",
+        metaDescription: "Prenez des décisions de trading plus intelligentes en comparant les courtiers selon les frais, les fonctionnalités et les réglementations. Notre outil de comparaison complet vous aide à trouver le meilleur courtier pour votre style de trading.",
         // Navigation
         home: "Accueil",
         compare: "Comparer",
@@ -282,7 +282,7 @@ const translations = {
     it: {
         // Head
         pageTitle: "Broker Choose | Confronta i Broker di Trading",
-        metaDescription: "Confronta i broker di trading fianco a fianco. Trova il miglior broker per le tue esigenze di trading con confronti dettagliati di commissioni, funzionalità e normative.",
+        metaDescription: "Prendi decisioni di trading più intelligenti confrontando i broker in base a commissioni, funzionalità e normative. Il nostro strumento di confronto completo ti aiuta a trovare il miglior broker per il tuo stile di trading.",
         // Navigation
         home: "Home",
         compare: "Confronta",
@@ -350,7 +350,7 @@ const translations = {
     "zh-CN": {
         // Head
         pageTitle: "Broker Choose | 比较交易经纪商",
-        metaDescription: "并排比较交易经纪商。通过详细比较手续费、功能和监管，找到最适合您交易需求的经纪商。",
+        metaDescription: "通过比较经纪商的手续费、功能和监管来做出更明智的交易决策。我们的综合比较工具帮助您找到最适合您交易风格的经纪商。",
         // Navigation
         home: "首页",
         compare: "比较",
@@ -418,7 +418,7 @@ const translations = {
     "zh-TW": {
         // Head
         pageTitle: "Broker Choose | 比較交易經紀商",
-        metaDescription: "並排比較交易經紀商。通過詳細比較手續費、功能和監管，找到最適合您交易需求的經紀商。",
+        metaDescription: "通過比較經紀商的手續費、功能和監管來做出更明智的交易決策。我們的綜合比較工具幫助您找到最適合您交易風格的經紀商。",
         // Navigation
         home: "首頁",
         compare: "比較",
@@ -486,7 +486,7 @@ const translations = {
     ar: {
         // Head
         pageTitle: "Broker Choose | مقارنة وسطاء التداول",
-        metaDescription: "قارن وسطاء التداول جنباً إلى جنب. اعثر على أفضل وسيط لاحتياجات التداول الخاصة بك مع مقارنات مفصلة للرسوم والميزات واللوائح التنظيمية.",
+        metaDescription: "اتخذ قرارات تداول أكثر ذكاءً من خلال مقارنة الوسطاء بناءً على الرسوم والميزات واللوائح التنظيمية. تساعدك أداتنا الشاملة للمقارنة في العثور على أفضل وسيط لنمط التداول الخاص بك.",
         // Navigation
         home: "الرئيسية",
         compare: "مقارنة",
@@ -554,7 +554,7 @@ const translations = {
     pt: {
         // Head
         pageTitle: "Broker Choose | Compare Corretores de Trading",
-        metaDescription: "Compare corretores de trading lado a lado. Encontre o melhor corretor para suas necessidades de trading com comparações detalhadas de taxas, recursos e regulamentações.",
+        metaDescription: "Tome decisões de trading mais inteligentes comparando corretores com base em taxas, recursos e regulamentações. Nossa ferramenta abrangente de comparação ajuda você a encontrar o melhor corretor para seu estilo de trading.",
         // Navigation
         home: "Início",
         compare: "Comparar",
@@ -622,7 +622,7 @@ const translations = {
     nl: {
         // Head
         pageTitle: "Broker Choose | Vergelijk Trading Brokers",
-        metaDescription: "Vergelijk trading brokers naast elkaar. Vind de beste broker voor uw trading behoeften met gedetailleerde vergelijkingen van kosten, functies en regelgeving.",
+        metaDescription: "Neem slimmere trading beslissingen door brokers te vergelijken op basis van kosten, functies en regelgeving. Onze uitgebreide vergelijkingstool helpt u de beste broker te vinden voor uw trading stijl.",
         // Navigation
         home: "Home",
         compare: "Vergelijken",
