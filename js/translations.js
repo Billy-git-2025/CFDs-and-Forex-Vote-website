@@ -1,5 +1,8 @@
 const translations = {
     en: {
+        // Head
+        pageTitle: "Broker Choose | Compare Brokers for Trading",
+        metaDescription: "Compare trading brokers side by side. Find the best broker for your trading needs with detailed comparisons of fees, features, and regulations.",
         // Navigation
         home: "Home",
         compare: "Compare",
@@ -73,6 +76,10 @@ const translations = {
         votes: "votes"
     },
     de: {
+        // Head
+        pageTitle: "Broker Choose | Handelsbroker vergleichen",
+        metaDescription: "Vergleichen Sie Handelsbroker nebeneinander. Finden Sie den besten Broker für Ihre Handelsanforderungen mit detaillierten Vergleichen von Gebühren, Funktionen und Vorschriften.",
+        // Navigation
         home: "Startseite",
         compare: "Vergleichen",
         joinDiscord: "Discord beitreten",
@@ -137,6 +144,10 @@ const translations = {
         votes: "Stimmen"
     },
     es: {
+        // Head
+        pageTitle: "Broker Choose | Comparar Brokers de Trading",
+        metaDescription: "Compara brokers de trading lado a lado. Encuentra el mejor broker para tus necesidades de trading con comparaciones detalladas de comisiones, características y regulaciones.",
+        // Navigation
         home: "Inicio",
         compare: "Comparar",
         joinDiscord: "Unirse a Discord",
@@ -201,6 +212,10 @@ const translations = {
         votes: "votes"
     },
     fr: {
+        // Head
+        pageTitle: "Broker Choose | Comparer les Courtiers de Trading",
+        metaDescription: "Comparez les courtiers de trading côte à côte. Trouvez le meilleur courtier pour vos besoins de trading avec des comparaisons détaillées des frais, des fonctionnalités et des réglementations.",
+        // Navigation
         home: "Accueil",
         compare: "Comparer",
         joinDiscord: "Rejoindre Discord",
@@ -265,6 +280,10 @@ const translations = {
         votes: "votes"
     },
     it: {
+        // Head
+        pageTitle: "Broker Choose | Confronta i Broker di Trading",
+        metaDescription: "Confronta i broker di trading fianco a fianco. Trova il miglior broker per le tue esigenze di trading con confronti dettagliati di commissioni, funzionalità e normative.",
+        // Navigation
         home: "Home",
         compare: "Confronta",
         joinDiscord: "Unisciti a Discord",
@@ -329,6 +348,10 @@ const translations = {
         votes: "votes"
     },
     "zh-CN": {
+        // Head
+        pageTitle: "Broker Choose | 比较交易经纪商",
+        metaDescription: "并排比较交易经纪商。通过详细比较手续费、功能和监管，找到最适合您交易需求的经纪商。",
+        // Navigation
         home: "首页",
         compare: "比较",
         joinDiscord: "加入 Discord",
@@ -393,6 +416,10 @@ const translations = {
         votes: "votes"
     },
     "zh-TW": {
+        // Head
+        pageTitle: "Broker Choose | 比較交易經紀商",
+        metaDescription: "並排比較交易經紀商。通過詳細比較手續費、功能和監管，找到最適合您交易需求的經紀商。",
+        // Navigation
         home: "首頁",
         compare: "比較",
         joinDiscord: "加入 Discord",
@@ -457,6 +484,10 @@ const translations = {
         votes: "votes"
     },
     ar: {
+        // Head
+        pageTitle: "Broker Choose | مقارنة وسطاء التداول",
+        metaDescription: "قارن وسطاء التداول جنباً إلى جنب. اعثر على أفضل وسيط لاحتياجات التداول الخاصة بك مع مقارنات مفصلة للرسوم والميزات واللوائح التنظيمية.",
+        // Navigation
         home: "الرئيسية",
         compare: "مقارنة",
         joinDiscord: "انضم إلى Discord",
@@ -521,6 +552,10 @@ const translations = {
         votes: "votes"
     },
     pt: {
+        // Head
+        pageTitle: "Broker Choose | Compare Corretores de Trading",
+        metaDescription: "Compare corretores de trading lado a lado. Encontre o melhor corretor para suas necessidades de trading com comparações detalhadas de taxas, recursos e regulamentações.",
+        // Navigation
         home: "Início",
         compare: "Comparar",
         joinDiscord: "Juntar-se ao Discord",
@@ -585,6 +620,10 @@ const translations = {
         votes: "votes"
     },
     nl: {
+        // Head
+        pageTitle: "Broker Choose | Vergelijk Trading Brokers",
+        metaDescription: "Vergelijk trading brokers naast elkaar. Vind de beste broker voor uw trading behoeften met gedetailleerde vergelijkingen van kosten, functies en regelgeving.",
+        // Navigation
         home: "Home",
         compare: "Vergelijken",
         joinDiscord: "Word lid van Discord",
