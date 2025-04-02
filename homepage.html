@@ -586,6 +586,42 @@
                 margin: 20px auto;
             }
         }
+
+        /* Language selector styling */
+        .language-selector {
+            margin-left: 1rem;
+        }
+        
+        .language-selector select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        
+        .language-selector select:hover {
+            border-color: #327fff;
+        }
+        
+        .language-selector select:focus {
+            outline: none;
+            border-color: #327fff;
+            box-shadow: 0 0 0 2px rgba(50, 127, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .language-selector {
+                margin-left: 0.5rem;
+            }
+            
+            .language-selector select {
+                padding: 0.4rem;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -593,12 +629,26 @@
         <a href="/" class="site-title">Broker Choose</a>
         <nav class="site-nav">
             <ul>
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="/compare.html">Compare</a></li>
+                <li><a href="/" class="active" data-translate="home">Home</a></li>
+                <li><a href="/compare.html" data-translate="compare">Compare</a></li>
                 <li>
                     <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
-                        <i class="fab fa-discord discord-icon"></i> Join Discord
+                        <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join Discord</span>
                     </a>
+                </li>
+                <li class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="it">Italiano</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="zh-TW">繁體中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="nl">Nederlands</option>
+                    </select>
                 </li>
             </ul>
         </nav>
@@ -606,24 +656,24 @@
 
     <main>
         <section class="welcome-section">
-            <h1>Find Your Perfect Trading Broker</h1>
-            <h2>Compare brokers side by side to make an informed decision</h2>
-            <p>Make smarter trading decisions by comparing brokers based on fees, features, and regulations. Our comprehensive comparison tool helps you find the best broker for your trading style.</p>
-            <a href="/compare.html" class="cta-button">Compare Brokers Now</a>
+            <h1 data-translate="findPerfectBroker">Find Your Perfect Trading Broker</h1>
+            <h2 data-translate="compareBrokers">Compare brokers side by side to make an informed decision</h2>
+            <p data-translate="makeSmarterDecisions">Make smarter trading decisions by comparing brokers based on fees, features, and regulations. Our comprehensive comparison tool helps you find the best broker for your trading style.</p>
+            <a href="/compare.html" class="cta-button" data-translate="compareNow">Compare Brokers Now</a>
         </section>
 
         <section class="market-highlights">
-                <div class="market-highlight">
-                <h3>Trading Fees</h3>
-                <p>Compare spreads, commissions, and other trading costs across different brokers to find the most cost-effective option.</p>
-                </div>
-                <div class="market-highlight">
-                <h3>Platform Features</h3>
-                <p>Evaluate trading platforms, tools, and features to ensure they match your trading requirements.</p>
-                </div>
-                <div class="market-highlight">
-                <h3>Regulations</h3>
-                <p>Check regulatory status and safety measures to ensure your funds are protected with trusted brokers.</p>
+            <div class="market-highlight">
+                <h3 data-translate="tradingFees">Trading Fees</h3>
+                <p data-translate="tradingFeesDesc">Compare spreads, commissions, and other trading costs across different brokers to find the most cost-effective option.</p>
+            </div>
+            <div class="market-highlight">
+                <h3 data-translate="platformFeatures">Platform Features</h3>
+                <p data-translate="platformFeaturesDesc">Evaluate trading platforms, tools, and features to ensure they match your trading requirements.</p>
+            </div>
+            <div class="market-highlight">
+                <h3 data-translate="regulations">Regulations</h3>
+                <p data-translate="regulationsDesc">Check regulatory status and safety measures to ensure your funds are protected with trusted brokers.</p>
             </div>
         </section>
 
@@ -827,11 +877,11 @@
 
         <section class="about-section">
             <div class="about-container">
-                <h2>About Us</h2>
+                <h2 data-translate="aboutUs">About Us</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Broker Choose is your trusted platform for comparing trading brokers and making informed investment decisions. We provide comprehensive analysis, detailed comparisons, and expert insights to help you find the perfect broker for your trading needs.</p>
-                        <p>Our mission is to empower traders with transparent, accurate, and up-to-date information about trading brokers. We believe that informed decisions lead to better trading outcomes, and we're committed to providing the tools and resources you need to succeed.</p>
+                        <p data-translate="aboutText1">Broker Choose is your trusted platform for comparing trading brokers and making informed investment decisions. We provide comprehensive analysis, detailed comparisons, and expert insights to help you find the perfect broker for your trading needs.</p>
+                        <p data-translate="aboutText2">Our mission is to empower traders with transparent, accurate, and up-to-date information about trading brokers. We believe that informed decisions lead to better trading outcomes, and we're committed to providing the tools and resources you need to succeed.</p>
                     </div>
                     <div class="team-grid">
                         <div class="team-member">
@@ -860,11 +910,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Broker Choose. All rights reserved. | 
+        <p><span data-translate="copyright">© 2025 Broker Choose. All rights reserved.</span> | 
         <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
-            <i class="fab fa-discord discord-icon"></i> Join our Discord
+            <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join our Discord</span>
         </a> | 
-        <a href="/sitemap.xml" class="sitemap-link">Sitemap</a>
+        <a href="/sitemap.xml" class="sitemap-link" data-translate="sitemap">Sitemap</a>
         </p>
     </footer>
 
@@ -872,5 +922,6 @@
     <script type="module" src="js/firebase-voting.js"></script>
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
+    <script src="js/translations.js"></script>
 </body>
 </html> 
