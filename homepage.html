@@ -688,23 +688,23 @@
         <div class="vote_mount_457adfa15e7c dis-vote" id="vote-section">
             <div class="feed__wrapper skin-white">
                 <div class="vote-content-wrapper vote_white discussM justify">
-                    <div class="vote-title overflow2">
+                    <div class="vote-title overflow2" data-translate="votingTitle">
                         How do you plan to invest now?
-                </div>
+                    </div>
                     <div class="pk-wrapper innerVoteWrapper">
                         <div class="not-vote-yet">
-                    <div class="vote-progress-wrapper">
+                            <div class="vote-progress-wrapper">
                                 <span class="left-rate" id="buy-percentage">50%</span>
-                        <div class="vote-progress-now" id="vote-progress-bar"></div>
+                                <div class="vote-progress-now" id="vote-progress-bar"></div>
                                 <span class="right-rate" id="cash-percentage">50%</span>
-                    </div>
-                    <div class="vote-option-wrapper">
+                            </div>
+                            <div class="vote-option-wrapper">
                                 <div id="vote-buy" class="vote-option vote-left-option">
-                                    <div class="vote-option-title overflow">Buying the Dip</div>
+                                    <div class="vote-option-title overflow" data-translate="buyingTheDip">Buying the Dip</div>
                                 </div>
                                 <div class="vote-sub-area"></div>
                                 <div id="vote-cash" class="vote-option vote-right-option">
-                                    <div class="vote-option-title overflow">Cashing Out</div>
+                                    <div class="vote-option-title overflow" data-translate="cashingOut">Cashing Out</div>
                                 </div>
                             </div>
                         </div>
@@ -713,10 +713,11 @@
                         <div class="vote-already">
                             <span>
                                 <span class="vote-already-num" id="total-votes">0</span>
-                                votes
+                                <span data-translate="votes">votes</span>
                             </span>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
@@ -727,151 +728,147 @@
         <div class="tradingview-widget-container">
             <div class="tradingview-widget-container__widget"></div>
             <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-        </div>
-        <!-- TradingView Widget Configuration -->
-        <script type="text/javascript">
-        var tradingviewWidgetConfig = {
-            "width": 1300,
-            "height": 1000,
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+            {
+            "width": "880",
+            "height": "600",
             "symbolsGroups": [
                 {
-                "name": "Indices",
-                "originalName": "Indices",
-                "symbols": [
-                    {
-                    "name": "FOREXCOM:SPXUSD",
-                    "displayName": "S&P 500 Index"
-                    },
-                    {
-                    "name": "FOREXCOM:NSXUSD",
-                    "displayName": "US 100 Cash CFD"
-                    },
-                    {
-                    "name": "FOREXCOM:DJI",
-                    "displayName": "Dow Jones Industrial Average Index"
-                    },
-                    {
-                    "name": "INDEX:NKY",
-                    "displayName": "Japan 225"
-                    },
-                    {
-                    "name": "INDEX:DEU40",
-                    "displayName": "DAX Index"
-                    },
-                    {
-                    "name": "FOREXCOM:UKXGBP",
-                    "displayName": "FTSE 100 Index"
-                    }
-                ]
+                    "name": "Indices",
+                    "originalName": "Indices",
+                    "symbols": [
+                        {
+                            "name": "FOREXCOM:SPXUSD",
+                            "displayName": "S&P 500 Index"
+                        },
+                        {
+                            "name": "FOREXCOM:NSXUSD",
+                            "displayName": "US 100 Cash CFD"
+                        },
+                        {
+                            "name": "FOREXCOM:DJI",
+                            "displayName": "Dow Jones Industrial Average Index"
+                        },
+                        {
+                            "name": "INDEX:NKY",
+                            "displayName": "Japan 225"
+                        },
+                        {
+                            "name": "INDEX:DEU40",
+                            "displayName": "DAX Index"
+                        },
+                        {
+                            "name": "FOREXCOM:UKXGBP",
+                            "displayName": "FTSE 100 Index"
+                        }
+                    ]
                 },
                 {
-                "name": "Futures",
-                "originalName": "Futures",
-                "symbols": [
-                    {
-                    "name": "CME_MINI:ES1!",
-                    "displayName": "S&P 500"
-                    },
-                    {
-                    "name": "CME:6E1!",
-                    "displayName": "Euro"
-                    },
-                    {
-                    "name": "COMEX:GC1!",
-                    "displayName": "Gold"
-                    },
-                    {
-                    "name": "NYMEX:CL1!",
-                    "displayName": "WTI Crude Oil"
-                    },
-                    {
-                    "name": "NYMEX:NG1!",
-                    "displayName": "Gas"
-                    },
-                    {
-                    "name": "CBOT:ZC1!",
-                    "displayName": "Corn"
-                    }
-                ]
+                    "name": "Forex",
+                    "originalName": "Forex",
+                    "symbols": [
+                        {
+                            "name": "FX:EURUSD",
+                            "displayName": "EUR to USD"
+                        },
+                        {
+                            "name": "FX:GBPUSD",
+                            "displayName": "GBP to USD"
+                        },
+                        {
+                            "name": "FX:USDJPY",
+                            "displayName": "USD to JPY"
+                        },
+                        {
+                            "name": "FX:USDCHF",
+                            "displayName": "USD to CHF"
+                        },
+                        {
+                            "name": "FX:AUDUSD",
+                            "displayName": "AUD to USD"
+                        },
+                        {
+                            "name": "FX:USDCAD",
+                            "displayName": "USD to CAD"
+                        }
+                    ]
                 },
                 {
-                "name": "Bonds",
-                "originalName": "Bonds",
-                "symbols": [
-                    {
-                    "name": "CBOT:ZB1!",
-                    "displayName": "T-Bond"
-                    },
-                    {
-                    "name": "CBOT:UB1!",
-                    "displayName": "Ultra T-Bond"
-                    },
-                    {
-                    "name": "EUREX:FGBL1!",
-                    "displayName": "Euro Bund"
-                    },
-                    {
-                    "name": "EUREX:FBTP1!",
-                    "displayName": "Euro BTP"
-                    },
-                    {
-                    "name": "EUREX:FGBM1!",
-                    "displayName": "Euro BOBL"
-                    }
-                ]
+                    "name": "Futures",
+                    "originalName": "Futures",
+                    "symbols": [
+                        {
+                            "name": "BMFBOVESPA:ISP1!",
+                            "displayName": "S&P 500 Index Futures"
+                        },
+                        {
+                            "name": "BMFBOVESPA:EUR1!",
+                            "displayName": "Euro Futures"
+                        },
+                        {
+                            "name": "PYTH:WTI3!",
+                            "displayName": "WTI CRUDE OIL"
+                        },
+                        {
+                            "name": "BMFBOVESPA:ETH1!",
+                            "displayName": "Hydrous ethanol"
+                        },
+                        {
+                            "name": "BMFBOVESPA:CCM1!",
+                            "displayName": "Corn"
+                        }
+                    ]
                 },
                 {
-                "name": "Forex",
-                "originalName": "Forex",
-                "symbols": [
-                    {
-                    "name": "FX:EURUSD",
-                    "displayName": "EUR to USD"
-                    },
-                    {
-                    "name": "FX:GBPUSD",
-                    "displayName": "GBP to USD"
-                    },
-                    {
-                    "name": "FX:USDJPY",
-                    "displayName": "USD to JPY"
-                    },
-                    {
-                    "name": "FX:USDCHF",
-                    "displayName": "USD to CHF"
-                    },
-                    {
-                    "name": "FX:AUDUSD",
-                    "displayName": "AUD to USD"
-                    },
-                    {
-                    "name": "FX:USDCAD",
-                    "displayName": "USD to CAD"
-                    }
-                ]
+                    "name": "Bonds",
+                    "originalName": "Bonds",
+                    "symbols": [
+                        {
+                            "name": "EUREX:FGBL1!",
+                            "displayName": "Euro Bund"
+                        },
+                        {
+                            "name": "EUREX:FBTP1!",
+                            "displayName": "Euro BTP"
+                        },
+                        {
+                            "name": "EUREX:FGBM1!",
+                            "displayName": "Euro BOBL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Crypto",
+                    "symbols": [
+                        {
+                            "name": "BINANCE:BTCUSDT"
+                        },
+                        {
+                            "name": "BITSTAMP:BTCUSD"
+                        },
+                        {
+                            "name": "BINANCE:ETHUSDT"
+                        },
+                        {
+                            "name": "COINBASE:ETHUSD"
+                        },
+                        {
+                            "name": "COINBASE:SOLUSD"
+                        },
+                        {
+                            "name": "BITSTAMP:XRPUSD"
+                        }
+                    ]
                 }
             ],
-            "showSymbolLogo": true,
+            "showSymbolLogo": false,
             "isTransparent": false,
             "colorTheme": "dark",
             "locale": "en",
             "backgroundColor": "#131722"
-        };
-        </script>
-        <!-- TradingView Widget Loader -->
-        <script type="text/javascript">
-        (function() {
-            var script = document.createElement('script');
-            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js";
-            script.async = true;
-            script.type = 'text/javascript';
-            script.onload = function() {
-                console.log('TradingView widget loaded');
-            };
-            script.innerHTML = JSON.stringify(tradingviewWidgetConfig);
-            document.querySelector('.tradingview-widget-container__widget').appendChild(script);
-        })();
-        </script>
+            }
+            </script>
+        </div>
         <!-- TradingView Widget END -->
     </div>
 

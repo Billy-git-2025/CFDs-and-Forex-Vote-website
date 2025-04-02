@@ -64,7 +64,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     de: {
         home: "Startseite",
@@ -122,7 +128,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Kundenservice",
         accountOpening: "Kontoeröffnung",
-        overallScore: "Gesamtbewertung"
+        overallScore: "Gesamtbewertung",
+        
+        // Voting Section
+        votingTitle: "Wie planen Sie jetzt zu investieren?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "Stimmen"
     },
     es: {
         home: "Inicio",
@@ -180,7 +192,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     fr: {
         home: "Accueil",
@@ -238,7 +256,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     it: {
         home: "Home",
@@ -296,7 +320,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     "zh-CN": {
         home: "首页",
@@ -354,7 +384,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     "zh-TW": {
         home: "首頁",
@@ -412,7 +448,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     ar: {
         home: "الرئيسية",
@@ -470,7 +512,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     pt: {
         home: "Início",
@@ -528,7 +576,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     },
     nl: {
         home: "Home",
@@ -586,7 +640,13 @@ const translations = {
         mt5: "MT5",
         customerService: "Customer Service",
         accountOpening: "Account Opening",
-        overallScore: "Overall Score"
+        overallScore: "Overall Score",
+        
+        // Voting Section
+        votingTitle: "How do you plan to invest now?",
+        buyingTheDip: "Buying the Dip",
+        cashingOut: "Cashing Out",
+        votes: "votes"
     }
 };
 
