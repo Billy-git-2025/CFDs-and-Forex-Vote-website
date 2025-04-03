@@ -359,7 +359,7 @@
             var input, filter, table, tr, td, i, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toLowerCase();
-            table = document.getElementById("brokerTable");
+            table = document.querySelector(".broker-table");
             tr = table.getElementsByTagName("tr");
 
             for (i = 1; i < tr.length; i++) {
@@ -377,7 +377,7 @@
 
         function sortTable() {
             var sortBy = document.getElementById("sortBy").value;
-            var table = document.getElementById("brokerTable");
+            var table = document.querySelector(".broker-table");
             var tbody = table.getElementsByTagName("tbody")[0];
             var rows = Array.from(tbody.getElementsByTagName("tr"));
 
@@ -416,9 +416,6 @@
                 tbody.appendChild(row);
             });
         }
-
-        // Add event listener for sort select
-        document.getElementById("sortBy").addEventListener("change", sortTable);
 
         // Initialize table with data
         function populateTable() {
