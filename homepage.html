@@ -919,5 +919,121 @@
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
     <script src="js/translations.js"></script>
+    <script src="js/broker-data.js"></script>
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            table = document.querySelector(".broker-table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        function sortTable() {
+            var sortBy = document.getElementById("sortBy").value;
+            var table = document.querySelector(".broker-table");
+            var tbody = table.getElementsByTagName("tbody")[0];
+            var rows = Array.from(tbody.getElementsByTagName("tr"));
+
+            rows.sort(function(a, b) {
+                var aValue, bValue;
+                
+                switch(sortBy) {
+                    case "score":
+                        aValue = parseFloat(a.cells[1].textContent);
+                        bValue = parseFloat(b.cells[1].textContent);
+                        break;
+                    case "popularity":
+                        aValue = parseFloat(a.cells[2].textContent);
+                        bValue = parseFloat(b.cells[2].textContent);
+                        break;
+                    case "fees":
+                        aValue = parseFloat(a.cells[3].textContent.replace(/[^0-9.-]+/g,""));
+                        bValue = parseFloat(b.cells[3].textContent.replace(/[^0-9.-]+/g,""));
+                        break;
+                    case "minDeposit":
+                        aValue = parseFloat(a.cells[12].textContent.replace(/[^0-9.-]+/g,""));
+                        bValue = parseFloat(b.cells[12].textContent.replace(/[^0-9.-]+/g,""));
+                        break;
+                    default:
+                        return 0;
+                }
+
+                if (isNaN(aValue)) aValue = 0;
+                if (isNaN(bValue)) bValue = 0;
+
+                return bValue - aValue;
+            });
+
+            // Clear and re-append sorted rows
+            rows.forEach(function(row) {
+                tbody.appendChild(row);
+            });
+        }
+
+        // Initialize table with data
+        function populateTable() {
+            var tbody = document.getElementById("brokerTableBody");
+            tbody.innerHTML = ""; // Clear existing content
+
+            // Sort brokers by score before populating
+            brokers.sort((a, b) => b.score - a.score);
+
+            brokers.forEach(function(broker) {
+                var row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${broker.name}</td>
+                    <td>${broker.score}</td>
+                    <td>${broker.popularity}</td>
+                    <td>${broker.usStockFee}</td>
+                    <td>${broker.eurusdSpread}</td>
+                    <td>${broker.sp500CfdSpread}</td>
+                    <td>${broker.withdrawalFee}</td>
+                    <td>${broker.depositFee}</td>
+                    <td>${broker.inactivityFee}</td>
+                    <td>${broker.regulators}</td>
+                    <td>${broker.foundationDate}</td>
+                    <td>${broker.investorProtection}</td>
+                    <td>${broker.minDeposit}</td>
+                    <td>${broker.bankTransfer ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.creditDebit ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.paypal ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.wise ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.revolut ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.otherEWallets ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.mobileScore}</td>
+                    <td>${broker.webScore}</td>
+                    <td>${broker.mt4 ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.mt5 ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.customerService}</td>
+                    <td>${broker.accountOpening}</td>
+                    <td>${broker.overallScore}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Set up event listeners when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize table with sorted data
+            populateTable();
+            
+            // Add event listeners
+            document.getElementById("sortBy").addEventListener("change", sortTable);
+            document.getElementById("searchInput").addEventListener("input", filterTable);
+        });
+    </script>
 </body>
 </html> 
