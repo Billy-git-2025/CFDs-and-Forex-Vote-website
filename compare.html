@@ -425,6 +425,9 @@
             var tbody = document.getElementById("brokerTableBody");
             tbody.innerHTML = ""; // Clear existing content
 
+            // Sort brokers by score before populating
+            brokers.sort((a, b) => b.score - a.score);
+
             brokers.forEach(function(broker) {
                 var row = document.createElement("tr");
                 row.innerHTML = `
@@ -459,8 +462,15 @@
             });
         }
 
-        // Call populateTable when the page loads
-        document.addEventListener("DOMContentLoaded", populateTable);
+        // Set up event listeners when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize table with sorted data
+            populateTable();
+            
+            // Add event listeners
+            document.getElementById("sortBy").addEventListener("change", sortTable);
+            document.getElementById("searchInput").addEventListener("input", filterTable);
+        });
     </script>
     <!-- Vercel Analytics -->
     <script defer src="/_vercel/insights/script.js"></script>
