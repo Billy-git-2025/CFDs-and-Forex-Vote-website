@@ -621,6 +621,97 @@
                 font-size: 0.8rem;
             }
         }
+
+        .faq-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-item h3 {
+            color: #327fff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section {
+                padding: 40px 0;
+            }
+
+            .faq-section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .faq-item {
+                padding: 20px;
+            }
+
+            .faq-item h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-section {
+                padding: 30px 0;
+            }
+
+            .faq-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
+
+            .faq-item {
+                padding: 15px;
+            }
+
+            .faq-item h3 {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -899,6 +990,31 @@
                             <p class="bio">Former hedge fund manager with 15 years of experience in institutional trading and risk management.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Why do you need Broker Choose website to help you compare all brokers on the markets?</h3>
+                    <p>Broker Choose provides a comprehensive comparison platform that saves you time and effort in researching brokers. Our website offers detailed side-by-side comparisons of trading fees, platform features, regulations, and more. This helps you make informed decisions by having all the essential information in one place, rather than spending hours researching multiple broker websites individually.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Where should you choose the best broker?</h3>
+                    <p>The best broker for you depends on your specific trading needs, experience level, and investment goals. Consider factors such as trading fees, platform usability, available markets, regulatory status, and customer support. Use our comparison tool to evaluate these aspects across different brokers and find the one that best matches your requirements.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is region a way to help you choose broker?</h3>
+                    <p>Yes, your region is an important factor when choosing a broker. Different brokers operate in different regions and may be subject to various regulatory requirements. Some brokers may not accept clients from certain countries, while others may offer specialized services for specific regions. Consider your location and the broker's regulatory status in your region to ensure compliance and access to appropriate services.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can we add our list to your website?</h3>
+                    <p>Yes, you can! We welcome suggestions for brokers to add to our comparison platform. Please join our Discord channel and message us with your recommendations. We'll review each suggestion to ensure it meets our criteria for inclusion in our comprehensive broker comparison.</p>
                 </div>
             </div>
         </div>
