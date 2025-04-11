@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9M85WK6TT"></script>
     <script>
@@ -133,12 +134,14 @@
             
             .search-box input {
                 width: 100%;
-                padding: 8px;
+                padding: 12px;
+                font-size: 16px;
             }
 
             .sort-select {
                 width: 100%;
-                padding: 8px;
+                padding: 12px;
+                font-size: 16px;
             }
             
             table {
@@ -146,28 +149,60 @@
             }
             
             th, td {
-                padding: 8px;
-                min-width: 120px;
+                padding: 10px 8px;
+                min-width: 100px;
+                white-space: nowrap;
             }
 
             td:first-child {
-                min-width: 150px;
+                min-width: 120px;
+                position: sticky;
+                left: 0;
+                background-color: white;
+                z-index: 5;
             }
 
             .table-container {
                 margin: 10px -10px;
                 width: calc(100% + 20px);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .table-scroll {
                 margin-bottom: 10px;
+                min-width: 1000px;
             }
 
             h1 {
                 font-size: 1.5rem;
+                margin-bottom: 10px;
             }
 
             p {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+            }
+
+            .filter-highlight {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
+            .broker-cards {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .broker-card {
+                padding: 20px;
+            }
+
+            .broker-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .broker-card p {
                 font-size: 0.9rem;
             }
         }
@@ -180,6 +215,7 @@
             .search-box input,
             .sort-select {
                 font-size: 14px;
+                padding: 10px;
             }
 
             table {
@@ -187,16 +223,33 @@
             }
 
             th, td {
-                padding: 6px;
-                min-width: 100px;
+                padding: 8px 6px;
+                min-width: 90px;
             }
 
             td:first-child {
-                min-width: 120px;
+                min-width: 110px;
             }
 
             h1 {
                 font-size: 1.3rem;
+            }
+
+            .filter-highlight {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+
+            .broker-card {
+                padding: 15px;
+            }
+
+            .broker-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .broker-card p {
+                font-size: 0.8rem;
             }
         }
 
