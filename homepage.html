@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="en" href="https://broker-choose.com/" />
+    <link rel="alternate" hreflang="es" href="https://broker-choose.com/es/" />
+    <link rel="alternate" hreflang="fr" href="https://broker-choose.com/fr/" />
+    <link rel="alternate" hreflang="de" href="https://broker-choose.com/de/" />
+    <link rel="alternate" hreflang="it" href="https://broker-choose.com/it/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://broker-choose.com/zh-CN/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://broker-choose.com/zh-TW/" />
+    <link rel="alternate" hreflang="ar" href="https://broker-choose.com/ar/" />
+    <link rel="alternate" hreflang="pt" href="https://broker-choose.com/pt/" />
+    <link rel="alternate" hreflang="nl" href="https://broker-choose.com/nl/" />
+    <link rel="alternate" hreflang="x-default" href="https://broker-choose.com/" />
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1161,6 +1173,27 @@
             // Add event listeners
             document.getElementById("sortBy").addEventListener("change", sortTable);
             document.getElementById("searchInput").addEventListener("input", filterTable);
+        });
+
+        function changeLanguage(lang) {
+            if (lang === 'en') {
+                window.location.href = '/';
+            } else {
+                window.location.href = '/' + lang + '/';
+            }
+        }
+
+        // Get current language from URL
+        function getCurrentLanguage() {
+            const path = window.location.pathname;
+            const langMatch = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+            return langMatch ? langMatch[1] : 'en';
+        }
+
+        // Set initial language in selector
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLang = getCurrentLanguage();
+            document.getElementById('languageSelect').value = currentLang;
         });
     </script>
 </body>
