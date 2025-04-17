@@ -693,17 +693,34 @@ function changeLanguage(lang) {
     // Store the selected language in localStorage
     localStorage.setItem('selectedLanguage', lang);
     
-    // Update the page content
-    updatePageContent(lang);
+    // Get current path without language prefix
+    const currentPath = window.location.pathname;
+    const pathWithoutLang = currentPath.replace(/^\/([a-z]{2}(?:-[A-Z]{2})?)\/?/, '/');
     
-    // Update the HTML lang attribute
-    document.documentElement.lang = lang;
-    
-    // For RTL languages (Arabic), update the direction
-    if (lang === 'ar') {
-        document.documentElement.dir = 'rtl';
+    // Construct new URL
+    let newPath;
+    if (lang === 'en') {
+        newPath = pathWithoutLang;
     } else {
-        document.documentElement.dir = 'ltr';
+        newPath = `/${lang}${pathWithoutLang}`;
+    }
+    
+    // Only redirect if the new path is different from current path
+    if (newPath !== currentPath) {
+        window.location.href = newPath;
+    } else {
+        // If we're already on the correct path, just update the content
+        updatePageContent(lang);
+        
+        // Update the HTML lang attribute
+        document.documentElement.lang = lang;
+        
+        // For RTL languages (Arabic), update the direction
+        if (lang === 'ar') {
+            document.documentElement.dir = 'rtl';
+        } else {
+            document.documentElement.dir = 'ltr';
+        }
     }
 }
 
@@ -727,6 +744,29 @@ function updatePageContent(lang) {
 
 // Initialize language on page load
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
-    changeLanguage(savedLang);
+    // Get language from URL first
+    const path = window.location.pathname;
+    const langMatch = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+    
+    // Use URL language, or fallback to saved language, or default to 'en'
+    const urlLang = langMatch ? langMatch[1] : null;
+    const savedLang = localStorage.getItem('selectedLanguage');
+    const initialLang = urlLang || savedLang || 'en';
+    
+    // Update language selector to match current language
+    const languageSelect = document.getElementById('languageSelect');
+    if (languageSelect) {
+        languageSelect.value = initialLang;
+    }
+    
+    // Update page content without causing redirect
+    updatePageContent(initialLang);
+    document.documentElement.lang = initialLang;
+    
+    // Set RTL for Arabic
+    if (initialLang === 'ar') {
+        document.documentElement.dir = 'rtl';
+    } else {
+        document.documentElement.dir = 'ltr';
+    }
 }); 
