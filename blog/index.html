@@ -19,8 +19,22 @@
                 <li><a href="/blog" class="active">Blog</a></li>
                 <li>
                     <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
-                        <i class="fab fa-discord discord-icon"></i> Join Discord
+                        <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join Discord</span>
                     </a>
+                </li>
+                <li class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="it">Italiano</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="zh-TW">繁體中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="nl">Nederlands</option>
+                    </select>
                 </li>
             </ul>
         </nav>
