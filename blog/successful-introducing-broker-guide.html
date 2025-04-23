@@ -229,5 +229,29 @@
     <footer class="site-footer">
         <p>&copy; 2024 Broker Choose. All rights reserved.</p>
     </footer>
+
+    <script src="../js/translations.js"></script>
+    <script>
+        function changeLanguage(lang) {
+            if (lang === 'en') {
+                window.location.href = '/';
+            } else {
+                window.location.href = '/' + lang + '/';
+            }
+        }
+
+        // Get current language from URL
+        function getCurrentLanguage() {
+            const path = window.location.pathname;
+            const langMatch = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+            return langMatch ? langMatch[1] : 'en';
+        }
+
+        // Set initial language in selector
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLang = getCurrentLanguage();
+            document.getElementById('languageSelect').value = currentLang;
+        });
+    </script>
 </body>
 </html>
