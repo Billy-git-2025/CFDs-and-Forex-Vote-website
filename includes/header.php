@@ -46,49 +46,6 @@
     <?php endif; ?>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Discord Link -->
-    <div class="discord-link">
-        <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-discord"></i> Join our Discord
-        </a>
-    </div>
-    <style>
-        .discord-link {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .discord-link a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background-color: #7289DA;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: background-color 0.3s ease;
-        }
-        
-        .discord-link a:hover {
-            background-color: #5f73bc;
-        }
-        
-        @media (max-width: 768px) {
-            .discord-link {
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .discord-link a {
-                padding: 8px 16px;
-                font-size: 14px;
-            }
-        }
-    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -96,35 +53,104 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <header>
-        <nav>
-            <div class="nav-container">
-                <a href="<?php echo $isBlog ? '../index.html' : 'index.html'; ?>" class="logo">
-                    <img src="<?php echo $isBlog ? '../images/logo.png' : 'images/logo.png'; ?>" alt="CFDs and Forex Vote Logo">
-                </a>
-                
-                <div class="nav-links">
-                    <a href="<?php echo $isBlog ? '../index.html' : 'index.html'; ?>" class="<?php echo $currentPage === 'index.html' ? 'active' : ''; ?>">Home</a>
-                    <a href="<?php echo $isBlog ? '../compare.html' : 'compare.html'; ?>" class="<?php echo $currentPage === 'compare.html' ? 'active' : ''; ?>">Compare</a>
-                    <a href="<?php echo $isBlog ? '../blog/index.html' : 'blog/index.html'; ?>" class="<?php echo $isBlog ? 'active' : ''; ?>">Blog</a>
-                </div>
-                
-                <div class="language-selector">
-                    <select onchange="window.location.href=this.value">
-                        <option value="https://cfdsandforexvote.com/" <?php echo $currentLang === 'en' ? 'selected' : ''; ?>>English</option>
-                        <option value="https://cfdsandforexvote.com/es/" <?php echo $currentLang === 'es' ? 'selected' : ''; ?>>Español</option>
-                        <option value="https://cfdsandforexvote.com/fr/" <?php echo $currentLang === 'fr' ? 'selected' : ''; ?>>Français</option>
-                        <option value="https://cfdsandforexvote.com/de/" <?php echo $currentLang === 'de' ? 'selected' : ''; ?>>Deutsch</option>
-                        <option value="https://cfdsandforexvote.com/it/" <?php echo $currentLang === 'it' ? 'selected' : ''; ?>>Italiano</option>
-                        <option value="https://cfdsandforexvote.com/zh/" <?php echo $currentLang === 'zh' ? 'selected' : ''; ?>>中文 (简体)</option>
-                        <option value="https://cfdsandforexvote.com/zh-tw/" <?php echo $currentLang === 'zh-tw' ? 'selected' : ''; ?>>中文 (繁體)</option>
-                        <option value="https://cfdsandforexvote.com/ar/" <?php echo $currentLang === 'ar' ? 'selected' : ''; ?>>العربية</option>
-                        <option value="https://cfdsandforexvote.com/pt/" <?php echo $currentLang === 'pt' ? 'selected' : ''; ?>>Português</option>
-                        <option value="https://cfdsandforexvote.com/nl/" <?php echo $currentLang === 'nl' ? 'selected' : ''; ?>>Nederlands</option>
-                    </select>
-                </div>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="<?php echo $isBlog ? '../index.html' : 'index.html'; ?>" class="site-title">
+                <img src="<?php echo $isBlog ? '../images/logo.png' : 'images/logo.png'; ?>" alt="CFDs and Forex Vote Logo">
+            </a>
+            
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="<?php echo $isBlog ? '../index.html' : 'index.html'; ?>" class="<?php echo $currentPage === 'index.html' ? 'active' : ''; ?>">Home</a></li>
+                    <li><a href="<?php echo $isBlog ? '../compare.html' : 'compare.html'; ?>" class="<?php echo $currentPage === 'compare.html' ? 'active' : ''; ?>">Compare</a></li>
+                    <li><a href="<?php echo $isBlog ? '../blog/index.html' : 'blog/index.html'; ?>" class="<?php echo $isBlog ? 'active' : ''; ?>">Blog</a></li>
+                </ul>
+            </nav>
+            
+            <div class="language-selector">
+                <select onchange="window.location.href=this.value">
+                    <option value="https://cfdsandforexvote.com/" <?php echo $currentLang === 'en' ? 'selected' : ''; ?>>English</option>
+                    <option value="https://cfdsandforexvote.com/es/" <?php echo $currentLang === 'es' ? 'selected' : ''; ?>>Español</option>
+                    <option value="https://cfdsandforexvote.com/fr/" <?php echo $currentLang === 'fr' ? 'selected' : ''; ?>>Français</option>
+                    <option value="https://cfdsandforexvote.com/de/" <?php echo $currentLang === 'de' ? 'selected' : ''; ?>>Deutsch</option>
+                    <option value="https://cfdsandforexvote.com/it/" <?php echo $currentLang === 'it' ? 'selected' : ''; ?>>Italiano</option>
+                    <option value="https://cfdsandforexvote.com/zh/" <?php echo $currentLang === 'zh' ? 'selected' : ''; ?>>中文 (简体)</option>
+                    <option value="https://cfdsandforexvote.com/zh-tw/" <?php echo $currentLang === 'zh-tw' ? 'selected' : ''; ?>>中文 (繁體)</option>
+                    <option value="https://cfdsandforexvote.com/ar/" <?php echo $currentLang === 'ar' ? 'selected' : ''; ?>>العربية</option>
+                    <option value="https://cfdsandforexvote.com/pt/" <?php echo $currentLang === 'pt' ? 'selected' : ''; ?>>Português</option>
+                    <option value="https://cfdsandforexvote.com/nl/" <?php echo $currentLang === 'nl' ? 'selected' : ''; ?>>Nederlands</option>
+                </select>
             </div>
-        </nav>
+        </div>
     </header>
+
+    <style>
+        .site-header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .site-title img {
+            height: 40px;
+            width: auto;
+        }
+        
+        .site-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #327fff;
+        }
+        
+        .language-selector select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .site-nav ul {
+                gap: 1rem;
+            }
+            
+            .site-title img {
+                height: 30px;
+            }
+        }
+    </style>
 </body>
 </html> 
