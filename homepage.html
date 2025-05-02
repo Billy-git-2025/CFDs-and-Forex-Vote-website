@@ -1,436 +1,1201 @@
-<?php
-$currentPage = 'index.html';
-$pageTitle = 'Broker Choose | Help You Choose Brokers and Compare Brokers 2025';
-$metaDescription = 'Compare trading brokers side by side in 2025. Find the best broker for your trading needs with detailed comparisons.';
-include 'includes/header.php';
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="en" href="https://broker-choose.com/" />
+    <link rel="alternate" hreflang="es" href="https://broker-choose.com/es/" />
+    <link rel="alternate" hreflang="fr" href="https://broker-choose.com/fr/" />
+    <link rel="alternate" hreflang="de" href="https://broker-choose.com/de/" />
+    <link rel="alternate" hreflang="it" href="https://broker-choose.com/it/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://broker-choose.com/zh-CN/" />
+    <link rel="alternate" hreflang="zh-TW" href="https://broker-choose.com/zh-TW/" />
+    <link rel="alternate" hreflang="ar" href="https://broker-choose.com/ar/" />
+    <link rel="alternate" hreflang="pt" href="https://broker-choose.com/pt/" />
+    <link rel="alternate" hreflang="nl" href="https://broker-choose.com/nl/" />
+    <link rel="alternate" hreflang="x-default" href="https://broker-choose.com/" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KMRPCTZJ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9M85WK6TT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    <div class="welcome-section">
-        <h1 data-translate="findPerfectBroker">Find Your Perfect Trading Broker</h1>
-        <h2 data-translate="compareBrokers">Compare brokers 2025 side by side to make an informed decision</h2>
-        <p data-translate="makeSmarterDecisions">Make smarter trading decisions by comparing brokers based on fees, features, and regulations. Our comprehensive comparison tool helps you find the best broker for your trading style.</p>
-        <a href="/compare.html" class="cta-button" data-translate="compareNow">Compare Brokers Now</a>
+        gtag('config', 'G-V9M85WK6TT');
+    </script>
+    <title data-translate="pageTitle">Broker Choose | Help You Choose Brokers and Compare Brokers 2025</title>
+    <meta name="description" content="Compare trading brokers side by side in 2025. Find the best broker for your trading needs with detailed comparisons." data-translate="metaDescription">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/vote-styles.css">
+    <!-- Font Awesome for Discord icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .discord-link {
+            color: #7289DA; /* Discord color */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: opacity 0.2s;
+        }
+        .discord-link:hover {
+            opacity: 0.8;
+        }
+        .discord-icon {
+            font-size: 1.2em;
+        }
+        /* For smaller screens, make the nav more responsive */
+        @media (max-width: 768px) {
+            header nav ul {
+                gap: 15px;
+            }
+        }
+        
+        /* Welcome section styling */
+        .welcome-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(248, 249, 250, 0.9), rgba(233, 236, 239, 0.9)), url('images/Broker to choose .jpeg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .welcome-section h1 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .welcome-section h2 {
+            color: #34495e;
+            font-weight: 500;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 15px;
+            text-align: left;
+        }
+        
+        .market-highlights {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .market-highlight {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: 180px;
+        }
+        
+        .market-highlight h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .market-highlight p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #dbc106;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #c4a905;
+            transform: translateY(-2px);
+        }
+
+        .site-header {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+        
+        .site-title {
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .site-title:hover {
+            color: #2763c5;
+        }
+
+        /* Adjust main content to account for fixed header */
+        main {
+            margin-top: 80px;
+        }
+
+        .latest-posts {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card h3 {
+            color: #2763c5;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #dbc106;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #c4a905;
+        }
+
+        .welcome-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .welcome-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .welcome-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #555;
+        }
+
+        .site-nav {
+            margin-left: auto;
+        }
+        
+        .site-nav ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .site-nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .site-nav a:hover,
+        .site-nav a.active {
+            color: #327fff;
+        }
+        
+        .site-nav .discord-link {
+            display: flex;
+            align-items: center;
+            background-color: #5865F2;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .site-nav .discord-link:hover {
+            background-color: #4752c4;
+            color: white;
+        }
+        
+        .discord-icon {
+            margin-right: 0.5rem;
+            color: white;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .site-header {
+                padding: 0.8rem 1rem;
+            }
+            
+            .site-title {
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .discord-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
+            
+            .welcome-section {
+                padding: 20px 10px;
+                margin: 10px;
+            }
+            
+            .welcome-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-content p {
+                font-size: 1rem;
+            }
+
+            .market-highlights {
+                flex-direction: column;
+                padding: 0 15px;
+            }
+
+            .market-highlight {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .widget-container {
+                padding: 0 10px;
+            }
+
+            .tradingview-widget-container {
+                max-width: 100%;
+                overflow-x: auto;
+            }
+
+            .about-section {
+                padding: 2rem 0;
+                margin-top: 2rem;
+            }
+
+            .about-container {
+                padding: 0 1rem;
+            }
+
+            .about-text p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0 10px;
+            }
+
+            .team-member {
+                padding: 1.5rem;
+            }
+
+            .team-member img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .team-member h3 {
+                font-size: 1.1rem;
+            }
+
+            .team-member p {
+                font-size: 0.9rem;
+            }
+
+            .team-member .bio {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .site-header {
+                padding: 0.6rem 0.8rem;
+            }
+            
+            .site-title {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                gap: 0.8rem;
+            }
+            
+            nav a {
+                padding: 0.4rem;
+                font-size: 0.8rem;
+            }
+
+            .discord-link {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+            
+            .welcome-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .welcome-content p {
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .market-highlight h3 {
+                font-size: 0.9rem;
+            }
+
+            .market-highlight p {
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        .widget-container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .tradingview-widget-container {
+            width: 100% !important;
+            max-height: 1500px;
+        }
+
+        @media (max-width: 768px) {
+            .widget-container {
+                padding: 10px;
+            }
+
+            .tradingview-widget-container {
+                max-height: 1200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .widget-container {
+                padding: 5px;
+            }
+
+            .tradingview-widget-container {
+                max-height: 1000px;
+            }
+        }
+
+        .about-section {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-text p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .bio {
+            font-size: 0.9rem;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 0 1rem;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+        }
+
+        .about-section h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .sitemap-link {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .sitemap-link:hover {
+            color: #327fff;
+        }
+
+        .sponsor-banner {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .sponsor-banner {
+                padding: 0 10px;
+                margin: 20px auto;
+            }
+        }
+
+        /* Language selector styling */
+        .language-selector {
+            margin-left: 1rem;
+        }
+        
+        .language-selector select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        
+        .language-selector select:hover {
+            border-color: #327fff;
+        }
+        
+        .language-selector select:focus {
+            outline: none;
+            border-color: #327fff;
+            box-shadow: 0 0 0 2px rgba(50, 127, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .language-selector {
+                margin-left: 0.5rem;
+            }
+            
+            .language-selector select {
+                padding: 0.4rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .faq-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-item h3 {
+            color: #327fff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .faq-item p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section {
+                padding: 40px 0;
+            }
+
+            .faq-section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            .faq-item {
+                padding: 20px;
+            }
+
+            .faq-item h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .faq-section {
+                padding: 30px 0;
+            }
+
+            .faq-section h2 {
+                font-size: 1.5rem;
+                margin-bottom: 25px;
+            }
+
+            .faq-item {
+                padding: 15px;
+            }
+
+            .faq-item h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMRPCTZJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="site-header">
+        <a href="/" class="site-title">Broker Choose</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/" class="active" data-translate="home">Home</a></li>
+                <li><a href="/compare.html" data-translate="compare">Compare</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li>
+                    <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
+                        <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join Discord</span>
+                    </a>
+                </li>
+                <li class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="it">Italiano</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="zh-TW">繁體中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="nl">Nederlands</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h1 data-translate="findPerfectBroker">Find Your Perfect Trading Broker</h1>
+            <h2 data-translate="compareBrokers">Compare brokers 2025 side by side to make an informed decision</h2>
+            <p data-translate="makeSmarterDecisions">Make smarter trading decisions by comparing brokers based on fees, features, and regulations. Our comprehensive comparison tool helps you find the best broker for your trading style.</p>
+            <a href="/compare.html" class="cta-button" data-translate="compareNow">Compare Brokers Now</a>
+        </section>
+
+        <section class="market-highlights">
+            <div class="market-highlight">
+                <h3 data-translate="tradingFees">Trading Fees</h3>
+                <p data-translate="tradingFeesDesc">Compare spreads, commissions, and other trading costs across different brokers to find the most cost-effective option.</p>
+            </div>
+            <div class="market-highlight">
+                <h3 data-translate="platformFeatures">Platform Features</h3>
+                <p data-translate="platformFeaturesDesc">Evaluate trading platforms, tools, and features to ensure they match your trading requirements.</p>
+            </div>
+            <div class="market-highlight">
+                <h3 data-translate="regulations">Regulations</h3>
+                <p data-translate="regulationsDesc">Check regulatory status and safety measures to ensure your funds are protected with trusted brokers.</p>
+            </div>
+        </section>
+
+        <!-- MC Markets Sponsor Banner -->
+        <div class="sponsor-banner">
+            <a href="https://mcmarkets.com/?utm_source=broker-choose&utm_medium=website&utm_campaign=banner" target="_blank" rel="noopener">
+                <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
+            </a>
+        </div>
+
+        <!-- Voting Section -->
+        <div class="vote_mount_457adfa15e7c dis-vote" id="vote-section">
+            <div class="feed__wrapper skin-white">
+                <div class="vote-content-wrapper vote_white discussM justify">
+                    <div class="vote-title overflow2" data-translate="votingTitle">
+                        How do you plan to invest now?
+                    </div>
+                    <div class="pk-wrapper innerVoteWrapper">
+                        <div class="not-vote-yet">
+                            <div class="vote-progress-wrapper">
+                                <span class="left-rate" id="buy-percentage">50%</span>
+                                <div class="vote-progress-now" id="vote-progress-bar"></div>
+                                <span class="right-rate" id="cash-percentage">50%</span>
+                            </div>
+                            <div class="vote-option-wrapper">
+                                <div id="vote-buy" class="vote-option vote-left-option">
+                                    <div class="vote-option-title overflow" data-translate="buyingTheDip">Buying the Dip</div>
+                                </div>
+                                <div class="vote-sub-area"></div>
+                                <div id="vote-cash" class="vote-option vote-right-option">
+                                    <div class="vote-option-title overflow" data-translate="cashingOut">Cashing Out</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vote-sub-msg justify">
+                        <div class="vote-already">
+                            <span>
+                                <span class="vote-already-num" id="total-votes">0</span>
+                                <span data-translate="votes">votes</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <section class="market-highlights">
-        <div class="market-highlight">
-            <h3 data-translate="tradingFees">Trading Fees</h3>
-            <p data-translate="tradingFeesDesc">Compare spreads, commissions, and other trading costs across different brokers to find the most cost-effective option.</p>
+    <div class="widget-container">
+        <h2 class="section-title">Live Stock Index</h2>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+            {
+            "width": "880",
+            "height": "1300",
+            "symbolsGroups": [
+                {
+                    "name": "Indices",
+                    "originalName": "Indices",
+                    "symbols": [
+                        {
+                            "name": "FOREXCOM:SPXUSD",
+                            "displayName": "S&P 500 Index"
+                        },
+                        {
+                            "name": "FOREXCOM:NSXUSD",
+                            "displayName": "US 100 Cash CFD"
+                        },
+                        {
+                            "name": "FOREXCOM:DJI",
+                            "displayName": "Dow Jones Industrial Average Index"
+                        },
+                        {
+                            "name": "INDEX:NKY",
+                            "displayName": "Japan 225"
+                        },
+                        {
+                            "name": "INDEX:DEU40",
+                            "displayName": "DAX Index"
+                        },
+                        {
+                            "name": "FOREXCOM:UKXGBP",
+                            "displayName": "FTSE 100 Index"
+                        }
+                    ]
+                },
+                {
+                    "name": "Forex",
+                    "originalName": "Forex",
+                    "symbols": [
+                        {
+                            "name": "FX:EURUSD",
+                            "displayName": "EUR to USD"
+                        },
+                        {
+                            "name": "FX:GBPUSD",
+                            "displayName": "GBP to USD"
+                        },
+                        {
+                            "name": "FX:USDJPY",
+                            "displayName": "USD to JPY"
+                        },
+                        {
+                            "name": "FX:USDCHF",
+                            "displayName": "USD to CHF"
+                        },
+                        {
+                            "name": "FX:AUDUSD",
+                            "displayName": "AUD to USD"
+                        },
+                        {
+                            "name": "FX:USDCAD",
+                            "displayName": "USD to CAD"
+                        }
+                    ]
+                },
+                {
+                    "name": "Futures",
+                    "originalName": "Futures",
+                    "symbols": [
+                        {
+                            "name": "BMFBOVESPA:ISP1!",
+                            "displayName": "S&P 500 Index Futures"
+                        },
+                        {
+                            "name": "BMFBOVESPA:EUR1!",
+                            "displayName": "Euro Futures"
+                        },
+                        {
+                            "name": "PYTH:WTI3!",
+                            "displayName": "WTI CRUDE OIL"
+                        },
+                        {
+                            "name": "BMFBOVESPA:ETH1!",
+                            "displayName": "Hydrous ethanol"
+                        },
+                        {
+                            "name": "BMFBOVESPA:CCM1!",
+                            "displayName": "Corn"
+                        }
+                    ]
+                },
+                {
+                    "name": "Bonds",
+                    "originalName": "Bonds",
+                    "symbols": [
+                        {
+                            "name": "EUREX:FGBL1!",
+                            "displayName": "Euro Bund"
+                        },
+                        {
+                            "name": "EUREX:FBTP1!",
+                            "displayName": "Euro BTP"
+                        },
+                        {
+                            "name": "EUREX:FGBM1!",
+                            "displayName": "Euro BOBL"
+                        }
+                    ]
+                },
+                {
+                    "name": "Crypto",
+                    "symbols": [
+                        {
+                            "name": "BINANCE:BTCUSDT"
+                        },
+                        {
+                            "name": "BITSTAMP:BTCUSD"
+                        },
+                        {
+                            "name": "BINANCE:ETHUSDT"
+                        },
+                        {
+                            "name": "COINBASE:ETHUSD"
+                        },
+                        {
+                            "name": "COINBASE:SOLUSD"
+                        },
+                        {
+                            "name": "BITSTAMP:XRPUSD"
+                        }
+                    ]
+                }
+            ],
+            "showSymbolLogo": false,
+            "isTransparent": false,
+            "colorTheme": "dark",
+            "locale": "en",
+            "backgroundColor": "#131722"
+            }
+            </script>
         </div>
-        <div class="market-highlight">
-            <h3 data-translate="platformFeatures">Platform Features</h3>
-            <p data-translate="platformFeaturesDesc">Evaluate trading platforms, tools, and features to ensure they match your trading requirements.</p>
-        </div>
-        <div class="market-highlight">
-            <h3 data-translate="regulations">Regulations</h3>
-            <p data-translate="regulationsDesc">Check regulatory status and safety measures to ensure your funds are protected with trusted brokers.</p>
+        <!-- TradingView Widget END -->
+    </div>
+
+        <section class="about-section">
+            <div class="about-container">
+                <h2 data-translate="aboutUs">About Us</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p data-translate="aboutText1">Broker Choose is your trusted platform for comparing trading brokers and making informed investment decisions. We provide comprehensive analysis, detailed comparisons, and expert insights to help you find the perfect broker for your trading needs.</p>
+                        <p data-translate="aboutText2">Our mission is to empower traders with transparent, accurate, and up-to-date information about trading brokers. We believe that informed decisions lead to better trading outcomes, and we're committed to providing the tools and resources you need to succeed.</p>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <img src="images/team1.jpg" alt="Billy Chen - Technical Lead">
+                            <h3>Billy Chen</h3>
+                            <p>Co-founder & Technical Lead</p>
+                            <p class="bio">Expert in algorithmic trading and market analysis with over 8 years of experience in quantitative finance.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/team2.jpg" alt="Franky Wong - Research Director">
+                            <h3>Franky Wong</h3>
+                            <p>Co-founder & Research Director</p>
+                            <p class="bio">Specializes in broker analysis and regulatory compliance with 12 years of industry experience.</p>
+                        </div>
+                        <div class="team-member">
+                            <img src="images/team3.jpg" alt="Geoffrey Wallace - Strategy Lead">
+                            <h3>Geoffrey Wallace</h3>
+                            <p>Co-founder & Strategy Lead</p>
+                            <p class="bio">Former hedge fund manager with 15 years of experience in institutional trading and risk management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- MC Markets Sponsor Banner -->
-    <div class="sponsor-banner">
-        <a href="https://mcmarkets.com/?utm_source=broker-choose&utm_medium=website&utm_campaign=banner" target="_blank" rel="noopener">
-            <img src="images/MC Markets sponsor banner.png" alt="MC Markets Sponsor Banner" class="banner-image">
-        </a>
-    </div>
-
-    <!-- Voting Section -->
-    <div class="vote_mount_457adfa15e7c dis-vote" id="vote-section">
-        <div class="feed__wrapper skin-white">
-            <div class="vote-content-wrapper vote_white discussM justify">
-                <div class="vote-title overflow2" data-translate="votingTitle">
-                    How do you plan to invest now?
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Why do you need Broker Choose website to help you compare all brokers on the markets?</h3>
+                    <p>Broker Choose provides a comprehensive comparison platform that saves you time and effort in researching brokers. Our website offers detailed side-by-side comparisons of trading fees, platform features, regulations, and more. This helps you make informed decisions by having all the essential information in one place, rather than spending hours researching multiple broker websites individually.</p>
                 </div>
-                <div class="pk-wrapper innerVoteWrapper">
-                    <div class="not-vote-yet">
-                        <div class="vote-progress-wrapper">
-                            <span class="left-rate" id="buy-percentage">50%</span>
-                            <div class="vote-progress-now" id="vote-progress-bar"></div>
-                            <span class="right-rate" id="cash-percentage">50%</span>
-                        </div>
-                        <div class="vote-option-wrapper">
-                            <div id="vote-buy" class="vote-option vote-left-option">
-                                <div class="vote-option-title overflow" data-translate="buyingTheDip">Buying the Dip</div>
-                            </div>
-                            <div class="vote-sub-area"></div>
-                            <div id="vote-cash" class="vote-option vote-right-option">
-                                <div class="vote-option-title overflow" data-translate="cashingOut">Cashing Out</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="faq-item">
+                    <h3>Where should you choose the best broker?</h3>
+                    <p>The best broker for you depends on your specific trading needs, experience level, and investment goals. Consider factors such as trading fees, platform usability, available markets, regulatory status, and customer support. Use our comparison tool to evaluate these aspects across different brokers and find the one that best matches your requirements.</p>
                 </div>
-                <div class="vote-sub-msg justify">
-                    <div class="vote-already">
-                        <span>
-                            <span class="vote-already-num" id="total-votes">0</span>
-                            <span data-translate="votes">votes</span>
-                        </span>
-                    </div>
+                <div class="faq-item">
+                    <h3>Is region a way to help you choose broker?</h3>
+                    <p>Yes, your region is an important factor when choosing a broker. Different brokers operate in different regions and may be subject to various regulatory requirements. Some brokers may not accept clients from certain countries, while others may offer specialized services for specific regions. Consider your location and the broker's regulatory status in your region to ensure compliance and access to appropriate services.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can we add our list to your website?</h3>
+                    <p>Yes, you can! We welcome suggestions for brokers to add to our comparison platform. Please join our Discord channel and message us with your recommendations. We'll review each suggestion to ensure it meets our criteria for inclusion in our comprehensive broker comparison.</p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    </main>
 
-<div class="widget-container">
-    <h2 class="section-title">Live Stock Index</h2>
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
-        {
-        "width": "880",
-        "height": "1300",
-        "symbolsGroups": [
-            {
-                "name": "Indices",
-                "originalName": "Indices",
-                "symbols": [
-                    {
-                        "name": "FOREXCOM:SPXUSD",
-                        "displayName": "S&P 500 Index"
-                    },
-                    {
-                        "name": "FOREXCOM:NSXUSD",
-                        "displayName": "US 100 Cash CFD"
-                    },
-                    {
-                        "name": "FOREXCOM:DJI",
-                        "displayName": "Dow Jones Industrial Average Index"
-                    },
-                    {
-                        "name": "INDEX:NKY",
-                        "displayName": "Japan 225"
-                    },
-                    {
-                        "name": "INDEX:DEU40",
-                        "displayName": "DAX Index"
-                    },
-                    {
-                        "name": "FOREXCOM:UKXGBP",
-                        "displayName": "FTSE 100 Index"
+    <footer>
+        <p><span data-translate="copyright">© 2025 Broker Choose. All rights reserved.</span> | 
+        <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
+            <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join our Discord</span>
+        </a> | 
+        <a href="/sitemap.xml" class="sitemap-link" data-translate="sitemap">Sitemap</a>
+        </p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="js/firebase-voting.js"></script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="js/translations.js"></script>
+    <script src="js/broker-data.js"></script>
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toLowerCase();
+            table = document.querySelector(".broker-table");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
                     }
-                ]
-            },
-            {
-                "name": "Forex",
-                "originalName": "Forex",
-                "symbols": [
-                    {
-                        "name": "FX:EURUSD",
-                        "displayName": "EUR to USD"
-                    },
-                    {
-                        "name": "FX:GBPUSD",
-                        "displayName": "GBP to USD"
-                    },
-                    {
-                        "name": "FX:USDJPY",
-                        "displayName": "USD to JPY"
-                    },
-                    {
-                        "name": "FX:USDCHF",
-                        "displayName": "USD to CHF"
-                    },
-                    {
-                        "name": "FX:AUDUSD",
-                        "displayName": "AUD to USD"
-                    },
-                    {
-                        "name": "FX:USDCAD",
-                        "displayName": "USD to CAD"
-                    }
-                ]
-            },
-            {
-                "name": "Futures",
-                "originalName": "Futures",
-                "symbols": [
-                    {
-                        "name": "BMFBOVESPA:ISP1!",
-                        "displayName": "S&P 500 Index Futures"
-                    },
-                    {
-                        "name": "BMFBOVESPA:EUR1!",
-                        "displayName": "Euro Futures"
-                    },
-                    {
-                        "name": "PYTH:WTI3!",
-                        "displayName": "WTI CRUDE OIL"
-                    },
-                    {
-                        "name": "BMFBOVESPA:ETH1!",
-                        "displayName": "Hydrous ethanol"
-                    },
-                    {
-                        "name": "BMFBOVESPA:CCM1!",
-                        "displayName": "Corn"
-                    }
-                ]
-            },
-            {
-                "name": "Bonds",
-                "originalName": "Bonds",
-                "symbols": [
-                    {
-                        "name": "EUREX:FGBL1!",
-                        "displayName": "Euro Bund"
-                    },
-                    {
-                        "name": "EUREX:FBTP1!",
-                        "displayName": "Euro BTP"
-                    },
-                    {
-                        "name": "EUREX:FGBM1!",
-                        "displayName": "Euro BOBL"
-                    }
-                ]
-            },
-            {
-                "name": "Crypto",
-                "symbols": [
-                    {
-                        "name": "BINANCE:BTCUSDT"
-                    },
-                    {
-                        "name": "BITSTAMP:BTCUSD"
-                    },
-                    {
-                        "name": "BINANCE:ETHUSDT"
-                    },
-                    {
-                        "name": "COINBASE:ETHUSD"
-                    },
-                    {
-                        "name": "COINBASE:SOLUSD"
-                    },
-                    {
-                        "name": "BITSTAMP:XRPUSD"
-                    }
-                ]
-            }
-        ],
-        "showSymbolLogo": false,
-        "isTransparent": false,
-        "colorTheme": "dark",
-        "locale": "en",
-        "backgroundColor": "#131722"
-        }
-        </script>
-    </div>
-    <!-- TradingView Widget END -->
-</div>
-
-    <section class="about-section">
-        <div class="about-container">
-            <h2 data-translate="aboutUs">About Us</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p data-translate="aboutText1">Broker Choose is your trusted platform for comparing trading brokers and making informed investment decisions. We provide comprehensive analysis, detailed comparisons, and expert insights to help you find the perfect broker for your trading needs.</p>
-                    <p data-translate="aboutText2">Our mission is to empower traders with transparent, accurate, and up-to-date information about trading brokers. We believe that informed decisions lead to better trading outcomes, and we're committed to providing the tools and resources you need to succeed.</p>
-                </div>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <img src="images/team1.jpg" alt="Billy Chen - Technical Lead">
-                        <h3>Billy Chen</h3>
-                        <p>Co-founder & Technical Lead</p>
-                        <p class="bio">Expert in algorithmic trading and market analysis with over 8 years of experience in quantitative finance.</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="images/team2.jpg" alt="Franky Wong - Research Director">
-                        <h3>Franky Wong</h3>
-                        <p>Co-founder & Research Director</p>
-                        <p class="bio">Specializes in broker analysis and regulatory compliance with 12 years of industry experience.</p>
-                    </div>
-                    <div class="team-member">
-                        <img src="images/team3.jpg" alt="Geoffrey Wallace - Strategy Lead">
-                        <h3>Geoffrey Wallace</h3>
-                        <p>Co-founder & Strategy Lead</p>
-                        <p class="bio">Former hedge fund manager with 15 years of experience in institutional trading and risk management.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="faq-section">
-    <div class="faq-container">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <h3>Why do you need Broker Choose website to help you compare all brokers on the markets?</h3>
-                <p>Broker Choose provides a comprehensive comparison platform that saves you time and effort in researching brokers. Our website offers detailed side-by-side comparisons of trading fees, platform features, regulations, and more. This helps you make informed decisions by having all the essential information in one place, rather than spending hours researching multiple broker websites individually.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Where should you choose the best broker?</h3>
-                <p>The best broker for you depends on your specific trading needs, experience level, and investment goals. Consider factors such as trading fees, platform usability, available markets, regulatory status, and customer support. Use our comparison tool to evaluate these aspects across different brokers and find the one that best matches your requirements.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is region a way to help you choose broker?</h3>
-                <p>Yes, your region is an important factor when choosing a broker. Different brokers operate in different regions and may be subject to various regulatory requirements. Some brokers may not accept clients from certain countries, while others may offer specialized services for specific regions. Consider your location and the broker's regulatory status in your region to ensure compliance and access to appropriate services.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can we add our list to your website?</h3>
-                <p>Yes, you can! We welcome suggestions for brokers to add to our comparison platform. Please join our Discord channel and message us with your recommendations. We'll review each suggestion to ensure it meets our criteria for inclusion in our comprehensive broker comparison.</p>
-            </div>
-        </div>
-    </div>
-</section>
-</main>
-
-<footer>
-    <p><span data-translate="copyright">© 2025 Broker Choose. All rights reserved.</span> | 
-    <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
-        <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join our Discord</span>
-    </a> | 
-    <a href="/sitemap.xml" class="sitemap-link" data-translate="sitemap">Sitemap</a>
-    </p>
-</footer>
-
-<!-- Firebase SDK -->
-<script type="module" src="js/firebase-voting.js"></script>
-<!-- Vercel Analytics -->
-<script defer src="/_vercel/insights/script.js"></script>
-<script src="js/translations.js"></script>
-<script src="js/broker-data.js"></script>
-<script>
-    function filterTable() {
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("searchInput");
-        filter = input.value.toLowerCase();
-        table = document.querySelector(".broker-table");
-        tr = table.getElementsByTagName("tr");
-
-        for (i = 1; i < tr.length; i++) {
-            td = tr[i].getElementsByTagName("td")[0];
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
                 }
             }
         }
-    }
 
-    function sortTable() {
-        var sortBy = document.getElementById("sortBy").value;
-        var table = document.querySelector(".broker-table");
-        var tbody = table.getElementsByTagName("tbody")[0];
-        var rows = Array.from(tbody.getElementsByTagName("tr"));
+        function sortTable() {
+            var sortBy = document.getElementById("sortBy").value;
+            var table = document.querySelector(".broker-table");
+            var tbody = table.getElementsByTagName("tbody")[0];
+            var rows = Array.from(tbody.getElementsByTagName("tr"));
 
-        rows.sort(function(a, b) {
-            var aValue, bValue;
-            
-            switch(sortBy) {
-                case "score":
-                    aValue = parseFloat(a.cells[1].textContent);
-                    bValue = parseFloat(b.cells[1].textContent);
-                    break;
-                case "popularity":
-                    aValue = parseFloat(a.cells[2].textContent);
-                    bValue = parseFloat(b.cells[2].textContent);
-                    break;
-                case "fees":
-                    aValue = parseFloat(a.cells[3].textContent.replace(/[^0-9.-]+/g,""));
-                    bValue = parseFloat(b.cells[3].textContent.replace(/[^0-9.-]+/g,""));
-                    break;
-                case "minDeposit":
-                    aValue = parseFloat(a.cells[12].textContent.replace(/[^0-9.-]+/g,""));
-                    bValue = parseFloat(b.cells[12].textContent.replace(/[^0-9.-]+/g,""));
-                    break;
-                default:
-                    return 0;
-            }
+            rows.sort(function(a, b) {
+                var aValue, bValue;
+                
+                switch(sortBy) {
+                    case "score":
+                        aValue = parseFloat(a.cells[1].textContent);
+                        bValue = parseFloat(b.cells[1].textContent);
+                        break;
+                    case "popularity":
+                        aValue = parseFloat(a.cells[2].textContent);
+                        bValue = parseFloat(b.cells[2].textContent);
+                        break;
+                    case "fees":
+                        aValue = parseFloat(a.cells[3].textContent.replace(/[^0-9.-]+/g,""));
+                        bValue = parseFloat(b.cells[3].textContent.replace(/[^0-9.-]+/g,""));
+                        break;
+                    case "minDeposit":
+                        aValue = parseFloat(a.cells[12].textContent.replace(/[^0-9.-]+/g,""));
+                        bValue = parseFloat(b.cells[12].textContent.replace(/[^0-9.-]+/g,""));
+                        break;
+                    default:
+                        return 0;
+                }
 
-            if (isNaN(aValue)) aValue = 0;
-            if (isNaN(bValue)) bValue = 0;
+                if (isNaN(aValue)) aValue = 0;
+                if (isNaN(bValue)) bValue = 0;
 
-            return bValue - aValue;
-        });
+                return bValue - aValue;
+            });
 
-        // Clear and re-append sorted rows
-        rows.forEach(function(row) {
-            tbody.appendChild(row);
-        });
-    }
-
-    // Initialize table with data
-    function populateTable() {
-        var tbody = document.getElementById("brokerTableBody");
-        tbody.innerHTML = ""; // Clear existing content
-
-        // Sort brokers by score before populating
-        brokers.sort((a, b) => b.score - a.score);
-
-        brokers.forEach(function(broker) {
-            var row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${broker.name}</td>
-                <td>${broker.score}</td>
-                <td>${broker.popularity}</td>
-                <td>${broker.usStockFee}</td>
-                <td>${broker.eurusdSpread}</td>
-                <td>${broker.sp500CfdSpread}</td>
-                <td>${broker.withdrawalFee}</td>
-                <td>${broker.depositFee}</td>
-                <td>${broker.inactivityFee}</td>
-                <td>${broker.regulators}</td>
-                <td>${broker.foundationDate}</td>
-                <td>${broker.investorProtection}</td>
-                <td>${broker.minDeposit}</td>
-                <td>${broker.bankTransfer ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.creditDebit ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.paypal ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.wise ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.revolut ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.otherEWallets ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.mobileScore}</td>
-                <td>${broker.webScore}</td>
-                <td>${broker.mt4 ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.mt5 ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
-                <td>${broker.customerService}</td>
-                <td>${broker.accountOpening}</td>
-                <td>${broker.overallScore}</td>
-            `;
-            tbody.appendChild(row);
-        });
-    }
-
-    // Set up event listeners when the page loads
-    document.addEventListener("DOMContentLoaded", function() {
-        // Initialize table with sorted data
-        populateTable();
-        
-        // Add event listeners
-        document.getElementById("sortBy").addEventListener("change", sortTable);
-        document.getElementById("searchInput").addEventListener("input", filterTable);
-    });
-
-    function changeLanguage(lang) {
-        if (lang === 'en') {
-            window.location.href = '/';
-        } else {
-            window.location.href = '/' + lang + '/';
+            // Clear and re-append sorted rows
+            rows.forEach(function(row) {
+                tbody.appendChild(row);
+            });
         }
-    }
 
-    // Get current language from URL
-    function getCurrentLanguage() {
-        const path = window.location.pathname;
-        const langMatch = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
-        return langMatch ? langMatch[1] : 'en';
-    }
+        // Initialize table with data
+        function populateTable() {
+            var tbody = document.getElementById("brokerTableBody");
+            tbody.innerHTML = ""; // Clear existing content
 
-    // Set initial language in selector
-    document.addEventListener('DOMContentLoaded', function() {
-        const currentLang = getCurrentLanguage();
-        document.getElementById('languageSelect').value = currentLang;
-    });
-</script>
+            // Sort brokers by score before populating
+            brokers.sort((a, b) => b.score - a.score);
+
+            brokers.forEach(function(broker) {
+                var row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${broker.name}</td>
+                    <td>${broker.score}</td>
+                    <td>${broker.popularity}</td>
+                    <td>${broker.usStockFee}</td>
+                    <td>${broker.eurusdSpread}</td>
+                    <td>${broker.sp500CfdSpread}</td>
+                    <td>${broker.withdrawalFee}</td>
+                    <td>${broker.depositFee}</td>
+                    <td>${broker.inactivityFee}</td>
+                    <td>${broker.regulators}</td>
+                    <td>${broker.foundationDate}</td>
+                    <td>${broker.investorProtection}</td>
+                    <td>${broker.minDeposit}</td>
+                    <td>${broker.bankTransfer ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.creditDebit ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.paypal ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.wise ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.revolut ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.otherEWallets ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.mobileScore}</td>
+                    <td>${broker.webScore}</td>
+                    <td>${broker.mt4 ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.mt5 ? '<i class="fas fa-check feature-icon"></i>' : '<i class="fas fa-times feature-missing"></i>'}</td>
+                    <td>${broker.customerService}</td>
+                    <td>${broker.accountOpening}</td>
+                    <td>${broker.overallScore}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Set up event listeners when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize table with sorted data
+            populateTable();
+            
+            // Add event listeners
+            document.getElementById("sortBy").addEventListener("change", sortTable);
+            document.getElementById("searchInput").addEventListener("input", filterTable);
+        });
+
+        function changeLanguage(lang) {
+            if (lang === 'en') {
+                window.location.href = '/';
+            } else {
+                window.location.href = '/' + lang + '/';
+            }
+        }
+
+        // Get current language from URL
+        function getCurrentLanguage() {
+            const path = window.location.pathname;
+            const langMatch = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+            return langMatch ? langMatch[1] : 'en';
+        }
+
+        // Set initial language in selector
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLang = getCurrentLanguage();
+            document.getElementById('languageSelect').value = currentLang;
+        });
+    </script>
 </body>
 </html> 
