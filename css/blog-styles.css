@@ -15,6 +15,7 @@
     color: #333;
     margin-bottom: 40px;
     text-align: center;
+    padding-top: 40px; /* Add padding to push title down */
 }
 
 .blog-grid {
@@ -135,6 +136,11 @@
     padding: 20px 0;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+    position: sticky; /* Make it stick to bottom */
+    bottom: 0;
+    background: white;
+    z-index: 100;
+    justify-content: center; /* Center the buttons */
 }
 
 .social-share a {
