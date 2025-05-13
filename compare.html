@@ -437,22 +437,29 @@
             margin-bottom: 40px;
         }
         
-        .broker-cards {
+        .top-brokers-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .broker-card {
             background: white;
+            border-radius: 10px;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
+            transition: transform 0.3s ease;
         }
         
-        .broker-card .rank {
+        .broker-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .rank {
             position: absolute;
             top: -15px;
             left: -15px;
@@ -464,34 +471,50 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
             font-weight: bold;
-            font-size: 1.2rem;
         }
         
         .broker-card h3 {
             color: #2c3e50;
-            margin-bottom: 15px;
             font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-left: 20px;
         }
         
-        .broker-card p {
+        .broker-details {
             color: #666;
-            line-height: 1.6;
-            margin: 0;
+        }
+        
+        .broker-details p {
+            margin-bottom: 10px;
+        }
+        
+        .broker-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .broker-details li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .broker-details li:before {
+            content: "✓";
+            color: #327fff;
+            position: absolute;
+            left: 0;
         }
         
         @media (max-width: 768px) {
-            .broker-cards {
+            .top-brokers-grid {
                 grid-template-columns: 1fr;
             }
             
-            .top-brokers-section {
-                padding: 40px 0;
-            }
-            
-            .top-brokers-section h2 {
-                font-size: 1.8rem;
-                margin-bottom: 30px;
+            .broker-card {
+                padding: 20px;
             }
         }
     </style>
@@ -505,11 +528,12 @@
         <a href="/" class="site-title">Broker Choose</a>
         <nav class="site-nav">
             <ul>
-                <li><a href="/" data-translate="home">Home</a></li>
-                <li><a href="/compare.html" class="active" data-translate="compare">Compare</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/compare.html">Compare</a></li>
+                <li><a href="/blog">Blog</a></li>
                 <li>
                     <a href="https://discord.gg/XjDcvrV6gR" class="discord-link" target="_blank" rel="noopener">
-                        <i class="fab fa-discord discord-icon"></i> <span data-translate="joinDiscord">Join Discord</span>
+                        <i class="fab fa-discord discord-icon"></i> Join Discord
                     </a>
                 </li>
                 <li class="language-selector">
@@ -643,22 +667,49 @@
 
     <section class="top-brokers-section">
         <div class="container">
-            <h2>Top 3 Brokers 2025 Apr - People's Choice</h2>
-            <div class="broker-cards">
+            <h2>Top 3 Brokers 2025 May - People's Choice</h2>
+            <div class="top-brokers-grid">
                 <div class="broker-card">
                     <div class="rank">1</div>
-                    <h3>IG</h3>
-                    <p>Leading broker with comprehensive trading tools and competitive fees</p>
+                    <h3>Interactive Brokers</h3>
+                    <div class="broker-details">
+                        <p><strong>Score:</strong> 9.5/10</p>
+                        <p><strong>Best for:</strong> Professional traders, low fees</p>
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>Extensive market access</li>
+                            <li>Advanced trading tools</li>
+                            <li>Competitive pricing</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="broker-card">
                     <div class="rank">2</div>
-                    <h3>Moomoo/Futuu</h3>
-                    <p>Innovative platform with user-friendly interface and advanced features</p>
+                    <h3>eToro</h3>
+                    <div class="broker-details">
+                        <p><strong>Score:</strong> 9.2/10</p>
+                        <p><strong>Best for:</strong> Social trading, beginners</p>
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>Copy trading platform</li>
+                            <li>User-friendly interface</li>
+                            <li>Social trading community</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="broker-card">
                     <div class="rank">3</div>
                     <h3>MC Markets</h3>
-                    <p>Trusted broker with strong regulatory compliance and excellent customer service</p>
+                    <div class="broker-details">
+                        <p><strong>Score:</strong> 9.0/10</p>
+                        <p><strong>Best for:</strong> CFD trading, research tools</p>
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li>Advanced charting</li>
+                            <li>Educational resources</li>
+                            <li>24/7 customer support</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
