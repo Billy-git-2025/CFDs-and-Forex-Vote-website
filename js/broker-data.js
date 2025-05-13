@@ -1,6 +1,296 @@
 // Broker data array
 const brokerData = [
     {
+        name: "Interactive Brokers",
+        score: "4.7/5",
+        popularity: "35K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.1",
+        sp500Spread: "0.2",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "SEC, FINRA, FCA, ASIC",
+        foundationDate: "1978",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.8/5",
+        webScore: "4.9/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.5/5",
+        accountOpening: "4.3/5",
+        overallScore: "4.7/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "Saxo",
+        score: "4.6/5",
+        popularity: "25K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.2",
+        sp500Spread: "0.3",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "FSA, FCA, ASIC",
+        foundationDate: "1992",
+        investorProtection: "Yes",
+        minDeposit: "$2000",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.7/5",
+        webScore: "4.8/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.4/5",
+        accountOpening: "4.2/5",
+        overallScore: "4.6/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "eToro",
+        score: "4.5/5",
+        popularity: "40K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.3",
+        sp500Spread: "0.4",
+        withdrawalFee: "$5",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "CySEC, FCA, ASIC",
+        foundationDate: "2007",
+        investorProtection: "Yes",
+        minDeposit: "$50",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "Yes",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.8/5",
+        webScore: "4.7/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.3/5",
+        accountOpening: "4.5/5",
+        overallScore: "4.5/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "XTB",
+        score: "4.4/5",
+        popularity: "20K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.2",
+        sp500Spread: "0.3",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "FCA, KNF, CySEC",
+        foundationDate: "2002",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "Yes",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.6/5",
+        webScore: "4.5/5",
+        mt4: "Yes",
+        mt5: "Yes",
+        customerService: "4.2/5",
+        accountOpening: "4.4/5",
+        overallScore: "4.4/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "Charles Schwab",
+        score: "4.8/5",
+        popularity: "45K",
+        usStockFee: "$0.0",
+        eurusdSpread: "N/A",
+        sp500Spread: "N/A",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "SEC, FINRA",
+        foundationDate: "1971",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "No",
+        revolut: "No",
+        otherEWallets: "No",
+        mobileScore: "4.7/5",
+        webScore: "4.8/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.6/5",
+        accountOpening: "4.7/5",
+        overallScore: "4.8/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "Lightyear",
+        score: "4.2/5",
+        popularity: "5K",
+        usStockFee: "$0.0",
+        eurusdSpread: "N/A",
+        sp500Spread: "N/A",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "No",
+        regulators: "FCA",
+        foundationDate: "2020",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.5/5",
+        webScore: "4.3/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.1/5",
+        accountOpening: "4.2/5",
+        overallScore: "4.2/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "NinjaTrader",
+        score: "4.3/5",
+        popularity: "15K",
+        usStockFee: "N/A",
+        eurusdSpread: "N/A",
+        sp500Spread: "N/A",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "CFTC, NFA",
+        foundationDate: "2003",
+        investorProtection: "No",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "No",
+        paypal: "No",
+        wise: "No",
+        revolut: "No",
+        otherEWallets: "No",
+        mobileScore: "4.4/5",
+        webScore: "4.5/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.2/5",
+        accountOpening: "4.3/5",
+        overallScore: "4.3/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "TradeStation Global",
+        score: "4.4/5",
+        popularity: "18K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.2",
+        sp500Spread: "0.3",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "FCA, ASIC",
+        foundationDate: "1982",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.5/5",
+        webScore: "4.6/5",
+        mt4: "Yes",
+        mt5: "Yes",
+        customerService: "4.3/5",
+        accountOpening: "4.4/5",
+        overallScore: "4.4/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "Swissquote",
+        score: "4.5/5",
+        popularity: "22K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.2",
+        sp500Spread: "0.3",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "FINMA",
+        foundationDate: "1996",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.6/5",
+        webScore: "4.7/5",
+        mt4: "Yes",
+        mt5: "Yes",
+        customerService: "4.4/5",
+        accountOpening: "4.5/5",
+        overallScore: "4.5/5",
+        updateTime: "May 2025"
+    },
+    {
+        name: "Fineco Bank",
+        score: "4.3/5",
+        popularity: "12K",
+        usStockFee: "$0.0",
+        eurusdSpread: "0.2",
+        sp500Spread: "0.3",
+        withdrawalFee: "$0",
+        depositFee: "$0",
+        inactivityFee: "Yes",
+        regulators: "Bank of Italy, FCA",
+        foundationDate: "1999",
+        investorProtection: "Yes",
+        minDeposit: "$0",
+        bankTransfer: "Yes",
+        creditDebit: "Yes",
+        paypal: "No",
+        wise: "Yes",
+        revolut: "Yes",
+        otherEWallets: "Yes",
+        mobileScore: "4.4/5",
+        webScore: "4.5/5",
+        mt4: "No",
+        mt5: "No",
+        customerService: "4.2/5",
+        accountOpening: "4.3/5",
+        overallScore: "4.3/5",
+        updateTime: "May 2025"
+    },
+    {
         name: "IG",
         score: "4.5/5",
         popularity: "28K",
@@ -26,7 +316,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "4.4/5",
         accountOpening: "4.4/5",
-        overallScore: "4.70/5"
+        overallScore: "4.70/5",
+        updateTime: "May 2025"
     },
     {
         name: "moomoo",
@@ -54,7 +345,8 @@ const brokerData = [
         mt5: "No",
         customerService: "3.4/5",
         accountOpening: "4.4/5",
-        overallScore: "4.45/5"
+        overallScore: "4.45/5",
+        updateTime: "May 2025"
     },
     {
         name: "MC Markets",
@@ -82,7 +374,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "4.4/5",
         accountOpening: "4.4/5",
-        overallScore: "4.50/5"
+        overallScore: "4.50/5",
+        updateTime: "May 2025"
     },
     {
         name: "Vantage",
@@ -110,7 +403,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "4.4/5",
         accountOpening: "4.4/5",
-        overallScore: "4.43/5"
+        overallScore: "4.43/5",
+        updateTime: "May 2025"
     },
     {
         name: "FP Markets",
@@ -138,7 +432,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "4.4/5",
         accountOpening: "4.4/5",
-        overallScore: "4.43/5"
+        overallScore: "4.43/5",
+        updateTime: "May 2025"
     },
     {
         name: "TradeZero",
@@ -166,7 +461,8 @@ const brokerData = [
         mt5: "No",
         customerService: "3.1/5",
         accountOpening: "4.4/5",
-        overallScore: "3.10/5"
+        overallScore: "3.10/5",
+        updateTime: "May 2025"
     },
     {
         name: "CapTrader",
@@ -194,7 +490,8 @@ const brokerData = [
         mt5: "No",
         customerService: "3.1/5",
         accountOpening: "4.4/5",
-        overallScore: "3.10/5"
+        overallScore: "3.10/5",
+        updateTime: "May 2025"
     },
     {
         name: "ChoiceTrade",
@@ -222,7 +519,8 @@ const brokerData = [
         mt5: "No",
         customerService: "3.1/5",
         accountOpening: "4.4/5",
-        overallScore: "3.10/5"
+        overallScore: "3.10/5",
+        updateTime: "May 2025"
     },
     {
         name: "Admirals (Admiral Markets)",
@@ -250,7 +548,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
     },
     {
         name: "Hantec Markets",
@@ -278,7 +577,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
     },
     {
         name: "Markets.com",
@@ -306,7 +606,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
     },
     {
         name: "Trade Nation",
@@ -334,7 +635,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
     },
     {
         name: "IC Markets",
@@ -362,7 +664,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
     },
     {
         name: "Tickmill",
@@ -390,7 +693,8 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
     },
     {
         name: "MEKEM",
@@ -418,36 +722,9 @@ const brokerData = [
         mt5: "Yes",
         customerService: "1.8/5",
         accountOpening: "5.0/5",
-        overallScore: "3.25/5"
-    },
-    {
-        name: "NinjaTrader",
-        score: "4.5/5",
-        popularity: "20K",
-        usStockFee: "N/A",
-        eurusdSpread: "N/A",
-        sp500Spread: "N/A",
-        withdrawalFee: "$0",
-        depositFee: "$0",
-        inactivityFee: "Yes",
-        regulators: "CFTC in the US and member of NFA",
-        foundationDate: "2003",
-        investorProtection: "No",
-        minDeposit: "$0",
-        bankTransfer: "Yes",
-        creditDebit: "No",
-        paypal: "No",
-        wise: "No",
-        revolut: "No",
-        otherEWallets: "No",
-        mobileScore: "N/A",
-        webScore: "N/A",
-        mt4: "No",
-        mt5: "No",
-        customerService: "3.4/5",
-        accountOpening: "3.8/5",
-        overallScore: "N/A"
-}
+        overallScore: "3.25/5",
+        updateTime: "May 2025"
+    }
     // Add more brokers as needed
 ];
 
@@ -513,6 +790,7 @@ function renderBrokers(brokers) {
             <td>${broker.customerService}</td>
             <td>${broker.accountOpening}</td>
             <td>${broker.overallScore}</td>
+            <td>${broker.updateTime}</td>
         `;
         tbody.appendChild(row);
     });
