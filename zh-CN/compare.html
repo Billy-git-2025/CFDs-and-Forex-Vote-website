@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="../images/favicon.jpg">
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="en" href="https://broker-choose.com/compare.html" />
+    <link rel="alternate" hreflang="es" href="https://broker-choose.com/es/compare.html" />
+    <link rel="alternate" hreflang="fr" href="https://broker-choose.com/fr/compare.html" />
+    <link rel="alternate" hreflang="de" href="https://broker-choose.com/de/compare.html" />
+    <link rel="alternate" hreflang="it" href="https://broker-choose.com/it/compare.html" />
+    <link rel="alternate" hreflang="zh-CN" href="https://broker-choose.com/zh-CN/compare.html" />
+    <link rel="alternate" hreflang="zh-TW" href="https://broker-choose.com/zh-TW/compare.html" />
+    <link rel="alternate" hreflang="ar" href="https://broker-choose.com/ar/compare.html" />
+    <link rel="alternate" hreflang="pt" href="https://broker-choose.com/pt/compare.html" />
+    <link rel="alternate" hreflang="nl" href="https://broker-choose.com/nl/compare.html" />
+    <link rel="alternate" hreflang="x-default" href="https://broker-choose.com/compare.html" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KMRPCTZJ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9M85WK6TT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-V9M85WK6TT');
+    </script>
+    <title data-translate="comparePageTitle">Broker Choose | 比较经纪商</title>
+    <meta name="description" content="比较基于费用、功能和监管的交易经纪商。找到最适合您交易风格的经纪商。" data-translate="compareMetaDescription">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/vote-styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KMRPCTZJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header class="site-header">
+        <a href="/zh-CN/" class="site-title">Broker Choose</a>
+        <nav class="site-nav">
+            <ul>
+                <li><a href="/zh-CN/">首页</a></li>
+                <li><a href="/zh-CN/compare.html" class="active">比较</a></li>
+                <li><a href="/zh-CN/blog">博客</a></li>
+                <li class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="it">Italiano</option>
+                        <option value="zh-CN" selected>简体中文</option>
+                        <option value="zh-TW">繁體中文</option>
+                        <option value="ar">العربية</option>
+                        <option value="pt">Português</option>
+                        <option value="nl">Nederlands</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="compare-section">
+            <h1 data-translate="compareBrokersTitle">比较经纪商</h1>
+            <p data-translate="compareBrokersDesc">选择最多三个经纪商进行并排比较。</p>
+            
+            <div class="broker-selection">
+                <div class="broker-select">
+                    <label for="broker1" data-translate="selectBroker1">选择经纪商 1</label>
+                    <select id="broker1" onchange="updateComparison()">
+                        <option value="">-- 选择经纪商 --</option>
+                    </select>
+                </div>
+                <div class="broker-select">
+                    <label for="broker2" data-translate="selectBroker2">选择经纪商 2</label>
+                    <select id="broker2" onchange="updateComparison()">
+                        <option value="">-- 选择经纪商 --</option>
+                    </select>
+                </div>
+                <div class="broker-select">
+                    <label for="broker3" data-translate="selectBroker3">选择经纪商 3</label>
+                    <select id="broker3" onchange="updateComparison()">
+                        <option value="">-- 选择经纪商 --</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="comparison-results" class="comparison-results">
+                <!-- Comparison results will be populated here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><span data-translate="copyright">© 2025 Broker Choose. 保留所有权利。</span> | 
+        <a href="/sitemap.xml" class="sitemap-link" data-translate="sitemap">网站地图</a>
+        </p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module" src="../js/firebase-voting.js"></script>
+    <!-- Vercel Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    <script src="../js/translations.js"></script>
+    <script src="../js/broker-data.js"></script>
+    <script>
+        function changeLanguage(lang) {
+            if (lang === 'en') {
+                window.location.href = '/compare.html';
+            } else {
+                window.location.href = '/' + lang + '/compare.html';
+            }
+        }
+
+        // Get current language from URL
+        function getCurrentLanguage() {
+            const path = window.location.pathname;
+            const langMatch = path.match(/^\/([a-z]{2}(?:-[A-Z]{2})?)\//);
+            return langMatch ? langMatch[1] : 'en';
+        }
+
+        // Set initial language in selector
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLang = getCurrentLanguage();
+            document.getElementById('languageSelect').value = currentLang;
+        });
+    </script>
+</body>
+</html> 
